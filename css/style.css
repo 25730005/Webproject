@@ -105,13 +105,16 @@ input[type="text"], input[type="search"] {
 .card-meta { display: flex; flex-wrap: wrap; gap: 6px; color: var(--muted); font-size: 12px; }
 .card-actions { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 3px; }
 .bottom-nav {
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  z-index: 5;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 760px);
+  z-index: 10;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  margin: 24px -18px -1px;
+  margin: 0;
   padding: 9px 12px calc(9px + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--line);
   background: rgba(255,255,255,.97);
@@ -140,6 +143,5 @@ input[type="text"], input[type="search"] {
 .divider { height: 1px; margin: 15px 0; background: #dededb; }
 @media (min-width: 620px) {
   .site-shell { padding-inline: 26px; }
-  .bottom-nav { margin-inline: -26px; padding-inline: 22px; }
   .home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start; }
 }
