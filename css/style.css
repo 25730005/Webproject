@@ -1,5 +1,5 @@
 :root {
-  --background: #f3f3f1;
+  --background: #e4e4e1;
   --surface: #ffffff;
   --ink: #202020;
   --muted: #6c6c6c;
@@ -24,13 +24,14 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   outline-offset: 2px;
 }
 .site-shell {
-  width: min(100%, 760px);
+  width: min(100%, 393px);
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 18px 104px;
   background: var(--surface);
   border-left: 1px solid #dededb;
   border-right: 1px solid #dededb;
+  box-shadow: 0 0 24px rgba(0,0,0,.08);
 }
 .site-header {
   display: flex;
@@ -109,7 +110,7 @@ input[type="text"], input[type="search"] {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: min(100%, 760px);
+  width: min(100%, 393px);
   z-index: 10;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -141,7 +142,3 @@ input[type="text"], input[type="search"] {
 .notice { margin: 18px 0 0; padding: 10px 12px; background: #f5f5f2; border-left: 3px solid #b5b5af; color: #5f5f5a; font-size: 12px; }
 .site-footer { padding: 12px 0 8px; color: var(--muted); font-size: 11px; }
 .divider { height: 1px; margin: 15px 0; background: #dededb; }
-@media (min-width: 620px) {
-  .site-shell { padding-inline: 26px; }
-  .home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start; }
-}
