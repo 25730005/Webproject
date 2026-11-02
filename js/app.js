@@ -84,17 +84,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const ACTION_BY = { 계정정보: "비밀번호 변경과 2단계 인증 설정", 금융정보: "결제·카드 이용 내역 확인", 연락처: "스팸·피싱 문자·전화 주의", 신원정보: "명의도용 여부 확인(본인 인증 수단 점검)", "위치·이용기록": "이용 내역에서 낯선 기록 확인" };
   const adapt = (a) => ({ ...a, refDate: a.incidentDate || a.disclosedDate || null, dateText: a.incidentDate || (a.disclosedDate ? a.disclosedDate + " 공개" : "날짜 정보 없음"), countText: fmtCount(a), actions: [...BASE_ACTIONS, ...a.leakedCategories.map((c) => ACTION_BY[c]).filter(Boolean)] });
   const srcChip = (a) => `<span class="chip src">${a.meta?.source === "api" ? "API" : "JSON"}</span>`;
-  const tag = (a, k) => { const m = a.meta || {}, t = (m.real || []).includes(k) ? ["real", "실제"] : (m.draft || []).includes(k) ? ["draft", "초안"] : null; return t ? ` <span class="type-tag type-${t[0]}">${t[1]}</span>` : ""; };
   const overview = (a) => {
-    const n = (k) => (a.meta?.[k] || []).length;
     const fmt = a.affectedCount == null ? null : a.affectedCount.toLocaleString() + a.affectedUnit;
     const rows = [["발생일", a.incidentDate, "incidentDate"], ["공개일", a.disclosedDate, "disclosedDate"], ["피해 규모", fmt, "affectedCount"], ["유출 항목", a.leakedCategories.join(", ") || null, "leakedCategories"], ["유출 상세", a.leakedData.join(", ") || null, "leakedData"], ["유형", a.incidentType, "incidentType"], ["원인", a.cause, "cause"], ["제재", a.penalty, "penalty"]];
-    return `<section class="panel"><h2>개요</h2><p class="small">출처 ${srcChip(a)} · 실제 ${n("real")}개 · 초안 ${n("draft")}개 필드</p><div class="key-value">${rows.map(([k, v, f]) => `<span>${k}</span><span>${v ? esc(v) + tag(a, f) : "정보 없음"}</span>`).join("")}</div></section>`;
+    return `<section class="panel"><h2>개요</h2><p class="small source-line">출처 ${srcChip(a)}</p><div class="key-value">${rows.map(([k, v]) => `<span>${k}</span><span>${v ? esc(v) : "정보 없음"}</span>`).join("")}</div></section>`;
   };
   // 홈 가로 넘김 카드 (회색 이미지 자리)
-  const rail = (t, list, ranked) => `<section class="rail"><div class="section-heading"><h2>${t}</h2><div class="row"><button type="button" class="icon-btn" data-dir="-1" aria-label="${t} 이전">${ICON.back}</button><button type="button" class="icon-btn" data-dir="1" aria-label="${t} 다음">${ICON.next}</button></div></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a, i) => `<a class="h-card" href="${P("detail.html")}?id=${a.id}" data-id="${a.id}"><div class="thumb" aria-hidden="true">${ranked ? `<span class="rank">${i + 1}</span>` : ""}</div><span><span class="chip">${a.category}</span> ${srcChip(a)}</span><strong>${esc(a.title)}</strong><span class="muted">${a.dateText}</span></a>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
+  const rail = (t, list, ranked) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a, i) => `<a class="h-card" href="${P("detail.html")}?id=${a.id}" data-id="${a.id}"><div class="thumb" aria-hidden="true">${ranked ? `<span class="rank">${i + 1}</span>` : ""}</div><span><span class="chip">${a.category}</span> ${srcChip(a)}</span><strong>${esc(a.title)}</strong><span class="muted">${a.dateText}</span></a>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
   const wireRails = () => {
-    v.addEventListener("click", (e) => { const b = e.target.closest("[data-dir]"); if (!b) return; const h = b.closest(".rail").querySelector(".hscroll"); h.scrollBy({ left: h.clientWidth * 0.8 * b.dataset.dir, behavior: "smooth" }); });
     v.addEventListener("keydown", (e) => { if (e.target.classList.contains("hscroll") && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { e.preventDefault(); e.target.scrollBy({ left: e.target.clientWidth * 0.8 * (e.key === "ArrowRight" ? 1 : -1), behavior: "smooth" }); } });
   };
   const boot = async () => {
@@ -110,8 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const rec = ACCIDENTS.filter((a) => a.recommendOrder != null).sort((x, y) => x.recommendOrder - y.recommendOrder);
       const pop = ACCIDENTS.filter((a) => a.affectedUnit === "명" && a.affectedCount != null).sort((x, y) => y.affectedCount - x.affectedCount).slice(0, 8);
       const neu = [...ACCIDENTS].sort(byDate).slice(0, 8);
-      v.innerHTML = `<h1>내 서비스도 해당될까?</h1><p class="lead">서비스의 사고 이력과 확인할 정보를 살펴보세요.</p><div class="hero" role="img" aria-label="대표 이미지 자리"><svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L200 100M200 0L0 100"/></svg></div>
-<form class="panel" id="sf"><div class="panel-title"><strong>서비스 검색</strong></div><div class="input-wrap"><input type="search" name="q" aria-label="서비스명 검색" placeholder="쇼핑몰, 배달 앱 이름"><button class="button primary">검색</button></div></form>
+      v.innerHTML = `<h1>내 서비스도 해당될까?</h1><p class="lead">서비스의 사고 이력과 확인할 정보를 살펴보세요.</p><form class="panel" id="sf"><div class="panel-title"><strong>서비스 검색</strong></div><div class="input-wrap"><input type="search" name="q" aria-label="서비스명 검색" placeholder="쇼핑몰, 배달 앱 이름"><button class="button primary">검색</button></div></form>
 <form class="panel soft" id="rf"><div class="panel-title"><strong>내 서비스 등록</strong></div><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="서비스명 입력"><button class="button">등록</button></div></form>
 ${rail("추천 사고", rec, true)}${rail("피해 규모가 큰 사고", pop)}${rail("최신 사고", neu)}`;
       $("sf").onsubmit = (e) => { e.preventDefault(); location.href = P("list.html") + "?q=" + encodeURIComponent(e.target.q.value.trim()); };
@@ -149,7 +145,7 @@ ${rail("추천 사고", rec, true)}${rail("피해 규모가 큰 사고", pop)}${
       const fav = () => db.favs.includes(a.id);
       v.innerHTML = `<h1>${a.title}</h1><div class="row"><span class="chip">${a.category}</span>${srcChip(a)}${worry(a) ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div>
 ${overview(a)}
-<section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}${tag(a, "summary")}</p></section>
+<section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}</p></section>
 <section class="panel"><h2>출처</h2>${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
 <section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}</section>
 <div class="row"><button class="button primary" id="favb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
