@@ -1,0 +1,137 @@
+:root { --background:#e4e4e1; --surface:#fff; --ink:#202020; --muted:#6c6c6c; --line:#292929; --soft:#ececE9; --warning:#8a5414; --warning-bg:#fff7e9; --radius:10px; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; color:var(--ink); background:var(--background); font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif; }
+a { color:inherit; }
+button, input { font:inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline:3px solid #4a79cb; outline-offset:2px; }
+.site-shell { width:min(100%,393px); min-height:100vh; margin:0 auto; padding:0 20px 88px; background:var(--surface); box-shadow:0 0 24px rgba(0,0,0,.08); }
+.site-header { display:flex; align-items:center; gap:8px; min-height:56px; padding:8px 0; border-bottom:1px solid var(--line); }
+.brand { display:flex; flex-direction:column; text-decoration:none; }
+.brand strong { font-size:20px; letter-spacing:-.4px; }
+.brand span { color:var(--muted); font-size:12px; }
+.icon-btn.right { margin:0 -8px 0 0; }
+.page-title { font-size:17px; }
+.icon-btn { margin-left:-8px; display:grid; place-items:center; width:40px; height:40px;  border-radius:50%; text-decoration:none; }
+.ic { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+main { padding:18px 0 20px; }
+h1 { margin:0 0 6px; font-size:22px; line-height:1.35; }
+h2 { margin:0 0 8px; font-size:16px; line-height:1.4; }
+p { margin:4px 0 10px; }
+.lead, .muted { color:var(--muted); }
+.muted { font-size:12px; }
+.small { font-size:13px; }
+.section-heading { display:flex; align-items:center; justify-content:space-between; margin:22px 0 10px; }
+.section-heading h2 { margin:0; }
+.panel, .accident-card, .service-card { border:1px solid var(--line); border-radius:var(--radius); padding:13px; margin:10px 0; background:var(--surface); }
+.panel.soft { background:var(--soft); }
+.panel-title { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; }
+.row { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.row.between { justify-content:space-between; }
+.button { display:inline-flex; align-items:center; justify-content:center; gap:5px; min-height:40px; padding:8px 14px; border:1px solid var(--line); border-radius:8px; color:var(--ink); background:var(--soft); text-decoration:none; cursor:pointer; white-space:nowrap; }
+.button.primary { color:#fff; background:var(--ink); }
+.button.small-button { min-height:34px; padding:4px 10px; font-size:13px; }
+.button.full { width:100%; }
+.input-wrap { display:flex; gap:7px; }
+input[type=text], input[type=search] { min-width:0; width:100%; min-height:40px; padding:8px 11px; border:1px solid #9a9a96; border-radius:8px; background:#fff; color:var(--ink); }
+.chips { display:flex; flex-wrap:wrap; gap:7px; }
+.chip { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border:1px solid #9b9b97; border-radius:999px; font-size:12px; background:#fff; text-decoration:none; }
+.chip.active { color:#fff; background:var(--ink); border-color:var(--ink); }
+.chip.warning { border-style:dashed; color:var(--warning); background:var(--warning-bg); }
+.accident-card { display:grid; gap:7px; }
+.card-title { font-size:15px; font-weight:700; line-height:1.35; text-decoration:none; }
+.card-meta { display:flex; flex-wrap:wrap; gap:4px 10px; color:var(--muted); font-size:12px; }
+.cmp { display:flex; align-items:center; gap:7px; font-size:13px; }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.mini-card { display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding:12px; border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; }
+.mini-card strong { font-size:14px; line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.bottom-nav { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:min(100%,393px); z-index:10; display:grid; grid-template-columns:repeat(3,1fr); gap:4px; padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px)); border-top:1px solid var(--line); background:rgba(255,255,255,.97); }
+.bottom-nav a { display:grid; place-items:center; gap:1px; min-height:48px; padding:4px; border-radius:8px; text-decoration:none; font-size:12px; color:var(--muted); }
+.bottom-nav a[aria-current=page] { color:var(--ink); background:var(--soft); font-weight:700; }
+.key-value { display:grid; grid-template-columns:80px minmax(0,1fr); gap:7px 10px; font-size:13px; }
+.key-value > :nth-child(odd) { color:var(--muted); }
+.timeline { margin:8px 0 0 6px; padding-left:18px; border-left:2px solid #c8c8c4; display:grid; gap:16px; }
+.timeline-item { position:relative; }
+.timeline-item::before { content:""; position:absolute; left:-25px; top:5px; width:10px; height:10px; background:#fff; border:2px solid var(--ink); border-radius:50%; }
+.timeline-item a { text-decoration:none; font-weight:600; }
+.compare-grid { display:grid; grid-template-columns:72px 1fr 1fr; gap:9px 8px; font-size:13px; }
+.compare-grid .k { color:var(--muted); }
+.compare-grid .col-title { font-weight:700; color:var(--ink); }
+.checklist { display:grid; gap:10px; margin:10px 0; }
+.checklist label { display:flex; align-items:flex-start; gap:8px; }
+.checklist input, .chip input { margin:0; }
+.checklist input { margin-top:4px; }
+.notice { margin:16px 0 0; padding:9px 12px; background:#f5f5f2; border-left:3px solid #b5b5af; color:#5f5f5a; font-size:12px; }
+.divider { height:1px; margin:12px 0; background:#dededb; }
+button.chip { font:inherit; font-size:12px; cursor:pointer; }
+.panel.empty { text-align:center; color:var(--muted); }
+.button[aria-disabled=true] { opacity:.45; pointer-events:none; }
+.service-card .panel-title { margin-bottom:2px; }
+
+/* 7주차: 히어로 X 박스, 가로 넘김 카드, 출처 칩·필드 태그 */
+.hero{aspect-ratio:2/1;background:#e5e7eb;border-radius:12px;margin:12px 0;overflow:hidden}
+.hero svg{width:100%;height:100%;display:block}.hero path{stroke:#9ca3af;stroke-width:1;fill:none;vector-effect:non-scaling-stroke}
+.rail{margin-top:16px}.rail .section-heading{display:flex;justify-content:space-between;align-items:center}
+.hscroll{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 8px;outline-offset:2px}
+.h-card{flex:0 0 138px;scroll-snap-align:start;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;font-size:13px}
+.h-card .thumb{height:52px;background:#f0f0ee;border-radius:8px;position:relative;overflow:hidden;display:grid;place-items:center}
+.h-card strong{font-size:15px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rank{position:absolute;left:6px;top:6px;background:rgba(32,32,32,.88);color:#fff;border-radius:999px;min-width:18px;height:18px;padding:0 4px;display:grid;place-items:center;font-size:10px;font-weight:500}
+.chip.src{display:inline-flex;align-items:center;padding:1px 6px;border:1px solid #d1d5db;border-radius:999px;background:#f8f8f7;color:#666;font-size:10px;line-height:1.45;font-weight:500;vertical-align:middle}
+.type-tag{display:inline-block;margin-left:6px;padding:0 6px;border:1px solid #6b7280;border-radius:6px;font-size:12px;color:#374151}
+.type-draft{border-style:dashed}
+
+/* 디자인 정리: 큰 자리표시 이미지 제거 후 카드·출처 표시 간소화 */
+.source-line { display:flex; align-items:center; gap:5px; margin-bottom:12px; }
+.rail .section-heading { margin-bottom:8px; }
+.hscroll { scrollbar-width:thin; scrollbar-color:#c9c9c5 transparent; }
+.h-card .chip { padding:2px 7px; font-size:11px; }
+@media (min-width: 600px) {
+  .site-shell { padding-left:16px; padding-right:16px; }
+  .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .h-card { flex-basis:160px; }
+}
+@media (max-width: 420px) {
+  .site-shell { width:100%; padding-left:16px; padding-right:16px; }
+  .bottom-nav { width:100%; }
+}
+
+/* 수정사항 반영: 홈 상단, 카테고리 버튼, 카드 정리, 관심·최근 탭 */
+.site-header { position:relative; }
+html { scroll-padding-bottom:calc(72px + env(safe-area-inset-bottom,0px)); }
+main { padding-bottom:calc(20px + env(safe-area-inset-bottom,0px)); }
+.bottom-nav .ic { width:22px; height:22px; flex:none; }
+.bottom-nav a { gap:2px; }
+.bottom-nav a span { line-height:1.2; }
+
+.search-bar { margin:0 0 20px; }
+.search-bar input[type=search] { min-height:46px; font-size:15px; border-color:var(--ink); }
+.search-bar .button { min-height:46px; padding:8px 18px; font-weight:600; }
+.reg-form { padding:10px 12px; border-color:#c9c9c5; }
+.reg-form .panel-title { margin-bottom:6px; font-size:13px; color:var(--muted); }
+.reg-form input[type=text] { min-height:36px; font-size:13px; }
+
+.cat-btn { margin-left:auto; flex:none; }
+.cat-btn .ic { width:18px; height:18px; }
+.cat-menu { position:absolute; top:calc(100% + 4px); right:0; z-index:20; width:190px; max-height:min(75vh,460px); overflow-y:auto; padding:6px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 6px 18px rgba(0,0,0,.14); }
+.cat-menu[hidden] { display:none; }
+.cat-menu a { display:block; padding:10px 12px; border-radius:6px; text-decoration:none; font-size:14px; }
+.cat-menu a:hover, .cat-menu a:focus-visible { background:var(--soft); }
+
+.h-card .thumb-ph { color:#a3a3a0; display:grid; }
+.h-card .thumb-ph .ic { width:22px; height:22px; stroke-width:1.6; }
+.h-card .thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.h-card .thumb img.logo { object-fit:contain; padding:8px 28px; background:#fff; }
+.thumb-tag { position:absolute; right:5px; bottom:4px; padding:0 5px; border-radius:4px; background:rgba(255,255,255,.9); color:var(--muted); font-size:10px; line-height:1.5; }
+.h-card .sub { color:var(--muted); font-size:12px; line-height:1.45; }
+.acc-id { color:#8c8c88; font-size:11px; font-weight:400; letter-spacing:0; }
+.h-card .acc-id { margin-top:-2px; }
+.card-meta .acc-id { margin-left:auto; }
+
+.tabs .chip { min-height:34px; padding:4px 14px; font-size:13px; }
+
+/* 홈 카드: 분야 칩은 해당 분야 목록으로, 사진·제목은 상세로 */
+.h-card .h-link { color:inherit; text-decoration:none; display:block; }
+.h-card .h-text { display:flex; flex-direction:column; gap:6px; }
+.h-card .chip-link { color:var(--ink); }
+.h-card .chip-link:hover { background:var(--soft); border-color:var(--ink); }
