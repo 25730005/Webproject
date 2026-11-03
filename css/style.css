@@ -135,3 +135,9 @@ main { padding-bottom:calc(20px + env(safe-area-inset-bottom,0px)); }
 .h-card .h-text { display:flex; flex-direction:column; gap:6px; }
 .h-card .chip-link { color:var(--ink); }
 .h-card .chip-link:hover { background:var(--soft); border-color:var(--ink); }
+
+/* 하단 탭 5개: 칸 수만 바꾸고 폭(393)은 기존 규칙 그대로 */
+.bottom-nav { grid-template-columns:repeat(5,1fr); gap:2px; padding-left:6px; padding-right:6px; }
+.bottom-nav a { padding:4px 2px; font-size:11.5px; white-space:nowrap; }
+.contact .button .ic { width:16px; height:16px; }
+.todo { margin:0 0 12px; padding-left:18px; display:grid; gap:6px; font-size:13px; }

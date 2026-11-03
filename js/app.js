@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const byDate = (a, b) => (b.refDate || "").localeCompare(a.refDate || "");
   const empty = (msg, btn) => `<div class="panel empty"><p>${msg}</p>${btn || ""}</div>`;
   const I = (d) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
-  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<path d="M4 6h16M4 12h16M4 18h10"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>') };
+  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<path d="M4 6h16M4 12h16M4 18h10"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>') };
 
   // ── 공통 헤더·하단 탭 ──
   const header = $("app-header");
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     $("back").addEventListener("click", (e) => { if (history.length > 1) { e.preventDefault(); history.back(); } });
   } else if (body.dataset.title) header.innerHTML = `<strong class="page-title">${body.dataset.title}</strong>`;
   else header.innerHTML = `<a class="brand" href="${base}index.html"><strong>LeakBase</strong><span>개인정보·보안 유출 사고 아카이브</span></a>`;
-  const tabs = [["home", "index.html", "홈", ICON.home], ["my", "pages/my.html", "내 서비스", ICON.my], ["saved", "pages/saved.html", "관심·최근", ICON.star]];
+  const tabs = [["home", "index.html", "홈", ICON.home], ["list", "pages/list.html", "사고 목록", ICON.list], ["my", "pages/my.html", "내 서비스", ICON.my], ["saved", "pages/saved.html", "관심·최근", ICON.star], ["help", "pages/help.html", "신고·상담", ICON.phone]];
   $("app-nav").innerHTML = tabs.map(([k, h, l, ic]) => `<a href="${base}${h}"${body.dataset.nav === k ? ' aria-current="page"' : ""}>${ic}<span>${l}</span></a>`).join("");
 
   // ── 카드 ──
@@ -206,6 +206,21 @@ ${db.services.length ? db.services.map((s, i) => `<article class="service-card">
       };
       v.onclick = (e) => { const b = e.target.closest("[data-tab]"); if (!b || b.dataset.tab === tab) return; tab = b.dataset.tab; history.replaceState(null, "", location.pathname + location.search + "#" + tab); draw(); };
       draw();
+    },
+
+    help() {
+      // 연락처는 공식 기관 안내(KISA·개인정보보호위원회 등) 기준. 바뀔 수 있으므로 화면에도 확인 안내를 둠
+      const C = [
+        ["개인정보침해 신고센터", "118", "118", "https://privacy.kisa.or.kr", "개인정보 침해 신고·상담 (한국인터넷진흥원)"],
+        ["경찰청 사이버범죄 신고", "182", "182", "https://ecrm.police.go.kr", "해킹·피싱 등 범죄 피해 신고"],
+        ["금융감독원", "1332", "1332", "https://www.fss.or.kr/s1332", "금융회사·신용정보회사의 개인신용정보 침해 문의"],
+        ["개인정보 분쟁조정위원회", "1833-6972", "1833-6972", "https://www.kopico.go.kr", "피해 구제를 위한 분쟁조정 신청"]
+      ];
+      const TODO = ["해당 기업의 공식 공지·안내 확인", "같은 비밀번호를 쓰는 서비스까지 비밀번호 변경", "결제·카드 이용 내역 확인, 이상 시 카드사 문의", "출처가 불분명한 문자·전화·링크 주의"];
+      v.innerHTML = `<h1>유출이 의심될 때</h1><p class="lead">피해가 의심되면 아래 기관에 신고하거나 상담할 수 있어요.</p>
+${C.map(([n, d, tel, url, desc]) => `<article class="panel contact"><div class="panel-title"><strong>${n}</strong><span class="chip">${d}</span></div><p class="small">${desc}</p><div class="row"><a class="button small-button primary" href="tel:${tel}">${ICON.phone}전화 ${d}</a><a class="button small-button" href="${url}" target="_blank" rel="noopener">누리집 열기</a></div></article>`).join("")}
+<section class="panel"><h2>먼저 해볼 일</h2><ul class="todo">${TODO.map((t) => `<li>${t}</li>`).join("")}</ul><a class="button small-button" href="${P("list.html")}">사고 목록 보기</a></section>
+<p class="notice">연락처는 공식 기관 안내를 기준으로 정리했습니다. 변경될 수 있으니 신고 전 각 기관 누리집에서 확인해 주세요.</p>`;
     },
 
     checklist() {
