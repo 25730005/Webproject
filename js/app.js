@@ -3,13 +3,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const body = document.body, base = body.dataset.base || "", v = document.getElementById("view");
   let ACCIDENTS = [];
   const KEY = "leakbase", ITEMS = ["계정정보", "금융정보", "연락처", "신원정보", "위치·이용기록"];
-  const DEF = () => ({ favs: [], recent: [], services: [], worries: ["계정정보", "금융정보"], checks: {}, cmp: [] });
+  const DEF = () => ({ favs: [], recent: [], services: [], checks: {}, cmp: [] });
   let db; try { db = { ...DEF(), ...JSON.parse(localStorage.getItem(KEY) || "{}") }; } catch (e) { db = DEF(); }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} };
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const P = (f) => base + "pages/" + f, find = (id) => ACCIDENTS.find((a) => a.id == id);
-  const worry = (a) => a.leakedCategories.some((i) => db.worries.includes(i));
   const byDate = (a, b) => (b.refDate || "").localeCompare(a.refDate || "");
   const empty = (msg, btn) => `<div class="panel empty"><p>${msg}</p>${btn || ""}</div>`;
   const I = (d) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
@@ -27,9 +26,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ── 카드 ──
   const card = (a, mode) => {
-    const href = P("detail.html") + "?id=" + a.id, w = worry(a);
-    if (mode === "mini") return `<a class="mini-card" href="${href}"><span class="chip">${a.category}${w ? " ⚠" : ""}</span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
-    return `<article class="accident-card"><div class="row between"><span>${srcChip(a)} <span class="chip">${a.category}</span></span>${w ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
+    const href = P("detail.html") + "?id=" + a.id;
+    if (mode === "mini") return `<a class="mini-card" href="${href}"><span class="chip tag">${a.category}</span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
+    return `<article class="accident-card"><div class="row between"><span>${srcChip(a)} <span class="chip tag">${a.category}</span></span></div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
   };
   const addService = (s) => { s = s.trim(); if (s && !db.services.includes(s)) { db.services.push(s); save(); } };
   const toggleCheck = (id, i, on) => { const c = new Set(db.checks[id] || []); on ? c.add(i) : c.delete(i); db.checks[id] = [...c]; save(); };
@@ -99,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const img = a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : a.logo ? `<img class="logo" src="${esc(a.logo)}" alt="" loading="lazy" onerror="this.remove()"><span class="thumb-tag">로고</span>` : "";
     return `<div class="thumb" aria-hidden="true"><span class="thumb-ph">${DEFAULT_THUMB}</span>${img}<span class="thumb-src">${srcChip(a)}</span></div>`;
   };
-  const rail = (t, list) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a)}</a><span><a class="chip chip-link" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
+  const rail = (t, list) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a)}</a><span><a class="chip chip-link tag" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
   const wireRails = () => {
     v.addEventListener("keydown", (e) => { if (e.target.classList.contains("hscroll") && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { e.preventDefault(); e.target.scrollBy({ left: e.target.clientWidth * 0.8 * (e.key === "ArrowRight" ? 1 : -1), behavior: "smooth" }); } });
   };
@@ -120,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const dataNote = dummy ? `실제 사고 ${real}건 + 더미(예시) ${dummy}건 · 저장된 JSON 데이터` : `실제 사고 ${real}건 기반 · 저장된 JSON 데이터`;
       const relOf = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
       const relAll = [...new Set(db.services.flatMap(relOf))];
-      const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong>${relAll.some(worry) ? ` · <span class="chip warning">⚠ 걱정 항목 포함 ${relAll.filter(worry).length}건</span>` : ""}</p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
+      const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong></p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
       v.innerHTML = `<form class="search-bar" id="sf" role="search"><div class="input-wrap"><input type="search" name="q" aria-label="유출사고 검색" placeholder="사고명·기업명·분야로 검색"><button class="button primary">검색</button></div></form>
 <section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" role="img" aria-label="히어로 이미지 영역(준비 중)"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg><span class="hero-box-label">히어로 이미지 영역 · 준비 중</span></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
 <section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">서비스 이름을 저장하면 관련 사고를 계속 확인할 수 있어요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button small-button">등록</button></div></form></section>
@@ -213,7 +212,7 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       if (!a) { v.innerHTML = empty("사고를 찾을 수 없습니다.", `<a class="button small-button" href="${P("list.html")}">사고 목록으로</a>`); return; }
       db.recent = [a.id, ...db.recent.filter((i) => i !== a.id)].slice(0, 10); save();
       const fav = () => db.favs.includes(a.id);
-      v.innerHTML = `<h1>${a.title}</h1><div class="row"><span class="chip">${a.category}</span>${srcChip(a)}${worry(a) ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div>
+      v.innerHTML = `<h1>${a.title}</h1><div class="row"><span class="chip tag">${a.category}</span>${srcChip(a)}</div>
 ${overview(a)}
 <section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}</p></section>
 <section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
@@ -228,7 +227,7 @@ ${overview(a)}
       const ids = (new URLSearchParams(location.search).get("ids") || db.cmp.join(",")).split(",").filter(Boolean);
       const L = ids.map(find).filter(Boolean).slice(0, 3);
       if (L.length < 2) { v.innerHTML = empty("비교할 사고를 2건 이상 선택해 주세요.", `<a class="button small-button" href="${P("list.html")}">사고 목록으로</a>`); return; }
-      const rows = [["분야", (a) => a.category], ["발생일", (a) => a.dateText], ["규모", (a) => a.countText], ["유출 항목", (a) => a.leakedCategories.join("·") || "정보 없음"], ["유형", (a) => a.incidentType], ["원인", (a) => a.cause || "정보 없음"], ["제재", (a) => a.penalty || "확인되지 않음"], ["걱정 항목", (a) => (worry(a) ? "⚠ 포함" : "-")]];
+      const rows = [["분야", (a) => a.category], ["발생일", (a) => a.dateText], ["규모", (a) => a.countText], ["유출 항목", (a) => a.leakedCategories.join("·") || "정보 없음"], ["유형", (a) => a.incidentType], ["원인", (a) => a.cause || "정보 없음"], ["제재", (a) => a.penalty || "확인되지 않음"]];
       v.innerHTML = `<section class="panel"><div class="compare-grid" style="grid-template-columns:64px repeat(${L.length},1fr)"><span></span>${L.map((a) => `<span class="col-title">${a.company}</span>`).join("")}${rows.map(([k, f]) => `<span class="k">${k}</span>` + L.map((a) => `<span>${f(a)}</span>`).join("")).join("")}</div></section><div class="row">${L.map((a) => `<a class="button small-button" href="${P("detail.html")}?id=${a.id}">${a.company} 상세</a>`).join("")}</div>`;
     },
 
@@ -238,13 +237,11 @@ ${overview(a)}
         const tl = [...new Set(db.services.flatMap(rel))].sort((a, b) => (a.refDate || "9999").localeCompare(b.refDate || "9999"));
         v.innerHTML = `<form class="panel" id="af"><div class="input-wrap"><input type="text" name="s" placeholder="서비스명 입력" aria-label="서비스명 입력"><button class="button primary">추가</button></div></form>
 ${db.services.length ? db.services.map((s, i) => `<article class="service-card"><div class="panel-title"><strong>${esc(s)}</strong></div><p class="small">관련 사고 ${rel(s).length}건</p><div class="row"><a class="button small-button" href="${P("list.html")}?q=${encodeURIComponent(s)}">사고 보기</a><button class="button small-button" data-del="${i}">삭제</button></div></article>`).join("") : empty("등록한 서비스가 없습니다.")}
-<section class="panel"><h2>걱정되는 정보</h2><div class="chips">${ITEMS.map((i) => `<label class="chip"><input type="checkbox" data-w="${i}" ${db.worries.includes(i) ? "checked" : ""}> ${i}</label>`).join("")}</div></section>
-<section class="panel"><h2>사고 연표</h2>${tl.length ? `<div class="timeline">${tl.map((a) => `<div class="timeline-item"><div class="muted">${a.dateText}</div><a href="${P("detail.html")}?id=${a.id}">${a.title}</a>${worry(a) ? '<div><span class="chip warning">⚠ 걱정 항목</span></div>' : ""}</div>`).join("")}</div>` : '<p class="muted">등록한 서비스와 관련된 사고가 없습니다.</p>'}</section>
+<section class="panel"><h2>사고 연표</h2>${tl.length ? `<div class="timeline">${tl.map((a) => `<div class="timeline-item"><div class="muted">${a.dateText}</div><a href="${P("detail.html")}?id=${a.id}">${a.title}</a></div>`).join("")}</div>` : '<p class="muted">등록한 서비스와 관련된 사고가 없습니다.</p>'}</section>
 <p class="notice">관련 사고가 없다고 해서 안전하다는 뜻은 아닙니다.</p>`;
         $("af").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); draw(); };
       };
       v.onclick = (e) => { if (e.target.dataset.del !== undefined) { db.services.splice(+e.target.dataset.del, 1); save(); draw(); } };
-      v.onchange = (e) => { const w = e.target.dataset.w; if (w) { db.worries = e.target.checked ? [...db.worries, w] : db.worries.filter((x) => x !== w); save(); draw(); } };
       draw();
     },
 
