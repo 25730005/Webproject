@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const card = (a, mode) => {
     const href = P("detail.html") + "?id=" + a.id, w = worry(a);
     if (mode === "mini") return `<a class="mini-card" href="${href}"><span class="chip">${a.category}${w ? " ⚠" : ""}</span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
-    return `<article class="accident-card"><div class="row between"><span><span class="chip">${a.category}</span> ${srcChip(a)}</span>${w ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
+    return `<article class="accident-card"><div class="row between"><span class="chip">${a.category}</span>${w ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span><span class="src-slot">${srcChip(a)}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
   };
   const addService = (s) => { s = s.trim(); if (s && !db.services.includes(s)) { db.services.push(s); save(); } };
   const toggleCheck = (id, i, on) => { const c = new Set(db.checks[id] || []); on ? c.add(i) : c.delete(i); db.checks[id] = [...c]; save(); };
@@ -96,22 +96,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const img = a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : a.logo ? `<img class="logo" src="${esc(a.logo)}" alt="" loading="lazy" onerror="this.remove()"><span class="thumb-tag">로고</span>` : "";
     return `<div class="thumb" aria-hidden="true"><span class="thumb-ph">${DEFAULT_THUMB}</span>${img}${rank ? `<span class="rank">${rank}</span>` : ""}</div>`;
   };
-  const rail = (t, list, ranked) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a, i) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a, ranked ? i + 1 : 0)}</a><span><a class="chip chip-link" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a> ${srcChip(a)}</span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
+  const rail = (t, list) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a, 0)}</a><span><a class="chip chip-link" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span><span class="src-slot">${srcChip(a)}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
   const wireRails = () => {
     v.addEventListener("keydown", (e) => { if (e.target.classList.contains("hscroll") && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { e.preventDefault(); e.target.scrollBy({ left: e.target.clientWidth * 0.8 * (e.key === "ArrowRight" ? 1 : -1), behavior: "smooth" }); } });
   };
-  // 홈 헤더 오른쪽 카테고리 버튼: 누르면 목록이 열리고, 선택하면 list.html?cat=…(3-2 필터)로 이동
-  const initCategory = () => {
-    if (body.dataset.page !== "home" || $("cat-btn")) return;
-    header.insertAdjacentHTML("beforeend", `<button type="button" class="button small-button cat-btn" id="cat-btn" aria-haspopup="true" aria-expanded="false" aria-controls="cat-menu">${ICON.grid}<span>카테고리</span></button><div class="cat-menu" id="cat-menu" hidden><a href="${P("list.html")}">전체</a>${CATEGORY.map((c) => `<a href="${P("list.html")}?cat=${encodeURIComponent(c)}">${c}</a>`).join("")}</div>`);
-    const btn = $("cat-btn"), menu = $("cat-menu");
-    const setOpen = (on) => { menu.hidden = !on; btn.setAttribute("aria-expanded", on); };
-    btn.onclick = (e) => { e.stopPropagation(); setOpen(menu.hidden); };
-    document.addEventListener("click", (e) => { if (!menu.hidden && !menu.contains(e.target)) setOpen(false); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) { setOpen(false); btn.focus(); } });
-  };
   const boot = async () => {
-    initCategory();
     v.innerHTML = '<p class="muted">불러오는 중…</p>';
     try { const res = await fetch(DATA_URL); if (!res.ok) throw new Error("HTTP " + res.status); ACCIDENTS = checkData(await res.json(), DATA_URL).map(adapt); }
     catch (err) { console.error(err); v.innerHTML = empty("사고 정보를 불러오지 못했습니다.", '<button class="button small-button" id="retry">다시 시도</button>'); $("retry").onclick = boot; return; }
@@ -121,13 +110,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const pages = {
     home() {
-      const rec = ACCIDENTS.filter((a) => a.recommendOrder != null).sort((x, y) => x.recommendOrder - y.recommendOrder);
       const pop = ACCIDENTS.filter((a) => a.affectedUnit === "명" && a.affectedCount != null).sort((x, y) => y.affectedCount - x.affectedCount).slice(0, 8);
       const neu = [...ACCIDENTS].sort(byDate).slice(0, 8);
+      const dummy = ACCIDENTS.filter((a) => a.meta?.kind === "dummy" || /^DM-/.test(a.id)).length, real = ACCIDENTS.length - dummy;
+      const dataNote = dummy ? `실제 사고 ${real}건 + 더미(예시) ${dummy}건 · 저장된 JSON 데이터` : `실제 사고 ${real}건 기반 · 저장된 JSON 데이터`;
+      const relOf = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
+      const relAll = [...new Set(db.services.flatMap(relOf))];
+      const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong>${relAll.some(worry) ? ` · <span class="chip warning">⚠ 걱정 항목 포함 ${relAll.filter(worry).length}건</span>` : ""}</p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
       v.innerHTML = `<form class="search-bar" id="sf" role="search"><div class="input-wrap"><input type="search" name="q" aria-label="유출사고 검색" placeholder="유출사고 검색"><button class="button primary">검색</button></div></form>
-<h1>내 서비스도 해당될까?</h1><p class="lead">서비스의 사고 이력과 확인할 정보를 살펴보세요.</p>
-<form class="panel soft reg-form" id="rf"><div class="panel-title"><strong>내 서비스 등록</strong></div><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="서비스명 입력"><button class="button small-button">등록</button></div></form>
-${rail("추천 사고", rec, true)}${rail("피해 규모가 큰 사고", pop)}${rail("최신 사고", neu)}`;
+<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" aria-hidden="true"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
+<section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">등록한 서비스와 걱정되는 개인정보를 바탕으로 관련 사고를 확인해요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="서비스명 입력"><button class="button small-button">등록</button></div></form></section>
+${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       $("sf").onsubmit = (e) => { e.preventDefault(); location.href = P("list.html") + "?q=" + encodeURIComponent(e.target.q.value.trim()); };
       $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
       wireRails();
