@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ── 카드 ──
   const card = (a, mode) => {
     const href = P("detail.html") + "?id=" + a.id, w = worry(a);
-    if (mode === "mini") return `<a class="mini-card" href="${href}"><span class="chip">${a.category}${w ? " ⚠" : ""}</span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countText}</span></a>`;
-    return `<article class="accident-card"><div class="row between"><span><span class="chip">${a.category}</span> ${srcChip(a)}</span>${w ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countText}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span><span class="acc-id">${esc(a.id)}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
+    if (mode === "mini") return `<a class="mini-card" href="${href}"><span class="chip">${a.category}${w ? " ⚠" : ""}</span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
+    return `<article class="accident-card"><div class="row between"><span><span class="chip">${a.category}</span> ${srcChip(a)}</span>${w ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
   };
   const addService = (s) => { s = s.trim(); if (s && !db.services.includes(s)) { db.services.push(s); save(); } };
   const toggleCheck = (id, i, on) => { const c = new Set(db.checks[id] || []); on ? c.add(i) : c.delete(i); db.checks[id] = [...c]; save(); };
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
   const BASE_ACTIONS = ["공식 공지·안내 확인", "다른 서비스와 같은 비밀번호 사용 여부 확인"];
   const ACTION_BY = { 계정정보: "비밀번호 변경과 2단계 인증 설정", 금융정보: "결제·카드 이용 내역 확인", 연락처: "스팸·피싱 문자·전화 주의", 신원정보: "명의도용 여부 확인(본인 인증 수단 점검)", "위치·이용기록": "이용 내역에서 낯선 기록 확인" };
-  const adapt = (a) => ({ ...a, refDate: a.incidentDate || a.disclosedDate || null, dateText: a.incidentDate || (a.disclosedDate ? a.disclosedDate + " 공개" : "날짜 정보 없음"), countText: fmtCount(a), actions: [...BASE_ACTIONS, ...a.leakedCategories.map((c) => ACTION_BY[c]).filter(Boolean)] });
+  const adapt = (a) => ({ ...a, refDate: a.incidentDate || a.disclosedDate || null, dateText: a.incidentDate || (a.disclosedDate ? a.disclosedDate + " 공개" : "날짜 정보 없음"), countText: fmtCount(a), countShort: fmtCount(a).replace(/ 명$/, ""), actions: [...BASE_ACTIONS, ...a.leakedCategories.map((c) => ACTION_BY[c]).filter(Boolean)] });
   const srcChip = (a) => `<span class="chip src">${a.meta?.source === "api" ? "API" : "JSON"}</span>`;
   const overview = (a) => {
     const fmt = a.affectedCount == null ? null : a.affectedCount.toLocaleString() + a.affectedUnit;
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const img = a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : a.logo ? `<img class="logo" src="${esc(a.logo)}" alt="" loading="lazy" onerror="this.remove()"><span class="thumb-tag">로고</span>` : "";
     return `<div class="thumb" aria-hidden="true"><span class="thumb-ph">${DEFAULT_THUMB}</span>${img}${rank ? `<span class="rank">${rank}</span>` : ""}</div>`;
   };
-  const rail = (t, list, ranked) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a, i) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a, ranked ? i + 1 : 0)}</a><span><a class="chip chip-link" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a> ${srcChip(a)}</span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countText}</span><span class="acc-id">${esc(a.id)}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
+  const rail = (t, list, ranked) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a, i) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a, ranked ? i + 1 : 0)}</a><span><a class="chip chip-link" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a> ${srcChip(a)}</span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
   const wireRails = () => {
     v.addEventListener("keydown", (e) => { if (e.target.classList.contains("hscroll") && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { e.preventDefault(); e.target.scrollBy({ left: e.target.clientWidth * 0.8 * (e.key === "ArrowRight" ? 1 : -1), behavior: "smooth" }); } });
   };
@@ -134,26 +134,80 @@ ${rail("추천 사고", rec, true)}${rail("피해 규모가 큰 사고", pop)}${
     },
 
     list() {
-      const p = new URLSearchParams(location.search); let q = p.get("q") || "", cats = (p.get("cat") || "").split(",").filter(Boolean);
+      const p = new URLSearchParams(location.search);
       const CATS = ["통신", "금융", "쇼핑·유통", "여행·숙박", "플랫폼·커뮤니티", "게임·레저", "공공", "교육·콘텐츠", "기타"];
-      v.innerHTML = `<form class="panel" id="lf"><div class="input-wrap"><input type="search" id="q" value="${esc(q)}" placeholder="서비스명 또는 사고명" aria-label="서비스명 또는 사고명"><button class="button primary">검색</button></div><div class="chips" id="cats" style="margin-top:12px"><button type="button" class="chip" data-c="">전체</button>${CATS.map((c) => `<button type="button" class="chip" data-c="${c}">${c}</button>`).join("")}</div></form><div id="res"></div><a class="button primary full" id="cmpbtn" href="#">선택한 사고 비교</a>`;
+      const TYPES = ["해킹", "업무 과실", "시스템 오류", "내부자 유출", "기타"];
+      // 탐색 상태는 이 객체 하나만 둔다(결과 배열도 apply()가 매번 하나만 만든다)
+      const S = { search: p.get("q") || "", categories: (p.get("cat") || "").split(",").filter(Boolean), types: [], leaked: [], mine: false, sort: "latest" };
+      const norm = (s) => String(s || "").toLowerCase().replace(/\s+/g, "");
+      const isMine = (a) => db.services.some((s) => a.company.includes(s) || s.includes(a.company));
+      // skip: 지정한 조건을 빼고 계산(결과 없음 화면의 "해제 제안"에 사용)
+      const apply = (skip) => {
+        const k = norm(S.search);
+        const r = ACCIDENTS.filter((a) =>
+          (skip === "search" || !k || norm(a.title + a.company + a.category + a.summary).includes(k)) &&
+          (skip === "categories" || !S.categories.length || S.categories.includes(a.category)) &&
+          (skip === "types" || !S.types.length || S.types.includes(a.incidentType)) &&
+          (skip === "leaked" || !S.leaked.length || a.leakedCategories.some((c) => S.leaked.includes(c))) &&
+          (skip === "mine" || !S.mine || isMine(a)));
+        // 정렬은 filter가 만든 새 배열에만 적용해서 원본(ACCIDENTS)을 바꾸지 않는다
+        if (S.sort === "size") {
+          const sized = (a) => a.affectedUnit === "명" && a.affectedCount != null;
+          return r.sort((x, y) => (sized(y) - sized(x)) || (sized(x) ? y.affectedCount - x.affectedCount : byDate(x, y)));
+        }
+        return r.sort(byDate);
+      };
+      const chipRow = (id, list, key) => `<div class="chips" id="${id}">${list.map((c) => `<button type="button" class="chip" data-k="${key}" data-c="${c}" aria-pressed="false">${c}</button>`).join("")}</div>`;
+      v.innerHTML = `<form class="panel" id="lf"><div class="input-wrap"><input type="search" id="q" value="${esc(S.search)}" placeholder="서비스명 또는 사고명" aria-label="서비스명 또는 사고명"><button class="button primary">검색</button></div>
+<div class="filter-group"><span class="filter-label">분야</span><div class="chips" id="cats"><button type="button" class="chip" data-k="categories" data-c="" aria-pressed="false">전체</button>${CATS.map((c) => `<button type="button" class="chip" data-k="categories" data-c="${c}" aria-pressed="false">${c}</button>`).join("")}</div></div>
+<div class="filter-group"><span class="filter-label">유출 항목</span>${chipRow("leak", ITEMS, "leaked")}</div>
+<details class="filter-group" id="more"><summary>상세 필터 (유형)</summary>${chipRow("types", TYPES, "types")}</details>
+<div class="filter-group row between"><button type="button" class="chip" id="mine" aria-pressed="false">내 서비스만</button><label class="sort-label">정렬 <select id="sort" aria-label="정렬"><option value="latest">최신순</option><option value="size">피해 규모순</option></select></label></div>
+<p class="small muted" id="minehint" hidden>내 서비스를 먼저 등록해 주세요. <a href="${P("my.html")}">내 서비스로 이동</a></p></form><div id="res"></div><a class="button primary full" id="cmpbtn" href="#">선택한 사고 비교</a>`;
       const upd = () => { const n = db.cmp.length, b = $("cmpbtn"); b.textContent = n ? `선택한 ${n}건 비교` : "선택한 사고 비교"; b.href = P("compare.html") + "?ids=" + db.cmp.join(","); b.setAttribute("aria-disabled", n < 2); };
+      const conds = () => [
+        ...(S.search.trim() ? [["search", `검색어 "${S.search.trim()}"`]] : []),
+        ...(S.categories.length ? [["categories", "분야 " + S.categories.join("·")]] : []),
+        ...(S.leaked.length ? [["leaked", "유출 항목 " + S.leaked.join("·")]] : []),
+        ...(S.types.length ? [["types", "유형 " + S.types.join("·")]] : []),
+        ...(S.mine ? [["mine", "내 서비스만"]] : [])];
+      const count = () => (S.search.trim() ? 1 : 0) + S.categories.length + S.leaked.length + S.types.length + (S.mine ? 1 : 0);
       const draw = () => {
-        document.querySelectorAll("#cats .chip").forEach((b) => { const on = b.dataset.c ? cats.includes(b.dataset.c) : !cats.length; b.classList.toggle("active", on); b.setAttribute("aria-pressed", on); });
-        const k = q.trim().toLowerCase(), r = ACCIDENTS.filter((a) => (!cats.length || cats.includes(a.category)) && (!k || (a.title + a.company + a.category + a.summary).toLowerCase().includes(k))).sort(byDate);
-        $("res").innerHTML = `<div class="row between" style="margin:14px 0 4px"><strong>사고 ${r.length}건</strong><span class="muted">최신순</span></div>` + (r.length ? r.map((a) => card(a, "list")).join("") : empty("조건에 맞는 사고가 없습니다.", '<button class="button small-button" id="reset">조건 초기화</button>'));
-        const u = new URLSearchParams(); if (q) u.set("q", q); if (cats.length) u.set("cat", cats.join(","));
+        document.querySelectorAll("#lf [data-k]").forEach((b) => { const on = b.dataset.c ? S[b.dataset.k].includes(b.dataset.c) : !S.categories.length; b.classList.toggle("active", on); b.setAttribute("aria-pressed", on); });
+        $("mine").classList.toggle("active", S.mine); $("mine").setAttribute("aria-pressed", S.mine);
+        $("mine").setAttribute("aria-disabled", !db.services.length); $("minehint").hidden = db.services.length > 0 || !S.mine;
+        $("sort").value = S.sort;
+        const r = apply(), n = count();
+        let none = "";
+        if (!r.length) {
+          // 조건 하나를 풀었을 때 결과가 가장 많이 나오는 조건을 제안
+          const best = conds().map(([k, l]) => [k, l, apply(k).length]).filter((x) => x[2] > 0).sort((a, b) => b[2] - a[2])[0];
+          none = empty("조건에 맞는 사고가 없습니다.", `<div class="row" style="justify-content:center">${best ? `<button class="button small-button" id="relax" data-k="${best[0]}">${esc(best[1])} 해제 (${best[2]}건)</button>` : ""}<button class="button small-button" id="reset">전체 초기화</button></div>`);
+        }
+        $("res").innerHTML = `<div class="row between" style="margin:14px 0 4px"><strong>사고 ${r.length}건${n ? ` · 조건 ${n}개 적용` : ""}</strong><span class="muted">${S.sort === "size" ? "피해 규모순(명 단위만)" : "최신순"}</span></div>` + (r.length ? r.map((a) => card(a, "list")).join("") : none);
+        const u = new URLSearchParams(); if (S.search) u.set("q", S.search); if (S.categories.length) u.set("cat", S.categories.join(","));
         history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : "")); upd();
       };
-      $("lf").onsubmit = (e) => { e.preventDefault(); q = $("q").value; draw(); };
-      $("cats").onclick = (e) => { const b = e.target.closest("[data-c]"); if (!b) return; const c = b.dataset.c; cats = !c ? [] : cats.includes(c) ? cats.filter((x) => x !== c) : [...cats, c]; draw(); };
+      const clear = (k) => { if (k === "search") { S.search = ""; $("q").value = ""; } else if (k === "mine") S.mine = false; else S[k] = []; };
+      $("lf").onsubmit = (e) => { e.preventDefault(); S.search = $("q").value; draw(); };
+      $("lf").onclick = (e) => {
+        const b = e.target.closest("[data-k]"); if (!b) return;
+        const k = b.dataset.k, c = b.dataset.c;
+        S[k] = !c ? [] : S[k].includes(c) ? S[k].filter((x) => x !== c) : [...S[k], c]; draw();
+      };
+      $("mine").onclick = () => { if (!db.services.length) { $("minehint").hidden = false; return; } S.mine = !S.mine; draw(); };
+      $("sort").onchange = (e) => { S.sort = e.target.value; draw(); };
       $("cmpbtn").onclick = (e) => { if (db.cmp.length < 2) e.preventDefault(); };
-      $("res").onclick = (e) => { if (e.target.id === "reset") { q = ""; cats = []; $("q").value = ""; draw(); } };
+      $("res").onclick = (e) => {
+        if (e.target.id === "relax") { clear(e.target.dataset.k); draw(); }
+        if (e.target.id === "reset") { ["search", "categories", "types", "leaked", "mine"].forEach(clear); S.sort = "latest"; draw(); }
+      };
       $("res").onchange = (e) => {
         const id = e.target.dataset.id; if (!id) return;
         if (e.target.checked && db.cmp.length >= 3) { e.target.checked = false; alert("비교는 최대 3건까지 가능합니다."); return; }
         db.cmp = e.target.checked ? [...db.cmp, id] : db.cmp.filter((x) => x !== id); save(); upd();
       };
+      if (S.types.length) $("more").open = true;
       draw();
     },
 
