@@ -8,26 +8,30 @@ document.addEventListener("DOMContentLoaded", async () => {
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} };
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // 잠깐 보였다 사라지는 안내 문구(공유 결과 등)
+  const notify = (msg) => { let t = document.getElementById("toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); } t.textContent = msg; t.classList.add("show"); clearTimeout(notify.t); notify.t = setTimeout(() => t.classList.remove("show"), 2200); };
   const P = (f) => base + "pages/" + f, find = (id) => ACCIDENTS.find((a) => a.id == id);
   const byDate = (a, b) => (b.refDate || "").localeCompare(a.refDate || "");
   const empty = (msg, btn) => `<div class="panel empty"><p>${msg}</p>${btn || ""}</div>`;
   const I = (d) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
-  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>') };
+  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), share: I('<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/>'), pause: I('<path d="M8 5v14M16 5v14"/>'), play: I('<path d="M7 4l13 8-13 8z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>') };
 
   // ── 공통 헤더·하단 탭 ──
   const header = $("app-header");
   if (body.dataset.title && body.dataset.back !== "0") {
-    header.innerHTML = `<a class="icon-btn" id="back" href="${base}index.html" aria-label="이전">${ICON.back}</a><strong class="page-title">${body.dataset.title}</strong>`;
-    $("back").addEventListener("click", (e) => { if (history.length > 1) { e.preventDefault(); history.back(); } });
+    const isDetail = body.dataset.page === "detail"; // 상세는 직접 주소로 들어와도 목록으로 돌아가게 함
+    header.innerHTML = `<a class="icon-btn" id="back" href="${base}${isDetail ? "pages/list.html" : "index.html"}" aria-label="${isDetail ? "목록으로 돌아가기" : "이전 화면으로 돌아가기"}">${ICON.back}</a><strong class="page-title">${body.dataset.title}</strong>`;
+    // 같은 사이트에서 들어왔을 때만 브라우저 뒤로가기(목록 조건·스크롤 유지), 아니면 위 주소로 이동
+    $("back").addEventListener("click", (e) => { if (history.length > 1 && document.referrer.startsWith(location.origin)) { e.preventDefault(); history.back(); } });
   } else if (body.dataset.title) header.innerHTML = `<strong class="page-title">${body.dataset.title}</strong>`;
   else header.innerHTML = `<a class="brand" href="${base}index.html"><strong>LeakBase</strong><span>개인정보·보안 유출 사고 아카이브</span></a>`;
-  const tabs = [["list", "pages/list.html", "사고 목록", ICON.list], ["my", "pages/my.html", "내 서비스", ICON.my], ["home", "index.html", "홈", ICON.home], ["saved", "pages/saved.html", "관심·최근", ICON.star], ["help", "pages/help.html", "신고·상담", ICON.phone]];
+  const tabs = [["list", "pages/list.html", "사고 목록", ICON.list], ["home", "index.html", "홈", ICON.home], ["my", "pages/my.html", "내 정보", ICON.my], ["help", "pages/help.html", "신고·상담", ICON.phone]];
   $("app-nav").innerHTML = tabs.map(([k, h, l, ic]) => `<a href="${base}${h}"${body.dataset.nav === k ? ' aria-current="page"' : ""}>${ic}<span>${l}</span></a>`).join("");
 
   // ── 카드 ──
   const card = (a, mode) => {
     const href = P("detail.html") + "?id=" + a.id;
-    if (mode === "mini") return `<a class="mini-card" href="${href}"><span class="chip tag">${a.category}</span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
+    if (mode === "mini") return `<a class="mini-card" href="${href}"><span>${srcChip(a)} <span class="chip tag">${a.category}</span></span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
     return `<article class="accident-card"><div class="row between"><span>${srcChip(a)} <span class="chip tag">${a.category}</span></span></div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
   };
   const addService = (s) => { s = s.trim(); if (s && !db.services.includes(s)) { db.services.push(s); save(); } };
@@ -98,9 +102,38 @@ document.addEventListener("DOMContentLoaded", async () => {
     const img = a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : a.logo ? `<img class="logo" src="${esc(a.logo)}" alt="" loading="lazy" onerror="this.remove()"><span class="thumb-tag">로고</span>` : "";
     return `<div class="thumb" aria-hidden="true"><span class="thumb-ph">${DEFAULT_THUMB}</span>${img}<span class="thumb-src">${srcChip(a)}</span></div>`;
   };
-  const rail = (t, list) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a)}</a><span><a class="chip chip-link tag" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
+  const railCtrl = `<div class="rail-ctrl" role="group" aria-label="최신 사고 이동"><button type="button" class="rc-btn" data-rc="prev" aria-label="이전 사고">${ICON.back}</button><button type="button" class="rc-btn" data-rc="toggle" aria-label="자동 이동 일시정지">${ICON.pause}</button><button type="button" class="rc-btn" data-rc="next" aria-label="다음 사고">${ICON.next}</button></div>`;
+  const rail = (t, list, auto) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll${auto ? " auto" : ""}" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a)}</a><span><a class="chip chip-link tag" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div>${auto && list.length > 1 ? railCtrl : ""}</section>`;
   const wireRails = () => {
     v.addEventListener("keydown", (e) => { if (e.target.classList.contains("hscroll") && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { e.preventDefault(); e.target.scrollBy({ left: e.target.clientWidth * 0.8 * (e.key === "ArrowRight" ? 1 : -1), behavior: "smooth" }); } });
+    // 홈 "최신 사고": 4초마다 자동 이동(마지막 뒤 처음으로), 수동 조작 후 8초 쉼, 올림·초점·화면 밖·다른 탭에서는 멈춤
+    const sc = v.querySelector(".hscroll.auto"); if (!sc) return;
+    const sec = sc.closest(".rail"), tog = sec.querySelector('[data-rc="toggle"]');
+    const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches; // 동작 줄이기면 자동 이동을 끈 채로 시작
+    const behavior = reduce ? "auto" : "smooth";
+    let playing = !reduce, hover = false, focus = false, visible = true, quietUntil = 0;
+    const step = () => (sc.children.length > 1 ? sc.children[1].offsetLeft - sc.children[0].offsetLeft : sc.clientWidth * 0.8);
+    const go = (dir) => {
+      const max = sc.scrollWidth - sc.clientWidth;
+      if (dir > 0) sc.scrollTo({ left: sc.scrollLeft >= max - 4 ? 0 : sc.scrollLeft + step(), behavior });
+      else sc.scrollTo({ left: sc.scrollLeft <= 4 ? max : sc.scrollLeft - step(), behavior });
+    };
+    const paint = () => { tog.innerHTML = playing ? ICON.pause : ICON.play; tog.setAttribute("aria-label", playing ? "자동 이동 일시정지" : "자동 이동 시작"); };
+    const quiet = () => { quietUntil = Date.now() + 8000; };
+    ["pointerdown", "touchstart", "wheel", "keydown"].forEach((ev) => sc.addEventListener(ev, quiet, { passive: true }));
+    sec.addEventListener("mouseenter", () => { hover = true; }); sec.addEventListener("mouseleave", () => { hover = false; });
+    sec.addEventListener("focusin", (e) => { focus = e.target.matches(":focus-visible"); }); sec.addEventListener("focusout", () => { focus = false; });
+    if ("IntersectionObserver" in window) new IntersectionObserver((es) => { visible = es[0].isIntersecting; }).observe(sec);
+    sec.querySelector(".rail-ctrl").addEventListener("click", (e) => { const b = e.target.closest("[data-rc]"); if (!b) return; quiet(); if (b.dataset.rc === "toggle") { playing = !playing; paint(); } else go(b.dataset.rc === "next" ? 1 : -1); });
+    setInterval(() => { if (playing && !hover && !focus && visible && !document.hidden && Date.now() >= quietUntil) go(1); }, 4000);
+    // 마우스 드래그로 넘기기(카드 클릭과 구분: 5px 넘게 움직이면 클릭으로 보지 않음)
+    let drag = null, moved = false;
+    sc.addEventListener("dragstart", (e) => e.preventDefault());
+    sc.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse" || e.button !== 0) return; drag = { x: e.clientX, left: sc.scrollLeft }; moved = false; });
+    window.addEventListener("pointermove", (e) => { if (!drag) return; const dx = e.clientX - drag.x; if (Math.abs(dx) > 5) { moved = true; sc.classList.add("dragging"); } if (moved) sc.scrollLeft = drag.left - dx; });
+    window.addEventListener("pointerup", () => { if (!drag) return; drag = null; sc.classList.remove("dragging"); });
+    sc.addEventListener("click", (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+    paint();
   };
   const boot = async () => {
     v.innerHTML = '<p class="muted">불러오는 중…</p>';
@@ -120,11 +153,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const relOf = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
       const relAll = [...new Set(db.services.flatMap(relOf))];
       const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong></p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
-      v.innerHTML = `<form class="search-bar" id="sf" role="search"><div class="input-wrap"><input type="search" name="q" aria-label="유출사고 검색" placeholder="사고명·기업명·분야로 검색"><button class="button primary">검색</button></div></form>
-<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" role="img" aria-label="히어로 이미지 영역(준비 중)"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg><span class="hero-box-label">히어로 이미지 영역 · 준비 중</span></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
+      v.innerHTML = `<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" role="img" aria-label="히어로 이미지 영역(준비 중)"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg><span class="hero-box-label">히어로 이미지 영역 · 준비 중</span></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
 <section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">서비스 이름을 저장하면 관련 사고를 계속 확인할 수 있어요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button small-button">등록</button></div></form></section>
-${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
-      $("sf").onsubmit = (e) => { e.preventDefault(); location.href = P("list.html") + "?q=" + encodeURIComponent(e.target.q.value.trim()); };
+${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
       $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
       wireRails();
     },
@@ -134,7 +165,8 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       const CATS = ["통신", "금융", "쇼핑·유통", "여행·숙박", "플랫폼·커뮤니티", "게임·레저", "공공", "교육·콘텐츠", "기타"];
       const TYPES = ["해킹", "업무 과실", "시스템 오류", "내부자 유출", "기타"];
       // 탐색 상태는 이 객체 하나만 둔다(결과 배열도 apply()가 매번 하나만 만든다)
-      const S = { search: p.get("q") || "", categories: (p.get("cat") || "").split(",").filter(Boolean), types: [], leaked: [], mine: false, sort: "latest" };
+      const fromUrl = (k, allowed) => (p.get(k) || "").split(",").filter((x) => allowed.includes(x));
+      const S = { search: p.get("q") || "", categories: fromUrl("cat", CATS), types: fromUrl("type", TYPES), leaked: fromUrl("leak", ITEMS), mine: p.get("mine") === "1" && db.services.length > 0, sort: p.get("sort") === "size" ? "size" : "latest" };
       const norm = (s) => String(s || "").toLowerCase().replace(/\s+/g, "");
       const isMine = (a) => db.services.some((s) => a.company.includes(s) || s.includes(a.company));
       // skip: 지정한 조건을 빼고 계산(결과 없음 화면의 "해제 제안"에 사용)
@@ -181,7 +213,7 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
           none = empty("조건에 맞는 사고가 없습니다.", `<div class="row" style="justify-content:center">${best ? `<button class="button small-button" id="relax" data-k="${best[0]}">${esc(best[1])} 해제 (${best[2]}건)</button>` : ""}<button class="button small-button" id="reset">전체 초기화</button></div>`);
         }
         $("res").innerHTML = `<div class="row between" style="margin:14px 0 4px"><strong>사고 ${r.length}건${n ? ` · 조건 ${n}개 적용` : ""}</strong><span class="muted">${S.sort === "size" ? "피해 규모순(명 단위만)" : "최신순"}</span></div>` + (r.some(isDummy) ? `<p class="notice" style="margin:0 0 10px">결과에 가상(더미) 데이터가 포함돼 있어요. 플라스크 아이콘이 붙은 사고는 실제 사건이 아닌 실습용 데이터예요.</p>` : "") + (r.length ? r.map((a) => card(a, "list")).join("") : none);
-        const u = new URLSearchParams(); if (S.search) u.set("q", S.search); if (S.categories.length) u.set("cat", S.categories.join(","));
+        const u = new URLSearchParams(); if (S.search) u.set("q", S.search); if (S.categories.length) u.set("cat", S.categories.join(",")); if (S.types.length) u.set("type", S.types.join(",")); if (S.leaked.length) u.set("leak", S.leaked.join(",")); if (S.mine) u.set("mine", "1"); if (S.sort === "size") u.set("sort", "size");
         history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : "")); upd();
       };
       const clear = (k) => { if (k === "search") { S.search = ""; $("q").value = ""; } else if (k === "mine") S.mine = false; else S[k] = []; };
@@ -195,6 +227,7 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       $("sort").onchange = (e) => { S.sort = e.target.value; draw(); };
       $("cmpbtn").onclick = (e) => { if (db.cmp.length < 2) e.preventDefault(); };
       $("res").onclick = (e) => {
+        if (e.target.closest("a.card-title")) { try { sessionStorage.setItem("lb-list-scroll", JSON.stringify({ q: location.search, y: window.scrollY })); } catch (err) {} } // 상세에서 돌아올 때 스크롤 위치 복원용
         if (e.target.id === "relax") { clear(e.target.dataset.k); draw(); }
         if (e.target.id === "reset") { ["search", "categories", "types", "leaked", "mine"].forEach(clear); S.sort = "latest"; draw(); }
       };
@@ -205,6 +238,7 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       };
       if (S.types.length) $("more").open = true;
       draw();
+      try { const sv = JSON.parse(sessionStorage.getItem("lb-list-scroll") || "null"); sessionStorage.removeItem("lb-list-scroll"); if (sv && sv.q === location.search) window.scrollTo(0, sv.y); } catch (err) {}
     },
 
     detail() {
@@ -212,14 +246,27 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       if (!a) { v.innerHTML = empty("사고를 찾을 수 없습니다.", `<a class="button small-button" href="${P("list.html")}">사고 목록으로</a>`); return; }
       db.recent = [a.id, ...db.recent.filter((i) => i !== a.id)].slice(0, 10); save();
       const fav = () => db.favs.includes(a.id);
-      v.innerHTML = `<h1>${a.title}</h1><div class="row"><span class="chip tag">${a.category}</span>${srcChip(a)}</div>
+      // 비슷한 사고: 같은 분야 중 유형·유출 항목이 겹치는 순. 실제 사고에는 실제만, 더미에는 더미만 추천
+      const sim = ACCIDENTS.filter((x) => x.id !== a.id && isDummy(x) === isDummy(a) && x.category === a.category)
+        .map((x) => [x, (x.incidentType === a.incidentType ? 2 : 0) + x.leakedCategories.filter((c) => a.leakedCategories.includes(c)).length])
+        .sort((m, n) => n[1] - m[1] || byDate(m[0], n[0])).slice(0, 3).map((x) => x[0]);
+      v.innerHTML = `<div class="title-row"><h1>${a.title}</h1><button type="button" class="share-btn" id="shareb" aria-label="이 사고 주소 공유하기">${ICON.share}</button></div><div class="row"><span class="chip tag">${a.category}</span>${srcChip(a)}</div>
 ${overview(a)}
 <section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}</p></section>
 <section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
 <section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}</section>
+${sim.length ? `<section class="panel"><h2>비슷한 사고</h2><p class="small muted">같은 분야에서 유형·유출 항목이 비슷한 사고예요.</p><div class="similar">${sim.map((x) => card(x, "mini")).join("")}</div></section>` : ""}
 <div class="row"><button class="button primary" id="favb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
-      const label = () => ($("favb").textContent = fav() ? "★ 관심 해제" : "☆ 관심 저장"); label();
+      const label = () => { $("favb").textContent = fav() ? "★ 관심 해제" : "☆ 관심 저장"; $("favb").setAttribute("aria-pressed", fav()); }; label();
       $("favb").onclick = () => { db.favs = fav() ? db.favs.filter((i) => i !== a.id) : [a.id, ...db.favs]; save(); label(); };
+      // 공유: id만 담은 주소를 보냄(휴대폰은 공유 창, 아니면 주소 복사). 출발 화면 같은 탐색 맥락은 빼고 공유
+      $("shareb").onclick = async () => {
+        const url = new URL(P("detail.html") + "?id=" + encodeURIComponent(a.id), location.href).href;
+        try {
+          if (navigator.share) await navigator.share({ title: a.title, text: a.company + " 개인정보 유출 사고", url });
+          else { await navigator.clipboard.writeText(url); notify("사고 주소를 복사했어요"); }
+        } catch (err) { if (err.name !== "AbortError") notify("공유하지 못했어요. 주소창의 주소를 복사해 주세요"); }
+      };
       v.onchange = (e) => { if (e.target.dataset.i) toggleCheck(a.id, +e.target.dataset.i, e.target.checked); };
     },
 
@@ -233,35 +280,31 @@ ${overview(a)}
 
     my() {
       const rel = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
-      const draw = () => {
-        const tl = [...new Set(db.services.flatMap(rel))].sort((a, b) => (a.refDate || "9999").localeCompare(b.refDate || "9999"));
-        v.innerHTML = `<form class="panel" id="af"><div class="input-wrap"><input type="text" name="s" placeholder="서비스명 입력" aria-label="서비스명 입력"><button class="button primary">추가</button></div></form>
+      // 내 정보 = 내 서비스 / 관심 사고 / 최근 본 사고를 칩으로 전환 (이전의 관심·최근 화면을 합침)
+      let tab = location.hash === "#favorites" ? "favorites" : location.hash === "#recent" ? "recent" : "services";
+      const TABS = [["services", "내 서비스"], ["favorites", "관심 사고"], ["recent", "최근 본 사고"]];
+      const listOf = (ids, label) => `<section><div class="section-heading"><h2>${label}</h2></div>${ids.length ? ids.map(find).filter(Boolean).map((a) => card(a, "plain")).join("") : empty(`${label}가 없습니다.`, `<a class="button small-button" href="${P("list.html")}">사고 둘러보기</a>`)}</section>`;
+      const panes = {
+        services: () => {
+          const tl = [...new Set(db.services.flatMap(rel))].sort((a, b) => (a.refDate || "9999").localeCompare(b.refDate || "9999"));
+          return `<form class="panel" id="af"><div class="input-wrap"><input type="text" name="s" placeholder="서비스명 입력" aria-label="서비스명 입력"><button class="button primary">추가</button></div></form>
 ${db.services.length ? db.services.map((s, i) => `<article class="service-card"><div class="panel-title"><strong>${esc(s)}</strong></div><p class="small">관련 사고 ${rel(s).length}건</p><div class="row"><a class="button small-button" href="${P("list.html")}?q=${encodeURIComponent(s)}">사고 보기</a><button class="button small-button" data-del="${i}">삭제</button></div></article>`).join("") : empty("등록한 서비스가 없습니다.")}
 <section class="panel"><h2>사고 연표</h2>${tl.length ? `<div class="timeline">${tl.map((a) => `<div class="timeline-item"><div class="muted">${a.dateText}</div><a href="${P("detail.html")}?id=${a.id}">${a.title}</a></div>`).join("")}</div>` : '<p class="muted">등록한 서비스와 관련된 사고가 없습니다.</p>'}</section>
 <p class="notice">관련 사고가 없다고 해서 안전하다는 뜻은 아닙니다.</p>`;
-        $("af").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); draw(); };
+        },
+        favorites: () => listOf(db.favs, "관심 사고") + `<a class="button primary full" href="${P("checklist.html")}">체크리스트 모아보기</a>`,
+        recent: () => listOf(db.recent, "최근 본 사고")
       };
-      v.onclick = (e) => { if (e.target.dataset.del !== undefined) { db.services.splice(+e.target.dataset.del, 1); save(); draw(); } };
-      draw();
-    },
-
-    saved() {
-      let tab = location.hash === "#recent" ? "recent" : "favorites";
-      const TABS = [["favorites", "관심 사고", () => db.favs], ["recent", "최근 본 사고", () => db.recent]];
       const draw = () => {
-        const [id, t, ids] = TABS.find((x) => x[0] === tab);
-        v.innerHTML = `<div class="chips tabs" role="group" aria-label="보기 선택">${TABS.map(([k, l]) => `<button type="button" class="chip${k === tab ? " active" : ""}" data-tab="${k}" aria-pressed="${k === tab}">${l}</button>`).join("")}</div><section id="${id}"><div class="section-heading"><h2>${t}</h2></div>${ids().length ? ids().map(find).filter(Boolean).map((a) => card(a, "plain")).join("") : empty(`${t}가 없습니다.`, `<a class="button small-button" href="${P("list.html")}">사고 둘러보기</a>`)}</section><a class="button primary full" href="${P("checklist.html")}">체크리스트 모아보기</a>`;
+        v.innerHTML = `<div class="chips tabs" role="group" aria-label="내 정보 보기 선택">${TABS.map(([k, l]) => `<button type="button" class="chip${k === tab ? " active" : ""}" data-tab="${k}" aria-pressed="${k === tab}">${l}</button>`).join("")}</div>${panes[tab]()}`;
+        if (tab === "services") $("af").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); draw(); };
       };
-      v.onclick = (e) => { const b = e.target.closest("[data-tab]"); if (!b || b.dataset.tab === tab) return; tab = b.dataset.tab; history.replaceState(null, "", location.pathname + location.search + "#" + tab); draw(); };
+      v.onclick = (e) => {
+        const t = e.target.closest("[data-tab]");
+        if (t) { if (t.dataset.tab !== tab) { tab = t.dataset.tab; history.replaceState(null, "", location.pathname + location.search + (tab === "services" ? "" : "#" + tab)); draw(); } return; }
+        if (e.target.dataset.del !== undefined) { db.services.splice(+e.target.dataset.del, 1); save(); draw(); }
+      };
       draw();
-    },
-
-    checklist() {
-      const L = db.favs.map(find).filter(Boolean);
-      if (!L.length) { v.innerHTML = empty("관심 사고를 저장하면 조치 현황을 모아볼 수 있어요.", `<a class="button small-button" href="${P("list.html")}">사고 둘러보기</a>`); return; }
-      const done = L.filter((a) => prog(a) === a.actions.length).length;
-      v.innerHTML = `<section class="panel soft"><h2>전체 진행</h2><strong>${L.length}건 중 ${done}건 완료</strong></section>${L.map((a) => `<section class="panel"><div class="panel-title"><strong>${a.title}</strong><span class="chip">${prog(a)}/${a.actions.length}</span></div>${checkList(a)}<a class="button small-button" href="${P("detail.html")}?id=${a.id}">상세 보기</a></section>`).join("")}<p class="notice">모든 항목을 완료해도 안전하다는 뜻은 아닙니다.</p>`;
-      v.onchange = (e) => { if (e.target.dataset.i) { toggleCheck(e.target.dataset.id, +e.target.dataset.i, e.target.checked); pages.checklist(); } };
     },
 
     help() {
@@ -274,7 +317,7 @@ ${db.services.length ? db.services.map((s, i) => `<article class="service-card">
       ];
       const TODO = ["해당 기업의 공식 공지·안내 확인", "같은 비밀번호를 쓰는 서비스까지 비밀번호 변경", "결제·카드 이용 내역 확인, 이상 시 카드사 문의", "출처가 불분명한 문자·전화·링크 주의"];
       v.innerHTML = `<h1>유출이 의심될 때</h1><p class="lead">피해가 의심되면 아래 기관에 신고하거나 상담할 수 있어요.</p>
-${C.map(([n, d, tel, url, desc]) => `<article class="panel contact"><div class="panel-title"><strong>${n}</strong><span class="chip">${d}</span></div><p class="small">${desc}</p><div class="row"><a class="button small-button primary" href="tel:${tel}">${ICON.phone}전화 ${d}</a><a class="button small-button" href="${url}" target="_blank" rel="noopener">누리집 열기</a></div></article>`).join("")}
+${C.map(([n, d, tel, url, desc]) => `<article class="panel contact"><div class="panel-title"><strong>${n}</strong></div><p class="small">${desc}</p><div class="row"><a class="button small-button primary" href="tel:${tel}">${ICON.phone}전화 ${d}</a><a class="button small-button" href="${url}" target="_blank" rel="noopener">누리집 열기</a></div></article>`).join("")}
 <section class="panel"><h2>먼저 해볼 일</h2><ul class="todo">${TODO.map((t) => `<li>${t}</li>`).join("")}</ul><a class="button small-button" href="${P("list.html")}">사고 목록 보기</a></section>
 <p class="notice">연락처는 공식 기관 안내를 기준으로 정리했습니다. 변경될 수 있으니 신고 전 각 기관 누리집에서 확인해 주세요.</p>`;
     },
@@ -287,5 +330,7 @@ ${C.map(([n, d, tel, url, desc]) => `<article class="panel contact"><div class="
       v.onchange = (e) => { if (e.target.dataset.i) { toggleCheck(e.target.dataset.id, +e.target.dataset.i, e.target.checked); pages.checklist(); } };
     }
   };
+  // 예전 관심·최근 주소(saved.html)는 내 정보 화면으로 보냄
+  if (body.dataset.page === "saved") { location.replace(base + "pages/my.html" + (location.hash === "#recent" ? "#recent" : "#favorites")); return; }
   await boot();
 });
