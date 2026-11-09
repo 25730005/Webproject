@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const byDate = (a, b) => (b.refDate || "").localeCompare(a.refDate || "");
   const empty = (msg, btn) => `<div class="panel empty"><p>${msg}</p>${btn || ""}</div>`;
   const I = (d) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
-  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'), search: I('<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>') };
+  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>') };
 
   // ── 공통 헤더·하단 탭 ──
   const header = $("app-header");
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 홈 헤더 오른쪽 카테고리 버튼: 누르면 목록이 열리고, 선택하면 list.html?cat=…(3-2 필터)로 이동
   const initCategory = () => {
     if (body.dataset.page !== "home" || $("cat-btn")) return;
-    header.insertAdjacentHTML("beforeend", `<button type="button" class="button small-button cat-btn" id="cat-btn" aria-label="카테고리" aria-haspopup="true" aria-expanded="false" aria-controls="cat-menu">${ICON.grid}</button><div class="cat-menu" id="cat-menu" hidden><a href="${P("list.html")}">전체</a>${CATEGORY.map((c) => `<a href="${P("list.html")}?cat=${encodeURIComponent(c)}">${c}</a>`).join("")}</div>`);
+    header.insertAdjacentHTML("beforeend", `<button type="button" class="button small-button cat-btn" id="cat-btn" aria-haspopup="true" aria-expanded="false" aria-controls="cat-menu">${ICON.grid}<span>카테고리</span></button><div class="cat-menu" id="cat-menu" hidden><a href="${P("list.html")}">전체</a>${CATEGORY.map((c) => `<a href="${P("list.html")}?cat=${encodeURIComponent(c)}">${c}</a>`).join("")}</div>`);
     const btn = $("cat-btn"), menu = $("cat-menu");
     const setOpen = (on) => { menu.hidden = !on; btn.setAttribute("aria-expanded", on); };
     btn.onclick = (e) => { e.stopPropagation(); setOpen(menu.hidden); };
@@ -124,9 +124,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const rec = ACCIDENTS.filter((a) => a.recommendOrder != null).sort((x, y) => x.recommendOrder - y.recommendOrder);
       const pop = ACCIDENTS.filter((a) => a.affectedUnit === "명" && a.affectedCount != null).sort((x, y) => y.affectedCount - x.affectedCount).slice(0, 8);
       const neu = [...ACCIDENTS].sort(byDate).slice(0, 8);
-      v.innerHTML = `<form class="search-bar" id="sf" role="search"><div class="input-wrap"><input type="search" name="q" aria-label="유출사고 검색" placeholder="유출사고 검색"><button class="button primary search-btn" aria-label="검색">${ICON.search}</button></div></form>
+      v.innerHTML = `<form class="search-bar" id="sf" role="search"><div class="input-wrap"><input type="search" name="q" aria-label="유출사고 검색" placeholder="유출사고 검색"><button class="button primary">검색</button></div></form>
 <h1>내 서비스도 해당될까?</h1><p class="lead">서비스의 사고 이력과 확인할 정보를 살펴보세요.</p>
-<form class="panel soft reg-form" id="rf"><strong>내 서비스 등록</strong><input type="text" name="s" aria-label="등록할 서비스명" placeholder="서비스명 입력"><button class="button small-button">등록</button></form>
+<form class="panel soft reg-form" id="rf"><div class="panel-title"><strong>내 서비스 등록</strong></div><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="서비스명 입력"><button class="button small-button">등록</button></div></form>
 ${rail("추천 사고", rec, true)}${rail("피해 규모가 큰 사고", pop)}${rail("최신 사고", neu)}`;
       $("sf").onsubmit = (e) => { e.preventDefault(); location.href = P("list.html") + "?q=" + encodeURIComponent(e.target.q.value.trim()); };
       $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
@@ -206,6 +206,14 @@ ${db.services.length ? db.services.map((s, i) => `<article class="service-card">
       };
       v.onclick = (e) => { const b = e.target.closest("[data-tab]"); if (!b || b.dataset.tab === tab) return; tab = b.dataset.tab; history.replaceState(null, "", location.pathname + location.search + "#" + tab); draw(); };
       draw();
+    },
+
+    checklist() {
+      const L = db.favs.map(find).filter(Boolean);
+      if (!L.length) { v.innerHTML = empty("관심 사고를 저장하면 조치 현황을 모아볼 수 있어요.", `<a class="button small-button" href="${P("list.html")}">사고 둘러보기</a>`); return; }
+      const done = L.filter((a) => prog(a) === a.actions.length).length;
+      v.innerHTML = `<section class="panel soft"><h2>전체 진행</h2><strong>${L.length}건 중 ${done}건 완료</strong></section>${L.map((a) => `<section class="panel"><div class="panel-title"><strong>${a.title}</strong><span class="chip">${prog(a)}/${a.actions.length}</span></div>${checkList(a)}<a class="button small-button" href="${P("detail.html")}?id=${a.id}">상세 보기</a></section>`).join("")}<p class="notice">모든 항목을 완료해도 안전하다는 뜻은 아닙니다.</p>`;
+      v.onchange = (e) => { if (e.target.dataset.i) { toggleCheck(e.target.dataset.id, +e.target.dataset.i, e.target.checked); pages.checklist(); } };
     },
 
     help() {
