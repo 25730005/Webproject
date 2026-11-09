@@ -58,7 +58,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -128,7 +129,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -189,7 +191,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -248,7 +251,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -312,7 +316,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -363,7 +368,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -414,7 +420,8 @@
         "leakedCategories",
         "summary",
         "incidentType"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -481,7 +488,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -535,7 +543,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -591,7 +600,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -658,7 +668,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -727,7 +738,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -773,7 +785,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -819,7 +832,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -865,7 +879,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -911,7 +926,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -964,7 +980,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1009,7 +1026,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1053,7 +1071,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1110,7 +1129,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1167,7 +1187,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1224,7 +1245,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1281,7 +1303,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1337,7 +1360,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1393,7 +1417,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1449,7 +1474,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1492,7 +1518,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1542,7 +1569,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1609,7 +1637,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1672,7 +1701,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1734,7 +1764,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1798,7 +1829,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1862,7 +1894,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1926,7 +1959,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -1987,7 +2021,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2044,7 +2079,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2102,7 +2138,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2165,7 +2202,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2211,7 +2249,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2257,7 +2296,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2303,7 +2343,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2364,7 +2405,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2422,7 +2464,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2468,7 +2511,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2513,7 +2557,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2569,7 +2614,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2611,7 +2657,8 @@
         "leakedCategories",
         "summary",
         "incidentType"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2687,7 +2734,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2741,7 +2789,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2797,7 +2846,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2853,7 +2903,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2896,7 +2947,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2939,7 +2991,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -2994,7 +3047,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3051,7 +3105,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3109,7 +3164,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3160,7 +3216,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3211,7 +3268,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3267,7 +3325,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3328,7 +3387,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3373,7 +3433,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3418,7 +3479,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3463,7 +3525,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3506,7 +3569,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3549,7 +3613,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3597,7 +3662,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3640,7 +3706,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3685,7 +3752,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3728,7 +3796,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3776,7 +3845,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3824,7 +3894,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3880,7 +3951,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -3939,7 +4011,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4000,7 +4073,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4054,7 +4128,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4099,7 +4174,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4142,7 +4218,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4185,7 +4262,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4228,7 +4306,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4271,7 +4350,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4314,7 +4394,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4357,7 +4438,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4400,7 +4482,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4454,7 +4537,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4505,7 +4589,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4556,7 +4641,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4607,7 +4693,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4658,7 +4745,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4703,7 +4791,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4748,7 +4837,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4793,7 +4883,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4838,7 +4929,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4883,7 +4975,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4926,7 +5019,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -4969,7 +5063,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5012,7 +5107,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5057,7 +5153,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5102,7 +5199,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5145,7 +5243,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5188,7 +5287,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5234,7 +5334,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5287,7 +5388,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5340,7 +5442,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5393,7 +5496,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5446,7 +5550,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5497,7 +5602,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5548,7 +5654,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5593,7 +5700,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5638,7 +5746,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5683,7 +5792,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5728,7 +5838,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5773,7 +5884,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5818,7 +5930,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5863,7 +5976,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5908,7 +6022,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5953,7 +6068,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -5998,7 +6114,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6043,7 +6160,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6088,7 +6206,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6131,7 +6250,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6174,7 +6294,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6219,7 +6340,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6264,7 +6386,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6309,7 +6432,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6361,7 +6485,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6415,7 +6540,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6469,7 +6595,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6512,7 +6639,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6564,7 +6692,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6620,7 +6749,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6671,7 +6801,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6717,7 +6848,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6763,7 +6895,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6822,7 +6955,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6875,7 +7009,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6929,7 +7064,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -6981,7 +7117,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7033,7 +7170,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7091,7 +7229,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7137,7 +7276,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7192,7 +7332,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7250,7 +7391,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7308,7 +7450,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7362,7 +7505,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7417,7 +7561,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7473,7 +7618,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7528,7 +7674,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7587,7 +7734,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7647,7 +7795,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7704,7 +7853,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7767,7 +7917,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7824,7 +7975,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7878,7 +8030,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7936,7 +8089,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -7988,7 +8142,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8041,7 +8196,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8091,7 +8247,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8137,7 +8294,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8182,7 +8340,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8234,7 +8393,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8279,7 +8439,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8327,7 +8488,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8377,7 +8539,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8422,7 +8585,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8466,7 +8630,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8510,7 +8675,8 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
     }
   },
   {
@@ -8554,7 +8720,5955 @@
         "category",
         "leakedCategories",
         "summary"
-      ]
+      ],
+      "kind": "real"
+    }
+  },
+  {
+    "id": "DM-001",
+    "title": "푸내트래블 예약 계정 무단 로그인 피해",
+    "company": "푸내트래블",
+    "category": "여행·숙박",
+    "incidentDate": "2019-01-13",
+    "disclosedDate": "2019-01-27",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 4842,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "아이디",
+      "계좌번호",
+      "결제 내역",
+      "성별",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "외부에서 대입한 계정 정보로 일부 예약 계정에 무단 로그인이 이뤄졌다. 로그인된 계정에서 아이디, 계좌번호, 결제 내역 등이 열람된 것으로 확인됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-002",
+    "title": "모별리조트 투숙 고객 정보 열람 사고",
+    "company": "모별리조트",
+    "category": "여행·숙박",
+    "incidentDate": "2019-02-05",
+    "disclosedDate": "2019-02-19",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 470629,
+    "affectedUnit": "명",
+    "leakedData": [
+      "계좌번호",
+      "성별",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "관리자 계정이 도용돼 다수 투숙 고객의 정보가 조회됐다. 계좌번호와 생년월일, 성별이 열람 대상에 포함됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-003",
+    "title": "두빛스튜디오 이벤트 메일 수신자 노출",
+    "company": "두빛스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2019-02-12",
+    "disclosedDate": "2019-02-26",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 5064,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "이벤트 안내 메일을 보내며 수신자 주소를 숨기지 않아 이메일 주소가 서로에게 보였다. 발송 직후 오류를 확인하고 사과 메일을 따로 보냈다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-004",
+    "title": "미울스테이 이용 내역 출력물 분실",
+    "company": "미울스테이",
+    "category": "여행·숙박",
+    "incidentDate": "2019-02-19",
+    "disclosedDate": "2019-02-22",
+    "incidentType": "기타",
+    "cause": "종이 문서 분실",
+    "affectedCount": 821474,
+    "affectedUnit": "명",
+    "leakedData": [
+      "접속 IP",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "이용 내역과 접속 IP가 인쇄된 점검용 문서 묶음이 외부 이동 중 사라졌다. 문서에 담긴 회원 다수의 기록이 제3자에게 넘어갔을 가능성을 두고 조사 중이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-005",
+    "title": "소나래레저 회원 계정 대량 탈취",
+    "company": "소나래레저",
+    "category": "게임·레저",
+    "incidentDate": "2019-03-30",
+    "disclosedDate": "2019-04-06",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 439060,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "닉네임",
+      "휴대전화번호"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처"
+    ],
+    "penalty": "과태료 300만 원",
+    "summary": "다른 사이트에서 새어 나온 로그인 정보를 대입하는 공격에 다수 계정이 뚫렸다. 닉네임과 휴대전화번호가 노출됐고 해당 계정은 비밀번호 변경을 요구받았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-006",
+    "title": "예늬통신 요금 안내 메일 오발송",
+    "company": "예늬통신",
+    "category": "통신",
+    "incidentDate": "2019-04-14",
+    "disclosedDate": "2019-04-28",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 7358,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": "과태료 1,000만 원",
+    "summary": "요금 안내 메일이 다른 가입자 주소로 잘못 나가 이메일 주소가 제3자에게 전달됐다. 소수 가입자에게만 발생했고 잘못 보낸 메일의 회수를 요청했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-007",
+    "title": "가누리인터랙티브 고객 상담 서류 분실",
+    "company": "가누리인터랙티브",
+    "category": "게임·레저",
+    "incidentDate": "2019-05-26",
+    "disclosedDate": "2019-07-25",
+    "incidentType": "기타",
+    "cause": "종이 문서 분실",
+    "affectedCount": 22200,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "닉네임",
+      "집 주소",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "고객 상담 과정에서 출력한 서류가 보관 장소에서 사라졌다. 서류에는 집 주소와 닉네임, 이용 내역 등이 적혀 있었고 다수 회원이 대상에 포함됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-008",
+    "title": "나빛투어 관리자 계정 도용으로 고객 DB 조회",
+    "company": "나빛투어",
+    "category": "여행·숙박",
+    "incidentDate": "2019-06-01",
+    "disclosedDate": "2019-06-08",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 79100,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "이메일 주소",
+      "집 주소",
+      "결제 내역",
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "도용된 관리자 계정으로 예약 관리 화면이 열려 고객 기록이 다량 조회됐다. 결제 내역과 계좌번호, 집 주소가 열람 범위에 있었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-009",
+    "title": "모미르뱅크 외부 침입으로 생년월일 유출",
+    "company": "모미르뱅크",
+    "category": "금융",
+    "incidentDate": "2019-06-03",
+    "disclosedDate": "2019-06-17",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 85100,
+    "affectedUnit": "건",
+    "leakedData": [
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "외부 침입자가 고객 DB 일부에 접근해 생년월일이 담긴 기록을 빼냈다. 다른 금융 정보의 유출은 확인되지 않았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-010",
+    "title": "시담트래블 여행 일정 메일 오발송",
+    "company": "시담트래블",
+    "category": "여행·숙박",
+    "incidentDate": "2019-06-11",
+    "disclosedDate": "2019-06-11",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 561208,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "여행 일정표를 보내는 과정에서 첨부 목록이 뒤섞여 이메일 주소가 다른 고객에게 전달됐다. 다수 고객에게 같은 실수가 반복된 것으로 파악됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-011",
+    "title": "다담캐피탈 직원 노트북 분실",
+    "company": "다담캐피탈",
+    "category": "금융",
+    "incidentDate": "2019-06-22",
+    "disclosedDate": "2019-06-23",
+    "incidentType": "기타",
+    "cause": "업무용 기기 분실",
+    "affectedCount": 779308,
+    "affectedUnit": "건",
+    "leakedData": [
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "외근 중이던 직원의 노트북이 분실되면서 카드번호 일부가 저장된 파일이 함께 사라졌다. 기기는 암호화되지 않은 상태였다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-012",
+    "title": "가리온플랫폼 내부 공유 링크 외부 공개",
+    "company": "가리온플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2019-07-12",
+    "disclosedDate": "2019-07-19",
+    "incidentType": "업무 과실",
+    "cause": "공유 링크 설정 오류",
+    "affectedCount": 631490,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "닉네임",
+      "휴대전화번호",
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "운영팀이 만든 공유 링크가 '누구나 열람' 상태로 남아 있어 회원 목록을 외부에서 볼 수 있었다. 휴대전화번호와 이메일 주소, 닉네임이 해당 목록에 있었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-013",
+    "title": "단봄시 복지재단 신청 페이지 취약점 악용",
+    "company": "단봄시 복지재단",
+    "category": "공공",
+    "incidentDate": "2019-08-31",
+    "disclosedDate": "2019-09-07",
+    "incidentType": "해킹",
+    "cause": "웹 취약점 악용",
+    "affectedCount": 876237,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "결제 내역",
+      "이름"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "금융정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "후원 신청 페이지의 취약점을 이용한 접근으로 신청자 이름과 이메일 주소, 결제 내역이 조회됐다. 재단은 해당 페이지를 닫고 점검을 마쳤다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-014",
+    "title": "푸별네트웍스 직원 USB 반출 적발",
+    "company": "푸별네트웍스",
+    "category": "통신",
+    "incidentDate": "2019-11-19",
+    "disclosedDate": "2020-01-18",
+    "incidentType": "내부자 유출",
+    "cause": "개인 저장장치로 반출",
+    "affectedCount": 513,
+    "affectedUnit": "건",
+    "leakedData": [
+      "집 주소",
+      "이메일 주소",
+      "성별"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "직원이 개인 USB에 고객 자료를 복사해 사외로 가져간 사실이 보안 점검에서 드러났다. 집 주소와 이메일 주소, 성별이 담긴 소량의 기록이 대상이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-015",
+    "title": "라울레저 회원 전체 대상 메일 수신자 노출",
+    "company": "라울레저",
+    "category": "게임·레저",
+    "incidentDate": "2019-11-25",
+    "disclosedDate": "2019-11-25",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 16176710,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이메일 주소",
+      "이름"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "전체 회원에게 보낸 공지 메일의 수신자 칸이 숨김 처리되지 않아 이름과 이메일 주소가 그대로 보였다. 발송 규모가 커서 노출 건수도 대규모였다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-016",
+    "title": "아결투어 관리자 계정 탈취 후 이용자 정보 열람",
+    "company": "아결투어",
+    "category": "여행·숙박",
+    "incidentDate": "2019-12-02",
+    "disclosedDate": "2019-12-09",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 30241,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "닉네임",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "위치·이용기록"
+    ],
+    "penalty": "시정명령",
+    "summary": "관리자 계정을 탈취한 접속자가 이용자 닉네임과 위치 기록을 조회했다. 접속 기록을 분석해 비정상 접근 시간대를 특정했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-017",
+    "title": "빛든게임즈 테스트 서버에 실제 회원 정보 보관",
+    "company": "빛든게임즈",
+    "category": "게임·레저",
+    "incidentDate": "2020-01-10",
+    "disclosedDate": "2020-01-24",
+    "incidentType": "업무 과실",
+    "cause": "테스트 서버 방치",
+    "affectedCount": 2659,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "아이디",
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "개발용 테스트 서버에 실제 회원 정보가 복사된 채 인터넷에 열려 있었다. 아이디와 계좌번호를 포함한 일부 회원 기록이 확인 대상이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-018",
+    "title": "한름뱅크 협력업체 직원의 계좌 자료 반출",
+    "company": "한름뱅크",
+    "category": "금융",
+    "incidentDate": "2020-01-10",
+    "disclosedDate": "2020-02-09",
+    "incidentType": "내부자 유출",
+    "cause": "협력업체 직원 자료 반출",
+    "affectedCount": 565668,
+    "affectedUnit": "건",
+    "leakedData": [
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "전산 작업을 맡은 협력업체 직원이 업무 자료를 외부로 내보냈다. 반출된 파일에는 계좌번호가 포함돼 있었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-019",
+    "title": "시제모바일 클라우드 저장소 공개 설정 오류",
+    "company": "시제모바일",
+    "category": "통신",
+    "incidentDate": "2020-02-18",
+    "disclosedDate": "2020-02-19",
+    "incidentType": "업무 과실",
+    "cause": "클라우드 저장소 공개 설정 오류",
+    "affectedCount": 872310,
+    "affectedUnit": "건",
+    "leakedData": [
+      "결제 내역",
+      "이용 내역",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "데이터 보관용 클라우드 저장소가 공개로 설정돼 이용 내역과 위치 기록이 외부에서 내려받을 수 있는 상태였다. 설정 오류는 외부 제보 후에 바로잡혔다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-020",
+    "title": "누나래시 환경공단 홈페이지 캐시 오류",
+    "company": "누나래시 환경공단",
+    "category": "공공",
+    "incidentDate": "2020-03-25",
+    "disclosedDate": "2020-03-26",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 31900,
+    "affectedUnit": "건",
+    "leakedData": [
+      "닉네임"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "홈페이지 캐시 설정 문제로 일부 방문자에게 다른 이용자의 닉네임이 표시됐다. 오류는 설정을 되돌리는 방식으로 해소했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-021",
+    "title": "미제모바일 제휴 서비스 연동 오류",
+    "company": "미제모바일",
+    "category": "통신",
+    "incidentDate": "2020-04-23",
+    "disclosedDate": "2020-04-23",
+    "incidentType": "시스템 오류",
+    "cause": "서비스 연동 오류",
+    "affectedCount": 22921803,
+    "affectedUnit": "명",
+    "leakedData": [
+      "카드번호 일부",
+      "이름",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "제휴 서비스와의 연동 오류로 이름과 이용 내역, 카드번호 일부가 상대 시스템에 잘못 전달됐다. 영향을 받은 가입자가 많아 별도 안내 문자를 발송했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-022",
+    "title": "시나래텔레콤 앱 업데이트 후 타인 이름 표시",
+    "company": "시나래텔레콤",
+    "category": "통신",
+    "incidentDate": "2020-07-05",
+    "disclosedDate": "2020-08-04",
+    "incidentType": "시스템 오류",
+    "cause": "배포 오류로 타인 정보 조회",
+    "affectedCount": 3604,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이름"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "앱 업데이트 직후 몇몇 가입자가 마이페이지에서 다른 가입자의 이름을 보게 됐다. 배포를 되돌려 약 하루 만에 정상화했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-023",
+    "title": "누빛모바일 외부 침입으로 연락처 유출",
+    "company": "누빛모바일",
+    "category": "통신",
+    "incidentDate": "2020-09-22",
+    "disclosedDate": "2020-10-22",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 97136,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "휴대전화번호"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": "시정명령",
+    "summary": "외부 침입자가 고객 DB를 조회해 휴대전화번호와 이메일 주소를 가져갔다. 침입 경로로 지목된 서버는 즉시 격리됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-024",
+    "title": "푸결트래블 점검 중 방치된 테스트 서버",
+    "company": "푸결트래블",
+    "category": "여행·숙박",
+    "incidentDate": "2020-09-27",
+    "disclosedDate": "2020-10-04",
+    "incidentType": "업무 과실",
+    "cause": "테스트 서버 방치",
+    "affectedCount": 338483,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이름",
+      "성별"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "새 기능을 시험하던 서버가 점검 후에도 외부에 열려 있어 고객의 이름과 성별을 볼 수 있었다. 서버가 방치된 기간은 수주에 이른다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-025",
+    "title": "두늘시 체육센터 회원 명단 링크 노출",
+    "company": "두늘시 체육센터",
+    "category": "공공",
+    "incidentDate": "2021-01-04",
+    "disclosedDate": "2021-01-18",
+    "incidentType": "업무 과실",
+    "cause": "공유 링크 설정 오류",
+    "affectedCount": 105141,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "수강 회원 명단을 공유하려고 만든 링크의 접근 제한이 풀려 있었다. 회원 아이디가 담긴 명단을 누구나 열어볼 수 있었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-026",
+    "title": "다샘커뮤니티 운영자 태블릿 분실",
+    "company": "다샘커뮤니티",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2021-01-31",
+    "disclosedDate": "2021-01-31",
+    "incidentType": "기타",
+    "cause": "업무용 기기 분실",
+    "affectedCount": 5463,
+    "affectedUnit": "건",
+    "leakedData": [
+      "집 주소",
+      "위치 기록",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "행사 현장에서 운영진이 쓰던 태블릿이 분실됐다. 기기에 저장된 집 주소와 위치 기록, 이용 내역 일부가 노출 우려 대상이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-027",
+    "title": "미누리플랫폼 직원 PC 악성코드로 결제 정보 노출",
+    "company": "미누리플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2021-02-16",
+    "disclosedDate": "2021-03-02",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 56800,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "이메일 주소",
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": "시정명령",
+    "summary": "악성코드에 감염된 직원 PC를 거쳐 회원 이메일 주소와 카드번호 일부가 외부 서버로 전송됐다. 감염 경로는 첨부 파일 실행으로 파악됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-028",
+    "title": "아담톡 계정 DB 외부 침입",
+    "company": "아담톡",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2021-04-09",
+    "disclosedDate": "2021-04-23",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 10270771,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "닉네임"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "침입자가 대화 서비스의 계정 DB에 접근해 아이디와 닉네임 기록을 대규모로 내려받았다. 대화 내용은 유출 대상이 아니라고 밝혔다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-029",
+    "title": "마봄게임즈 결제 연동 오류로 회원 정보 오전송",
+    "company": "마봄게임즈",
+    "category": "게임·레저",
+    "incidentDate": "2021-05-11",
+    "disclosedDate": "2021-07-10",
+    "incidentType": "시스템 오류",
+    "cause": "서비스 연동 오류",
+    "affectedCount": 6062,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "암호화된 비밀번호",
+      "이메일 주소",
+      "휴대전화번호",
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "결제 대행사와 연동하는 과정의 오류로 일부 회원의 계좌번호와 연락처가 다른 계정 화면에 나타났다. 영향 범위는 회원 소수로 좁혀졌다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-030",
+    "title": "도울모바일 제휴 서비스 쪽 결제 정보 노출",
+    "company": "도울모바일",
+    "category": "통신",
+    "incidentDate": "2021-05-21",
+    "disclosedDate": "2021-05-22",
+    "incidentType": "기타",
+    "cause": "제3자 서비스 연동 사고",
+    "affectedCount": 497077,
+    "affectedUnit": "명",
+    "leakedData": [
+      "카드번호 일부",
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "제휴한 외부 결제 서비스에서 정보가 노출되며 도울모바일 가입자의 계좌번호와 카드번호 일부가 영향을 받았다. 사고 지점이 제휴사라 자체 서버에는 문제가 없었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-031",
+    "title": "마솔레저 계정 도용으로 등록 카드 일부 확인",
+    "company": "마솔레저",
+    "category": "게임·레저",
+    "incidentDate": "2021-08-12",
+    "disclosedDate": "2021-08-26",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 1119,
+    "affectedUnit": "건",
+    "leakedData": [
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": "과태료 300만 원",
+    "summary": "대입 공격으로 계정이 뚫린 뒤 등록된 카드번호 일부가 열람됐다. 실제 결제까지 이뤄진 사례는 확인되지 않았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-032",
+    "title": "도든톡 운영자 계정 도용 사건",
+    "company": "도든톡",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2021-09-08",
+    "disclosedDate": "2021-09-15",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 5202,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "운영자 계정이 도용돼 일부 이용자의 이메일 주소가 조회됐다. 계정 비밀번호를 바꾸고 2단계 인증을 의무화했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-033",
+    "title": "도담모바일 연동 오류로 성별 정보 잘못 전달",
+    "company": "도담모바일",
+    "category": "통신",
+    "incidentDate": "2021-10-02",
+    "disclosedDate": "2021-10-09",
+    "incidentType": "시스템 오류",
+    "cause": "서비스 연동 오류",
+    "affectedCount": 1822,
+    "affectedUnit": "건",
+    "leakedData": [
+      "성별"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "외부 서비스와 맞추는 과정에서 일부 가입자의 성별 값이 다른 가입자 기록에 섞여 전달됐다. 건수가 적어 개별 정정으로 마무리됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-034",
+    "title": "두솔뱅크 모바일 앱 계정 탈취",
+    "company": "두솔뱅크",
+    "category": "금융",
+    "incidentDate": "2021-11-08",
+    "disclosedDate": "2021-12-08",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 57000,
+    "affectedUnit": "명",
+    "leakedData": [
+      "휴대전화번호",
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "유출된 로그인 정보를 대입하는 공격으로 모바일 앱 계정이 탈취돼 휴대전화번호와 이메일 주소가 열람됐다. 이상 접속이 몰린 시간대에 로그인을 일시 제한했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-035",
+    "title": "예름커뮤니티 관리 PC 악성코드 감염",
+    "company": "예름커뮤니티",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2021-11-14",
+    "disclosedDate": "2021-11-21",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 70800,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "생년월일",
+      "성별"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "게시판을 관리하던 PC가 악성코드에 감염돼 회원 닉네임과 생년월일, 성별이 외부로 나갔다. 감염 PC는 즉시 네트워크에서 분리됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-036",
+    "title": "보누리아카데미 수강생 정보 관리자 도용 열람",
+    "company": "보누리아카데미",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2021-11-26",
+    "disclosedDate": "2021-11-27",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 5893,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "닉네임",
+      "이메일 주소",
+      "집 주소",
+      "이름",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "관리자 계정이 도용돼 수강생 일부의 이름, 생년월일, 집 주소 등이 조회됐다. 조회 이력은 로그 분석으로 확인했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-037",
+    "title": "온솔트래블 직원의 고객 자료 개인 저장 사건",
+    "company": "온솔트래블",
+    "category": "여행·숙박",
+    "incidentDate": "2021-12-02",
+    "disclosedDate": "2021-12-03",
+    "incidentType": "내부자 유출",
+    "cause": "개인 저장장치로 반출",
+    "affectedCount": 341,
+    "affectedUnit": "명",
+    "leakedData": [
+      "휴대전화번호",
+      "집 주소",
+      "성별",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "한 직원이 고객 연락처와 집 주소, 위치 기록을 개인 저장장치에 옮긴 사실이 내부 감사에서 드러났다. 해당 직원은 업무에서 배제됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-038",
+    "title": "도내페이 간편결제 계정 대입 공격",
+    "company": "도내페이",
+    "category": "금융",
+    "incidentDate": "2021-12-08",
+    "disclosedDate": "2021-12-09",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 421305,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이름",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "간편결제 앱 계정에 대한 대입 공격으로 이름과 위치 기록이 열람된 사례가 다수 나왔다. 결제 수단 변경 시 추가 인증을 넣었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-039",
+    "title": "가울통신 고객센터 공유 링크 노출",
+    "company": "가울통신",
+    "category": "통신",
+    "incidentDate": "2021-12-25",
+    "disclosedDate": "2021-12-25",
+    "incidentType": "업무 과실",
+    "cause": "공유 링크 설정 오류",
+    "affectedCount": 7294,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "닉네임",
+      "이름",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "고객센터가 문의 내역을 내려받도록 만든 링크가 검색엔진에 잡혔다. 링크 안에는 이름, 생년월일, 아이디가 담긴 일부 가입자의 문의 기록이 있었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-040",
+    "title": "루울아카데미 관리자 페이지 무단 접속",
+    "company": "루울아카데미",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2021-12-30",
+    "disclosedDate": "2021-12-30",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 892,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "관리자 계정으로 무단 접속한 사실이 확인돼 수강생 일부의 아이디가 조회됐다. 열람 범위가 아이디에 한정돼 피해는 크지 않았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-041",
+    "title": "예봄시 관광재단 서버 랜섬웨어 감염",
+    "company": "예봄시 관광재단",
+    "category": "공공",
+    "incidentDate": "2022-03-09",
+    "disclosedDate": "2022-03-10",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 2206,
+    "affectedUnit": "건",
+    "leakedData": [
+      "닉네임",
+      "집 주소",
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "행사 접수 서버가 랜섬웨어에 감염돼 파일이 암호화됐다. 서버에 저장돼 있던 신청자 닉네임과 집 주소, 이메일 주소의 유출 여부를 조사했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-042",
+    "title": "단늘투어 퇴직자 계정으로 예약 기록 열람",
+    "company": "단늘투어",
+    "category": "여행·숙박",
+    "incidentDate": "2022-03-11",
+    "disclosedDate": "2022-06-09",
+    "incidentType": "내부자 유출",
+    "cause": "퇴직자 계정 미회수",
+    "affectedCount": 80800,
+    "affectedUnit": "건",
+    "leakedData": [
+      "결제 내역",
+      "이름",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "퇴사한 직원의 계정이 정리되지 않아 퇴사 뒤에도 접속이 이뤄졌다. 그 사이 예약자 이름과 결제 내역, 접속 IP가 조회됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-043",
+    "title": "두담모바일 관리자 페이지 인증 누락",
+    "company": "두담모바일",
+    "category": "통신",
+    "incidentDate": "2022-03-17",
+    "disclosedDate": "2022-06-15",
+    "incidentType": "업무 과실",
+    "cause": "관리자 페이지 접근통제 미흡",
+    "affectedCount": 4533,
+    "affectedUnit": "명",
+    "leakedData": [
+      "휴대전화번호",
+      "집 주소",
+      "성별"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "대리점용 관리자 페이지에 로그인 절차가 빠져 있어 주소만 알면 접속할 수 있었다. 소수 가입자의 휴대전화번호와 집 주소가 화면에 보였다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-044",
+    "title": "라리온커뮤니티 유료 회원 결제 화면 오표시",
+    "company": "라리온커뮤니티",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2022-03-17",
+    "disclosedDate": "2022-03-24",
+    "incidentType": "시스템 오류",
+    "cause": "배포 오류로 타인 정보 조회",
+    "affectedCount": 5796,
+    "affectedUnit": "건",
+    "leakedData": [
+      "카드번호 일부",
+      "결제 내역"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": "과태료 300만 원",
+    "summary": "배포 오류로 일부 유료 회원의 결제 화면에 다른 회원의 카드번호 일부와 결제 내역이 표시됐다. 발견 직후 최근 배포를 취소했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-045",
+    "title": "이별아카데미 수강 기록 파일 공유 오류",
+    "company": "이별아카데미",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2022-03-23",
+    "disclosedDate": "2022-03-23",
+    "incidentType": "업무 과실",
+    "cause": "공유 링크 설정 오류",
+    "affectedCount": 942330,
+    "affectedUnit": "명",
+    "leakedData": [
+      "접속 IP",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "강사 지원용으로 공유한 수강 기록 파일의 접근 제한이 풀려 접속 IP와 위치 기록이 노출됐다. 공유를 해제하고 파일을 다시 발급했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-046",
+    "title": "도제플랫폼 회원 DB 침입 사고",
+    "company": "도제플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2022-03-24",
+    "disclosedDate": "2022-06-22",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 486945,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "닉네임"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "외부에서 회원 DB에 침투해 아이디와 닉네임 기록 다수를 복사했다. 비밀번호는 별도로 보관돼 영향을 받지 않았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-047",
+    "title": "예솔캐피탈 조회 화면 캐시 오류",
+    "company": "예솔캐피탈",
+    "category": "금융",
+    "incidentDate": "2022-03-27",
+    "disclosedDate": "2022-04-03",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 763,
+    "affectedUnit": "건",
+    "leakedData": [
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "대출 조회 화면의 캐시가 꼬여 다른 고객의 계좌번호가 잠시 보였다. 해당 화면의 캐시 기능을 끄고 원인을 조사했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-048",
+    "title": "한봄시 관광재단 신청자 DB 랜섬웨어 피해",
+    "company": "한봄시 관광재단",
+    "category": "공공",
+    "incidentDate": "2022-04-01",
+    "disclosedDate": "2022-04-02",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 136328,
+    "affectedUnit": "명",
+    "leakedData": [
+      "생년월일",
+      "이름"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "관광 프로그램 신청자 DB가 랜섬웨어에 감염돼 이름과 생년월일이 포함된 기록이 위험에 노출됐다. 백업본으로 서비스를 복구했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-049",
+    "title": "마미르투어 상담 PC 악성코드 감염",
+    "company": "마미르투어",
+    "category": "여행·숙박",
+    "incidentDate": "2022-04-16",
+    "disclosedDate": "2022-04-23",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 17100,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "닉네임",
+      "위치 기록",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "상담 업무용 PC가 악성코드에 감염돼 이용자 아이디, 닉네임, 위치 기록 등이 외부 서버에 전송됐다. 같은 망의 PC를 전수 검사했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-050",
+    "title": "소내투어 로그인 시도 급증 후 계정 탈취",
+    "company": "소내투어",
+    "category": "여행·숙박",
+    "incidentDate": "2022-04-28",
+    "disclosedDate": "2022-06-27",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 738004,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이용 내역",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "짧은 시간에 로그인 시도가 몰리며 일부 계정이 뚫려 이용 내역과 접속 IP가 열람됐다. 문제 계정은 잠그고 비밀번호 재설정을 요청했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-051",
+    "title": "누늘통신 직원의 이용 기록 외부 반출",
+    "company": "누늘통신",
+    "category": "통신",
+    "incidentDate": "2022-06-09",
+    "disclosedDate": "2022-07-09",
+    "incidentType": "내부자 유출",
+    "cause": "개인 저장장치로 반출",
+    "affectedCount": 593759,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이용 내역",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "직원이 개인 저장장치로 가입자 이용 내역과 접속 IP 기록을 가져간 정황이 보안 로그에서 확인됐다. 해당 직원의 접근 권한은 회수됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-052",
+    "title": "루든시 복지재단 위탁 시스템 정보 노출",
+    "company": "루든시 복지재단",
+    "category": "공공",
+    "incidentDate": "2022-06-16",
+    "disclosedDate": "2022-07-16",
+    "incidentType": "기타",
+    "cause": "제3자 서비스 연동 사고",
+    "affectedCount": 2939,
+    "affectedUnit": "건",
+    "leakedData": [
+      "휴대전화번호",
+      "생년월일",
+      "성별"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "프로그램 접수를 맡긴 외부 시스템에서 정보가 노출돼 신청자 휴대전화번호와 생년월일이 영향을 받았다. 재단은 위탁사에 시정을 요구했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-053",
+    "title": "미봄텔레콤 대리점 서버 랜섬웨어",
+    "company": "미봄텔레콤",
+    "category": "통신",
+    "incidentDate": "2022-08-12",
+    "disclosedDate": "2022-11-10",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 1085,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "아이디",
+      "이름"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "대리점용 서버가 랜섬웨어에 감염돼 일부 가입자의 아이디와 이름 정보가 위험에 노출됐다. 영향 서버를 본사 망에서 떼어냈다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-054",
+    "title": "마나래캐피탈 고객 앱 계정 무단 로그인",
+    "company": "마나래캐피탈",
+    "category": "금융",
+    "incidentDate": "2022-09-06",
+    "disclosedDate": "2022-09-07",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 654588,
+    "affectedUnit": "명",
+    "leakedData": [
+      "집 주소",
+      "휴대전화번호",
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "고객 앱에 대한 대입 공격으로 계정이 뚫려 집 주소와 휴대전화번호, 카드번호 일부가 열람됐다. 비정상 접속 IP를 차단했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-055",
+    "title": "모누리스튜디오 운영 도구 접근통제 누락",
+    "company": "모누리스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2022-10-07",
+    "disclosedDate": "2022-10-07",
+    "incidentType": "업무 과실",
+    "cause": "관리자 페이지 접근통제 미흡",
+    "affectedCount": 573052,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "아이디",
+      "휴대전화번호",
+      "이메일 주소",
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": "시정명령",
+    "summary": "운영 도구에 접근 제한이 걸려 있지 않아 외부에서 회원 정보 화면을 열 수 있었다. 카드번호 일부와 연락처까지 조회가 가능했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-056",
+    "title": "나담통신 고객 DB 불법 접근",
+    "company": "나담통신",
+    "category": "통신",
+    "incidentDate": "2022-10-14",
+    "disclosedDate": "2023-01-12",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 355592,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "휴대전화번호",
+      "집 주소"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "정체불명의 접속자가 고객 DB에 들어와 닉네임과 휴대전화번호, 집 주소를 내려받았다. 서버 로그로 침입 시점을 특정했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-057",
+    "title": "소담통신 이용자 계정 탈취 시도",
+    "company": "소담통신",
+    "category": "통신",
+    "incidentDate": "2022-11-12",
+    "disclosedDate": "2023-01-11",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 1769,
+    "affectedUnit": "명",
+    "leakedData": [
+      "생년월일",
+      "이름"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": "시정명령",
+    "summary": "대입 공격으로 일부 계정이 탈취돼 이름과 생년월일이 노출됐다. 본인 인증이 필요한 메뉴는 추가 인증으로 보호됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-058",
+    "title": "마리온플랫폼 DB 침해 사고",
+    "company": "마리온플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2022-12-19",
+    "disclosedDate": "2023-02-17",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 87100,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "닉네임",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "플랫폼 DB가 침해돼 닉네임과 접속 IP, 암호화된 비밀번호 기록이 대량으로 복사됐다. 비밀번호는 암호화돼 있었지만 변경을 권고했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-059",
+    "title": "다리온시 복지재단 홈페이지 취약점 악용",
+    "company": "다리온시 복지재단",
+    "category": "공공",
+    "incidentDate": "2023-02-18",
+    "disclosedDate": "2023-02-18",
+    "incidentType": "해킹",
+    "cause": "웹 취약점 악용",
+    "affectedCount": 53100,
+    "affectedUnit": "명",
+    "leakedData": [
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "홈페이지 게시판의 보안 취약점이 악용돼 복지 서비스 이용자의 생년월일이 노출됐다. 취약점은 패치로 보완했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-060",
+    "title": "빛담캐피탈 클라우드 백업 저장소 공개",
+    "company": "빛담캐피탈",
+    "category": "금융",
+    "incidentDate": "2023-02-19",
+    "disclosedDate": "2023-03-21",
+    "incidentType": "업무 과실",
+    "cause": "클라우드 저장소 공개 설정 오류",
+    "affectedCount": 7222299,
+    "affectedUnit": "명",
+    "leakedData": [
+      "카드번호 일부",
+      "위치 기록",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "백업용 클라우드 저장소가 공개로 설정돼 카드번호 일부와 위치 기록, 이용 내역이 대규모로 노출 가능한 상태였다. 설정 오류는 자체 점검에서 발견됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-061",
+    "title": "두리온뱅크 로그 저장소 설정 실수",
+    "company": "두리온뱅크",
+    "category": "금융",
+    "incidentDate": "2023-03-21",
+    "disclosedDate": "2023-03-22",
+    "incidentType": "업무 과실",
+    "cause": "클라우드 저장소 공개 설정 오류",
+    "affectedCount": 88000,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "서비스 로그를 모아 둔 저장소가 외부에서 읽힐 수 있게 설정돼 아이디와 카드번호 일부가 남아 있었다. 해당 로그를 지우고 설정을 바꿨다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-062",
+    "title": "라빛스테이 예약 담당자의 자료 개인 보관",
+    "company": "라빛스테이",
+    "category": "여행·숙박",
+    "incidentDate": "2023-03-26",
+    "disclosedDate": "2023-04-02",
+    "incidentType": "내부자 유출",
+    "cause": "개인 저장장치로 반출",
+    "affectedCount": 6472,
+    "affectedUnit": "건",
+    "leakedData": [
+      "계좌번호",
+      "이름",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "예약 담당자가 고객 이름, 생년월일, 계좌번호가 담긴 파일을 개인 저장장치에 복사해 둔 사실이 드러났다. 외부 판매나 유포는 확인되지 않았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-063",
+    "title": "도나래플랫폼 대규모 회원 DB 침해",
+    "company": "도나래플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2023-05-07",
+    "disclosedDate": "2023-05-08",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 4195128,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "아이디",
+      "집 주소",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "외부 침입으로 회원 DB가 통째로 복사되며 대규모 이용자의 아이디와 집 주소, 접속 IP 정보가 유출됐다. 전체 회원에게 비밀번호 초기화를 안내했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-064",
+    "title": "아솔스튜디오 상점 페이지 캐시 오류",
+    "company": "아솔스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2023-06-25",
+    "disclosedDate": "2023-06-28",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 77100,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "결제 내역"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "게임 내 상점 페이지의 캐시 오류로 다른 이용자의 이메일 주소와 결제 내역이 보였다. 오류는 업데이트 직후 몇 시간 동안 이어졌다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-065",
+    "title": "누봄인터랙티브 환불 처리 서류 분실",
+    "company": "누봄인터랙티브",
+    "category": "게임·레저",
+    "incidentDate": "2023-08-24",
+    "disclosedDate": "2023-08-31",
+    "incidentType": "기타",
+    "cause": "종이 문서 분실",
+    "affectedCount": 318939,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "결제 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "환불 처리를 위해 출력한 서류가 분실돼 아이디와 결제 내역이 노출 위험에 놓였다. 서류 재발급과 환불 이력 재확인을 진행했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-066",
+    "title": "다미르모바일 가입자 DB 외부 접근",
+    "company": "다미르모바일",
+    "category": "통신",
+    "incidentDate": "2023-09-13",
+    "disclosedDate": "2023-09-13",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 563992,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "성별"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "외부 접근으로 가입자 아이디와 성별이 담긴 테이블이 조회됐다. 민감한 연락처나 금융 정보는 다른 시스템에 있어 영향이 없었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-067",
+    "title": "소별클래스 강사 PC 악성코드 감염",
+    "company": "소별클래스",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2023-10-06",
+    "disclosedDate": "2023-10-20",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 21600,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "암호화된 비밀번호",
+      "집 주소"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "강사용 PC가 악성코드에 감염돼 수강생 닉네임과 집 주소, 암호화된 비밀번호 파일이 외부로 보내졌다. 감염 PC는 교체됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-068",
+    "title": "라름게임즈 계정 도용 대량 발생",
+    "company": "라름게임즈",
+    "category": "게임·레저",
+    "incidentDate": "2023-10-22",
+    "disclosedDate": "2023-12-21",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 462746,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "집 주소",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "계정 대입 공격으로 계정 도용이 대량 발생해 이용 내역과 집 주소가 열람됐다. 이상 로그인에는 접속 제한을 걸었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-069",
+    "title": "가늘레저 예약 서버 랜섬웨어 피해",
+    "company": "가늘레저",
+    "category": "게임·레저",
+    "incidentDate": "2023-10-23",
+    "disclosedDate": "2023-11-22",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 76900,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "집 주소",
+      "이메일 주소",
+      "이용 내역",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "예약 서버가 랜섬웨어에 감염돼 회원 정보와 이용 내역이 암호화됐다. 이메일 주소와 집 주소 등의 외부 유출 여부를 조사 중이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-070",
+    "title": "이제레저 쿠폰 메일 수신자 정보 노출",
+    "company": "이제레저",
+    "category": "게임·레저",
+    "incidentDate": "2023-11-09",
+    "disclosedDate": "2023-11-09",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 9436,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이메일 주소",
+      "이름"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "쿠폰 안내 메일을 보내면서 수신자의 이름과 이메일 주소가 함께 나가는 실수가 있었다. 오류를 알린 뒤 쿠폰을 재발급했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-071",
+    "title": "온리온톡 대화 서비스 계정 탈취",
+    "company": "온리온톡",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2023-11-28",
+    "disclosedDate": "2023-12-12",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 58050,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "닉네임",
+      "집 주소",
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "유출된 비밀번호를 재사용한 계정이 줄줄이 탈취돼 닉네임과 이메일 주소, 집 주소가 열람됐다. 해당 계정은 임시 정지됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-072",
+    "title": "루누리시 평생교육원 테스트 서버 개방",
+    "company": "루누리시 평생교육원",
+    "category": "공공",
+    "incidentDate": "2023-12-10",
+    "disclosedDate": "2024-01-09",
+    "incidentType": "업무 과실",
+    "cause": "테스트 서버 방치",
+    "affectedCount": 7695,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이름"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "수강 신청 시스템 개편 중 테스트 서버가 외부에 열려 있어 수강생 이름이 조회될 수 있었다. 서버는 개편 종료 후에야 닫혔다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-073",
+    "title": "모름스튜디오 로그인 연동사 정보 노출",
+    "company": "모름스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2024-01-08",
+    "disclosedDate": "2024-01-11",
+    "incidentType": "기타",
+    "cause": "제3자 서비스 연동 사고",
+    "affectedCount": 25431,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "닉네임"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "소셜 로그인을 제공하는 연동사에서 정보가 노출돼 이 게임의 아이디와 닉네임이 함께 영향을 받았다. 연동 기능은 일시 중단됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-074",
+    "title": "가담카드 영업용 단말기 분실",
+    "company": "가담카드",
+    "category": "금융",
+    "incidentDate": "2024-01-22",
+    "disclosedDate": "2024-02-05",
+    "incidentType": "기타",
+    "cause": "업무용 기기 분실",
+    "affectedCount": 756969,
+    "affectedUnit": "명",
+    "leakedData": [
+      "계좌번호",
+      "결제 내역"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "영업 현장에서 쓰던 단말기가 분실돼 계좌번호와 결제 내역 일부가 저장된 데이터가 사라졌다. 단말기는 원격으로 잠금 처리됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-075",
+    "title": "해름아카데미 새 학기 배포 후 타인 아이디 표시",
+    "company": "해름아카데미",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2024-01-27",
+    "disclosedDate": "2024-01-28",
+    "incidentType": "시스템 오류",
+    "cause": "배포 오류로 타인 정보 조회",
+    "affectedCount": 9448,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "새 학기 시스템 배포 직후 몇몇 수강생이 로그인 화면에서 다른 수강생의 아이디를 보게 됐다. 이전 버전으로 되돌려 해결했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-076",
+    "title": "단늬라운지 연동 오류로 이용 기록 섞임",
+    "company": "단늬라운지",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2024-02-05",
+    "disclosedDate": "2024-03-06",
+    "incidentType": "시스템 오류",
+    "cause": "서비스 연동 오류",
+    "affectedCount": 3369,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "아이디",
+      "이용 내역",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "서비스 연동 오류로 일부 이용자의 이용 내역과 위치 기록이 다른 이용자 프로필에 붙었다. 해당 기록은 원래 계정으로 되돌렸다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-077",
+    "title": "소봄스튜디오 서버 랜섬웨어 공격",
+    "company": "소봄스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2024-02-23",
+    "disclosedDate": "2024-02-24",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 451568,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "집 주소",
+      "휴대전화번호",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "서버가 랜섬웨어 공격을 받아 회원의 집 주소와 휴대전화번호, 생년월일 등이 담긴 파일이 암호화됐다. 복구 후 외부 반출 여부를 점검했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-078",
+    "title": "이누리인터랙티브 내부 파일 링크 외부 공개",
+    "company": "이누리인터랙티브",
+    "category": "게임·레저",
+    "incidentDate": "2024-03-02",
+    "disclosedDate": "2024-03-03",
+    "incidentType": "업무 과실",
+    "cause": "공유 링크 설정 오류",
+    "affectedCount": 194444,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "내부 공유 링크가 외부에서도 열려 암호화된 비밀번호 목록을 내려받을 수 있었다. 링크를 폐기하고 비밀번호 재설정을 안내했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-079",
+    "title": "미별시 문화재단 예매 사이트 캐시 오류",
+    "company": "미별시 문화재단",
+    "category": "공공",
+    "incidentDate": "2024-03-10",
+    "disclosedDate": "2024-04-09",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 49700,
+    "affectedUnit": "명",
+    "leakedData": [
+      "집 주소",
+      "계좌번호",
+      "결제 내역"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "공연 예매 사이트의 캐시 오류로 다른 이용자의 집 주소와 결제 내역, 계좌번호가 화면에 나타났다. 해당 시간대 예매는 확인 후 정정했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-080",
+    "title": "마누리통신 대규모 고객 정보 노출, 원인 조사 중",
+    "company": "마누리통신",
+    "category": "통신",
+    "incidentDate": "2024-04-06",
+    "disclosedDate": "2024-04-07",
+    "incidentType": "기타",
+    "cause": "원인 조사 중",
+    "affectedCount": 18202883,
+    "affectedUnit": "건",
+    "leakedData": [
+      "휴대전화번호",
+      "집 주소",
+      "생년월일",
+      "이용 내역",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "고객 정보가 대규모로 외부에서 확인됐으나 유출 경로는 아직 밝혀지지 않았다. 휴대전화번호와 집 주소, 생년월일, 이용 내역이 포함돼 있다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-081",
+    "title": "마울클래스 수강 결제 화면 캐시 오류",
+    "company": "마울클래스",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2024-05-06",
+    "disclosedDate": "2024-05-06",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 117674,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "이메일 주소",
+      "휴대전화번호",
+      "결제 내역",
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "수강 결제 화면의 캐시 설정 문제로 다른 수강생의 이메일 주소와 결제 내역, 카드번호 일부가 보이는 일이 있었다. 설정을 수정해 재발을 막았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-082",
+    "title": "다봄러닝 교재 배송 명단 링크 공개",
+    "company": "다봄러닝",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2024-05-11",
+    "disclosedDate": "2024-05-25",
+    "incidentType": "업무 과실",
+    "cause": "공유 링크 설정 오류",
+    "affectedCount": 2892,
+    "affectedUnit": "건",
+    "leakedData": [
+      "집 주소",
+      "휴대전화번호"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "교재 배송 명단을 업체와 나누는 링크가 공개 상태였다. 명단의 집 주소와 휴대전화번호는 소량이었지만 검색으로도 접근 가능했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-083",
+    "title": "하별텔레콤 멤버십 계정 대입 공격",
+    "company": "하별텔레콤",
+    "category": "통신",
+    "incidentDate": "2024-06-18",
+    "disclosedDate": "2024-07-02",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 206063,
+    "affectedUnit": "건",
+    "leakedData": [
+      "닉네임",
+      "계좌번호",
+      "생년월일",
+      "성별"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보",
+      "신원정보"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "멤버십 계정에 대한 대입 공격으로 닉네임과 생년월일, 계좌번호가 열람된 사례가 다수 확인됐다. 문제 계정은 잠금 후 본인 확인 절차를 거쳤다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-084",
+    "title": "누샘에듀 학습 서버 랜섬웨어",
+    "company": "누샘에듀",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2024-07-07",
+    "disclosedDate": "2024-07-14",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 7736,
+    "affectedUnit": "건",
+    "leakedData": [
+      "휴대전화번호",
+      "집 주소",
+      "성별",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "학습 관리 서버가 랜섬웨어에 걸려 휴대전화번호와 집 주소 등 수강생 기록이 일시 접근 불가가 됐다. 백업본으로 복구했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-085",
+    "title": "푸누리커뮤니티 후원 결제 정보 노출, 원인 조사 중",
+    "company": "푸누리커뮤니티",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2024-07-12",
+    "disclosedDate": "2024-07-19",
+    "incidentType": "기타",
+    "cause": "원인 조사 중",
+    "affectedCount": 234024,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "계좌번호",
+      "결제 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "후원 결제 기록이 외부 사이트에 올라온 것이 확인됐지만 새어 나간 경로는 조사 중이다. 계좌번호와 결제 내역이 포함됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-086",
+    "title": "도미르캐피탈 대출 신청 화면 캐시 오류",
+    "company": "도미르캐피탈",
+    "category": "금융",
+    "incidentDate": "2024-07-23",
+    "disclosedDate": "2024-07-23",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 49197,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "결제 내역",
+      "카드번호 일부",
+      "성별"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "대출 신청 화면 캐시가 꼬여 일부 신청자의 결제 내역과 카드번호 일부가 다른 신청자 화면에 표시됐다. 오류 구간에 접속한 사용자를 개별 안내했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-087",
+    "title": "모늘페이 앱 업데이트 후 타인 정보 조회",
+    "company": "모늘페이",
+    "category": "금융",
+    "incidentDate": "2024-07-27",
+    "disclosedDate": "2024-07-28",
+    "incidentType": "시스템 오류",
+    "cause": "배포 오류로 타인 정보 조회",
+    "affectedCount": 649148,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "아이디",
+      "집 주소",
+      "휴대전화번호",
+      "카드번호 일부"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": "시정명령",
+    "summary": "앱 업데이트 후 일부 이용자가 내 정보 화면에서 다른 이용자의 집 주소와 휴대전화번호, 카드번호 일부를 볼 수 있었다. 문제 버전을 철회하고 재배포했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-088",
+    "title": "모결캐피탈 퇴직자 계정 통한 고객 주소 열람",
+    "company": "모결캐피탈",
+    "category": "금융",
+    "incidentDate": "2024-09-24",
+    "disclosedDate": "2024-10-24",
+    "incidentType": "내부자 유출",
+    "cause": "퇴직자 계정 미회수",
+    "affectedCount": 20768776,
+    "affectedUnit": "명",
+    "leakedData": [
+      "집 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "회수되지 않은 퇴직자 계정으로 고객 집 주소가 대규모로 조회된 사실이 점검에서 드러났다. 계정은 삭제됐고 퇴직 시 권한 회수 절차를 보완했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-089",
+    "title": "미름스튜디오 협력사 직원의 회원 자료 반출",
+    "company": "미름스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2024-10-01",
+    "disclosedDate": "2024-10-02",
+    "incidentType": "내부자 유출",
+    "cause": "협력업체 직원 자료 반출",
+    "affectedCount": 14947482,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "이름",
+      "생년월일"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "외주 개발을 맡은 협력업체 직원이 회원 이름과 생년월일, 암호화된 비밀번호 자료를 가져갔다. 반출 규모가 대규모여서 수사 의뢰를 검토했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-090",
+    "title": "해샘시 도서관운영센터 로그인 화면 오류",
+    "company": "해샘시 도서관운영센터",
+    "category": "공공",
+    "incidentDate": "2024-10-04",
+    "disclosedDate": "2024-10-18",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 3940,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "암호화된 비밀번호",
+      "휴대전화번호"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "도서관 시스템의 캐시 오류로 몇몇 이용자가 다른 이용자 아이디가 입력된 로그인 화면을 보게 됐다. 아이디와 휴대전화번호 일부가 노출된 사례도 있었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-091",
+    "title": "시울리조트 예약 PC 악성코드로 고객 정보 반출",
+    "company": "시울리조트",
+    "category": "여행·숙박",
+    "incidentDate": "2024-10-16",
+    "disclosedDate": "2024-10-16",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 196547,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "집 주소",
+      "계좌번호",
+      "접속 IP",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "금융정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "예약 접수 PC가 악성코드에 감염돼 이메일 주소와 집 주소, 계좌번호, 이용 내역이 외부로 전송됐다. 감염 시점부터의 전송 기록을 역추적했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-092",
+    "title": "하봄모바일 관리자 계정 도용 대규모 조회",
+    "company": "하봄모바일",
+    "category": "통신",
+    "incidentDate": "2024-10-23",
+    "disclosedDate": "2024-10-30",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 9718670,
+    "affectedUnit": "명",
+    "leakedData": [
+      "생년월일",
+      "성별"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "도용된 관리자 계정으로 가입자 정보 조회가 대규모로 이뤄져 생년월일과 성별이 노출됐다. 관리자 접속 방식을 전면 개편했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-093",
+    "title": "새봄네트웍스 고객 포털 취약점 악용",
+    "company": "새봄네트웍스",
+    "category": "통신",
+    "incidentDate": "2024-11-10",
+    "disclosedDate": "2025-02-08",
+    "incidentType": "해킹",
+    "cause": "웹 취약점 악용",
+    "affectedCount": 56600,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "성별",
+      "생년월일",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "고객 포털의 취약점을 이용한 접근으로 이메일 주소와 생년월일, 성별, 접속 IP 기록이 빠져나갔다. 취약점은 접수 하루 만에 패치됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-094",
+    "title": "마별레저 관리자 페이지 접근통제 누락",
+    "company": "마별레저",
+    "category": "게임·레저",
+    "incidentDate": "2024-11-14",
+    "disclosedDate": "2024-11-28",
+    "incidentType": "업무 과실",
+    "cause": "관리자 페이지 접근통제 미흡",
+    "affectedCount": 3375992,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이메일 주소",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "관리자 페이지에 접근 제한이 누락된 채 운영돼 이메일 주소와 이용 내역 기록이 대규모로 열람 가능했다. 제한 설정은 외부 제보 후 추가됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-095",
+    "title": "한늬라운지 프로필 캐시 오류로 정보 혼선",
+    "company": "한늬라운지",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2024-11-28",
+    "disclosedDate": "2024-12-01",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 168662,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "이름",
+      "성별",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "프로필 캐시 오류로 이용자의 이름과 성별, 위치 기록이 다른 이용자에게 보이는 일이 있었다. 캐시 정책을 바꿔 오류 구간을 끝냈다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-096",
+    "title": "다제텔레콤 청구서 메일 오발송",
+    "company": "다제텔레콤",
+    "category": "통신",
+    "incidentDate": "2024-12-26",
+    "disclosedDate": "2025-01-02",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 7712,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "청구서 메일이 소수 고객에게 다른 고객 주소로 잘못 나갔다. 해당 고객에게 사과하고 잘못 보낸 메일의 삭제를 요청했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-097",
+    "title": "해결카드 이벤트 페이지 취약점 악용",
+    "company": "해결카드",
+    "category": "금융",
+    "incidentDate": "2025-02-08",
+    "disclosedDate": "2025-02-22",
+    "incidentType": "해킹",
+    "cause": "웹 취약점 악용",
+    "affectedCount": 33600,
+    "affectedUnit": "명",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "닉네임",
+      "성별"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "이벤트 페이지의 취약점을 노린 접근으로 회원 닉네임과 성별, 암호화된 비밀번호가 조회됐다. 이벤트 페이지를 폐쇄하고 점검했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-098",
+    "title": "다름마켓 배송 안내 메일 오발송",
+    "company": "다름마켓",
+    "category": "쇼핑·유통",
+    "incidentDate": "2025-02-16",
+    "disclosedDate": "2025-02-19",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 27500,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "이름"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "배송 안내 메일에 다른 고객의 이름과 이메일 주소가 섞여 나갔다. 같은 날 발송된 메일 전체를 점검해 영향 고객을 추렸다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-099",
+    "title": "푸리온라운지 서버 랜섬웨어와 데이터 협박",
+    "company": "푸리온라운지",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2025-03-08",
+    "disclosedDate": "2025-03-15",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 62952,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "이용 내역",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "서버가 랜섬웨어에 감염돼 이용 내역과 접속 IP 기록이 암호화됐고, 공격자가 데이터 공개를 내세워 금전을 요구했다. 회사는 요구에 응하지 않고 복구했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-100",
+    "title": "온든에듀 수강생 계정 탈취",
+    "company": "온든에듀",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2025-03-11",
+    "disclosedDate": "2025-03-12",
+    "incidentType": "해킹",
+    "cause": "계정 탈취(크리덴셜 스터핑)",
+    "affectedCount": 806317,
+    "affectedUnit": "명",
+    "leakedData": [
+      "생년월일",
+      "이름"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "대입 공격으로 수강생 계정이 탈취돼 이름과 생년월일이 열람됐다. 이후 로그인 시도 횟수를 제한하는 장치를 넣었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-101",
+    "title": "가별페이 운영 페이지 접근통제 미흡",
+    "company": "가별페이",
+    "category": "금융",
+    "incidentDate": "2025-05-14",
+    "disclosedDate": "2025-07-13",
+    "incidentType": "업무 과실",
+    "cause": "관리자 페이지 접근통제 미흡",
+    "affectedCount": 308,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "암호화된 비밀번호"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": "과태료 1,000만 원",
+    "summary": "운영 페이지의 접근 통제가 약해 외부에서 접속된 흔적이 있었다. 몇몇 이용자의 닉네임과 암호화된 비밀번호가 열람 범위에 있었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-102",
+    "title": "이울플랫폼 이용 기록 DB 침해",
+    "company": "이울플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2025-05-16",
+    "disclosedDate": "2025-05-19",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 847130,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "외부 침입자가 이용 기록 DB에 접근해 이용 내역을 복사했다. 개인 식별 정보는 별도 DB라 영향이 없었다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-103",
+    "title": "단제스튜디오 직원의 고객 목록 무단 반출",
+    "company": "단제스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2025-05-17",
+    "disclosedDate": "2025-05-17",
+    "incidentType": "내부자 유출",
+    "cause": "직원의 고객목록 무단 반출",
+    "affectedCount": 782866,
+    "affectedUnit": "명",
+    "leakedData": [
+      "집 주소",
+      "이메일 주소",
+      "이용 내역",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "한 직원이 퇴사 직전 고객 목록을 무단으로 반출한 사실이 로그 분석에서 드러났다. 집 주소와 이메일 주소, 이용 내역, 위치 기록이 포함된 목록이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-104",
+    "title": "아봄트래블 예약 조회 화면 캐시 오류",
+    "company": "아봄트래블",
+    "category": "여행·숙박",
+    "incidentDate": "2025-06-09",
+    "disclosedDate": "2025-09-07",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 8850,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "집 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": null,
+    "summary": "예약 조회 화면의 캐시 문제로 몇몇 고객에게 다른 고객의 이메일 주소와 집 주소가 보였다. 영향 시간은 짧았고 해당 고객에게 개별 안내했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-105",
+    "title": "예내모바일 고객 DB 침입 사고",
+    "company": "예내모바일",
+    "category": "통신",
+    "incidentDate": "2025-08-19",
+    "disclosedDate": "2025-08-20",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 91800,
+    "affectedUnit": "명",
+    "leakedData": [
+      "휴대전화번호",
+      "이메일 주소",
+      "생년월일",
+      "이름"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "외부 침입으로 고객 DB가 조회돼 이름과 생년월일, 휴대전화번호, 이메일 주소가 유출됐다. 보이스피싱 주의를 안내하는 문자를 발송했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-106",
+    "title": "한결에듀 관리자 계정 도용 사건",
+    "company": "한결에듀",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2025-09-02",
+    "disclosedDate": "2025-09-05",
+    "incidentType": "해킹",
+    "cause": "관리자 계정 도용",
+    "affectedCount": 57900,
+    "affectedUnit": "건",
+    "leakedData": [
+      "생년월일",
+      "이름"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "도용된 관리자 계정으로 수강생 이름과 생년월일이 다수 조회됐다. 관리자 계정 모두에 추가 인증을 적용했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-107",
+    "title": "해내라운지 퇴직자 계정 접속 기록 발견",
+    "company": "해내라운지",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2025-09-10",
+    "disclosedDate": "2025-09-24",
+    "incidentType": "내부자 유출",
+    "cause": "퇴직자 계정 미회수",
+    "affectedCount": 9069,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "정리되지 않은 퇴직자 계정으로 접속한 이력이 확인됐다. 일부 이용자의 이메일 주소와 접속 IP가 조회됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-108",
+    "title": "한제트래블 서버 침입으로 이용 기록 유출",
+    "company": "한제트래블",
+    "category": "여행·숙박",
+    "incidentDate": "2025-09-23",
+    "disclosedDate": "2025-11-22",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 601024,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이용 내역",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "서버에 침입한 외부인이 이용 내역과 접속 IP 기록을 복사해 갔다. 침입에 쓰인 계정은 폐기됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-109",
+    "title": "마제통신 가입자 성별 정보 유출",
+    "company": "마제통신",
+    "category": "통신",
+    "incidentDate": "2025-10-06",
+    "disclosedDate": "2025-10-13",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 4032,
+    "affectedUnit": "명",
+    "leakedData": [
+      "성별"
+    ],
+    "leakedCategories": [
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "외부 침입으로 일부 가입자의 성별 정보가 조회됐다. 다른 항목은 접근 기록이 없다고 확인했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-110",
+    "title": "한누리페이 거래 내역 화면 캐시 오류",
+    "company": "한누리페이",
+    "category": "금융",
+    "incidentDate": "2025-10-16",
+    "disclosedDate": "2025-12-15",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 516319,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "접속 IP",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "거래 내역 화면의 캐시 오류로 다른 이용자의 이메일 주소와 접속 IP, 이용 내역이 표시됐다. 해당 기능은 임시로 중단됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-111",
+    "title": "새나래인터랙티브 악성코드 감염으로 대규모 유출",
+    "company": "새나래인터랙티브",
+    "category": "게임·레저",
+    "incidentDate": "2025-11-10",
+    "disclosedDate": "2025-11-24",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 6760280,
+    "affectedUnit": "명",
+    "leakedData": [
+      "휴대전화번호",
+      "접속 IP",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "개발 환경이 악성코드에 감염돼 이용자 휴대전화번호와 접속 IP, 위치 기록이 대규모로 반출됐다. 전체 이용자에게 이상 접속 주의를 안내했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-112",
+    "title": "새늘리조트 회원 서버 랜섬웨어 감염",
+    "company": "새늘리조트",
+    "category": "여행·숙박",
+    "incidentDate": "2025-11-10",
+    "disclosedDate": "2025-11-11",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 89900,
+    "affectedUnit": "건",
+    "leakedData": [
+      "아이디",
+      "암호화된 비밀번호"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": null,
+    "summary": "회원 서버가 랜섬웨어에 감염돼 회원 아이디와 비밀번호 기록의 보안이 위협받았다. 비밀번호는 암호화돼 있어 변경 권고만 했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-113",
+    "title": "가늬인터랙티브 직원 단말 악성코드 감염",
+    "company": "가늬인터랙티브",
+    "category": "게임·레저",
+    "incidentDate": "2025-12-14",
+    "disclosedDate": "2025-12-14",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 91195,
+    "affectedUnit": "건",
+    "leakedData": [
+      "휴대전화번호",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "직원 단말이 악성코드에 감염돼 이용자 휴대전화번호와 위치 기록이 외부로 전송됐다. 단말을 교체하고 내부망을 재점검했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-114",
+    "title": "해늘플랫폼 회원 DB 침해",
+    "company": "해늘플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2025-12-21",
+    "disclosedDate": "2025-12-28",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 71800,
+    "affectedUnit": "건",
+    "leakedData": [
+      "암호화된 비밀번호",
+      "생년월일",
+      "성별"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보"
+    ],
+    "penalty": null,
+    "summary": "외부 침입으로 회원 DB의 생년월일과 성별, 암호화된 비밀번호 기록이 복사됐다. 영향 회원에게 비밀번호 변경을 요청했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-115",
+    "title": "아제카드 이용 내역 조회 오류",
+    "company": "아제카드",
+    "category": "금융",
+    "incidentDate": "2026-01-22",
+    "disclosedDate": "2026-01-29",
+    "incidentType": "시스템 오류",
+    "cause": "캐시 설정 오류",
+    "affectedCount": 9343,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이메일 주소",
+      "결제 내역",
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "이용 내역 조회 화면의 캐시 오류로 몇몇 고객에게 다른 고객의 결제 내역과 계좌번호가 잠시 보였다. 오류 시간대 접속 고객을 확인했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-116",
+    "title": "보든시 시민정보센터 시민 서비스 API 권한 오류",
+    "company": "보든시 시민정보센터",
+    "category": "공공",
+    "incidentDate": "2026-01-23",
+    "disclosedDate": "2026-02-22",
+    "incidentType": "시스템 오류",
+    "cause": "API 권한 검증 누락",
+    "affectedCount": 886931,
+    "affectedUnit": "건",
+    "leakedData": [
+      "휴대전화번호",
+      "이름",
+      "이용 내역",
+      "접속 IP"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "시민 서비스 API의 권한 검증이 빠져 본인이 아닌 시민의 이름과 휴대전화번호, 이용 내역을 조회할 수 있었다. 권한 검증을 추가해 막았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-117",
+    "title": "도솔모바일 분석용 저장소 공개 설정",
+    "company": "도솔모바일",
+    "category": "통신",
+    "incidentDate": "2026-02-04",
+    "disclosedDate": "2026-03-06",
+    "incidentType": "업무 과실",
+    "cause": "클라우드 저장소 공개 설정 오류",
+    "affectedCount": 76100,
+    "affectedUnit": "명",
+    "leakedData": [
+      "성별",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "분석용 클라우드 저장소가 공개로 설정돼 가입자 성별과 이용 내역이 외부에서 열람 가능했다. 설정은 내부 점검에서 발견돼 즉시 바로잡았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-118",
+    "title": "푸나래클래스 학습 기록 DB 침해",
+    "company": "푸나래클래스",
+    "category": "교육·콘텐츠",
+    "incidentDate": "2026-03-01",
+    "disclosedDate": "2026-03-08",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 67300,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이름",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "외부 침입으로 학습 기록 DB의 이름과 이용 내역이 조회됐다. 침입 흔적이 남은 서버는 재구축했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-119",
+    "title": "루미르플랫폼 시험 서버에 실결제 정보 보관",
+    "company": "루미르플랫폼",
+    "category": "플랫폼·커뮤니티",
+    "incidentDate": "2026-03-26",
+    "disclosedDate": "2026-03-26",
+    "incidentType": "업무 과실",
+    "cause": "테스트 서버 방치",
+    "affectedCount": 20845899,
+    "affectedUnit": "건",
+    "leakedData": [
+      "카드번호 일부",
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "시험 서버에 실제 결제 정보가 복사된 채 방치돼 카드번호 일부와 계좌번호가 대규모로 노출 가능한 상태였다. 서버를 폐기하고 실데이터 사용을 금지했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-120",
+    "title": "도결통신 고객 상담 기록지 분실",
+    "company": "도결통신",
+    "category": "통신",
+    "incidentDate": "2026-04-03",
+    "disclosedDate": "2026-04-06",
+    "incidentType": "기타",
+    "cause": "종이 문서 분실",
+    "affectedCount": 20804520,
+    "affectedUnit": "명",
+    "leakedData": [
+      "이메일 주소",
+      "위치 기록",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "상담 기록지가 이송 중 분실돼 이메일 주소와 위치 기록, 이용 내역이 포함된 대규모의 고객 기록이 사라졌다. 분실 경위를 조사 중이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-121",
+    "title": "보별스튜디오 결제 로그 저장소 공개 오류",
+    "company": "보별스튜디오",
+    "category": "게임·레저",
+    "incidentDate": "2026-04-22",
+    "disclosedDate": "2026-04-23",
+    "incidentType": "업무 과실",
+    "cause": "클라우드 저장소 공개 설정 오류",
+    "affectedCount": 9167924,
+    "affectedUnit": "건",
+    "leakedData": [
+      "닉네임",
+      "계좌번호",
+      "카드번호 일부",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "금융정보",
+      "위치·이용기록"
+    ],
+    "penalty": "과태료 1,500만 원",
+    "summary": "결제 로그 저장소가 공개 상태로 설정돼 닉네임과 계좌번호, 카드번호 일부가 대규모로 노출될 수 있었다. 저장소 접근을 막고 접근 이력을 분석했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-122",
+    "title": "푸름시 도서관운영센터 회원 DB 침입",
+    "company": "푸름시 도서관운영센터",
+    "category": "공공",
+    "incidentDate": "2026-04-27",
+    "disclosedDate": "2026-06-26",
+    "incidentType": "해킹",
+    "cause": "외부 침입으로 DB 접근",
+    "affectedCount": 4870,
+    "affectedUnit": "건",
+    "leakedData": [
+      "결제 내역",
+      "생년월일",
+      "이름"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "신원정보"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "외부 침입으로 도서관 회원 DB의 이름과 생년월일, 결제 내역이 조회됐다. 침입 규모는 소량이다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-123",
+    "title": "모제레저 상담 PC 악성코드 감염",
+    "company": "모제레저",
+    "category": "게임·레저",
+    "incidentDate": "2026-05-01",
+    "disclosedDate": "2026-05-08",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 3530,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "집 주소",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "상담 PC가 악성코드에 감염돼 몇몇 회원의 닉네임과 집 주소, 이용 내역이 외부로 전송됐다. 감염 PC는 격리해 포맷했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-124",
+    "title": "푸늬트래블 영업 직원 태블릿 분실",
+    "company": "푸늬트래블",
+    "category": "여행·숙박",
+    "incidentDate": "2026-05-30",
+    "disclosedDate": "2026-06-29",
+    "incidentType": "기타",
+    "cause": "업무용 기기 분실",
+    "affectedCount": 907234,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "성별",
+      "생년월일",
+      "접속 IP",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "영업 직원의 태블릿이 분실돼 고객 아이디와 생년월일, 이용 내역이 저장된 파일이 함께 사라졌다. 기기는 원격 초기화됐다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-125",
+    "title": "아리온시 관광재단 관리 PC 악성코드 감염",
+    "company": "아리온시 관광재단",
+    "category": "공공",
+    "incidentDate": "2026-06-13",
+    "disclosedDate": "2026-08-12",
+    "incidentType": "해킹",
+    "cause": "악성코드 감염",
+    "affectedCount": 514522,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임"
+    ],
+    "leakedCategories": [
+      "계정정보"
+    ],
+    "penalty": "과태료 1,000만 원",
+    "summary": "행사 운영용 PC가 악성코드에 감염돼 참가자 닉네임 정보가 외부로 전송됐다. 다른 개인정보는 포함되지 않았다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-126",
+    "title": "라샘투어 예약 페이지 취약점 악용",
+    "company": "라샘투어",
+    "category": "여행·숙박",
+    "incidentDate": "2026-06-25",
+    "disclosedDate": "2026-06-26",
+    "incidentType": "해킹",
+    "cause": "웹 취약점 악용",
+    "affectedCount": 313389,
+    "affectedUnit": "건",
+    "leakedData": [
+      "계좌번호",
+      "결제 내역",
+      "성별",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "금융정보",
+      "신원정보",
+      "위치·이용기록"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "예약 페이지의 취약점이 악용돼 계좌번호와 결제 내역, 성별, 이용 내역이 조회됐다. 취약점은 보안 업체의 점검으로 확인했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-127",
+    "title": "해든스테이 예약 확정 메일 오발송",
+    "company": "해든스테이",
+    "category": "여행·숙박",
+    "incidentDate": "2026-06-30",
+    "disclosedDate": "2026-07-07",
+    "incidentType": "업무 과실",
+    "cause": "이메일 오발송",
+    "affectedCount": 5993,
+    "affectedUnit": "건",
+    "leakedData": [
+      "이메일 주소"
+    ],
+    "leakedCategories": [
+      "연락처"
+    ],
+    "penalty": "과태료 600만 원",
+    "summary": "예약 확정 메일이 다른 고객의 이메일 주소로 한 건씩 잘못 발송됐다. 오발송된 메일은 회수 요청을 보냈다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "penalty",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-128",
+    "title": "하미르레저 퇴직자 계정으로 회원 정보 접근",
+    "company": "하미르레저",
+    "category": "게임·레저",
+    "incidentDate": "2026-08-03",
+    "disclosedDate": "2026-08-06",
+    "incidentType": "내부자 유출",
+    "cause": "퇴직자 계정 미회수",
+    "affectedCount": 66800,
+    "affectedUnit": "명",
+    "leakedData": [
+      "아이디",
+      "이메일 주소",
+      "집 주소",
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "퇴직자 계정이 살아 있어 퇴사 후에도 회원 정보 화면에 접근한 기록이 남았다. 아이디와 이메일 주소, 집 주소, 계좌번호가 조회 범위였다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-129",
+    "title": "미늘텔레콤 직원 고객 목록 무단 반출",
+    "company": "미늘텔레콤",
+    "category": "통신",
+    "incidentDate": "2026-08-07",
+    "disclosedDate": "2026-10-06",
+    "incidentType": "내부자 유출",
+    "cause": "직원의 고객목록 무단 반출",
+    "affectedCount": 9918864,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "이용 내역"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "직원이 대규모 가입자의 닉네임과 이용 내역이 담긴 목록을 무단으로 반출한 정황이 드러났다. 해당 직원은 징계 절차에 들어갔다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-130",
+    "title": "예울텔레콤 요금 서버 랜섬웨어",
+    "company": "예울텔레콤",
+    "category": "통신",
+    "incidentDate": "2026-08-12",
+    "disclosedDate": "2026-08-15",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 875832,
+    "affectedUnit": "명",
+    "leakedData": [
+      "계좌번호"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "요금 정산 서버가 랜섬웨어에 감염돼 가입자 계좌번호가 담긴 파일이 암호화됐다. 계좌번호의 외부 반출 여부를 조사했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-131",
+    "title": "마담리조트 회원 서버 랜섬웨어 피해",
+    "company": "마담리조트",
+    "category": "여행·숙박",
+    "incidentDate": "2026-08-21",
+    "disclosedDate": "2026-09-20",
+    "incidentType": "해킹",
+    "cause": "랜섬웨어 감염",
+    "affectedCount": 735844,
+    "affectedUnit": "명",
+    "leakedData": [
+      "닉네임",
+      "집 주소",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "계정정보",
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "회원 서버가 랜섬웨어에 감염돼 닉네임과 집 주소, 위치 기록이 암호화되고 일부는 외부에 올라갔다. 해당 회원에게 개별 연락했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-132",
+    "title": "모리온스테이 퇴직자 계정 악용 결제 기록 조회",
+    "company": "모리온스테이",
+    "category": "여행·숙박",
+    "incidentDate": "2026-09-05",
+    "disclosedDate": "2026-09-06",
+    "incidentType": "내부자 유출",
+    "cause": "퇴직자 계정 미회수",
+    "affectedCount": 880844,
+    "affectedUnit": "명",
+    "leakedData": [
+      "결제 내역"
+    ],
+    "leakedCategories": [
+      "금융정보"
+    ],
+    "penalty": null,
+    "summary": "퇴직자 계정이 회수되지 않아 이를 통해 투숙객 결제 내역이 조회됐다. 계정은 폐쇄됐고 퇴사 절차에 권한 회수를 추가했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
+    }
+  },
+  {
+    "id": "DM-133",
+    "title": "미빛시 시설관리공단 이용자 정보 노출",
+    "company": "미빛시 시설관리공단",
+    "category": "공공",
+    "incidentDate": "2026-09-29",
+    "disclosedDate": "2026-10-29",
+    "incidentType": "해킹",
+    "cause": "웹 취약점 악용",
+    "affectedCount": 133941,
+    "affectedUnit": "건",
+    "leakedData": [
+      "휴대전화번호",
+      "위치 기록"
+    ],
+    "leakedCategories": [
+      "연락처",
+      "위치·이용기록"
+    ],
+    "penalty": null,
+    "summary": "홈페이지 취약점이 악용돼 이용자의 휴대전화번호와 위치 기록이 다수 노출됐다. 공단은 홈페이지를 임시 폐쇄하고 점검했다.",
+    "sources": [],
+    "recommendOrder": null,
+    "meta": {
+      "source": "json",
+      "kind": "dummy",
+      "real": [],
+      "dummy": [
+        "title",
+        "company",
+        "category",
+        "incidentDate",
+        "disclosedDate",
+        "incidentType",
+        "cause",
+        "affectedCount",
+        "affectedUnit",
+        "leakedData",
+        "leakedCategories",
+        "summary"
+      ],
+      "draft": []
     }
   }
 ]

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const card = (a, mode) => {
     const href = P("detail.html") + "?id=" + a.id, w = worry(a);
     if (mode === "mini") return `<a class="mini-card" href="${href}"><span class="chip">${a.category}${w ? " ⚠" : ""}</span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
-    return `<article class="accident-card"><div class="row between"><span class="chip">${a.category}</span>${w ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span><span class="src-slot">${srcChip(a)}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
+    return `<article class="accident-card"><div class="row between"><span>${srcChip(a)} <span class="chip">${a.category}</span></span>${w ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
   };
   const addService = (s) => { s = s.trim(); if (s && !db.services.includes(s)) { db.services.push(s); save(); } };
   const toggleCheck = (id, i, on) => { const c = new Set(db.checks[id] || []); on ? c.add(i) : c.delete(i); db.checks[id] = [...c]; save(); };
@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return !miss.length;
     });
     console.log("빈 값(null) 수:", nulls); console.log("항목 출처:", src);
+    const kinds = {}; data.forEach((p) => { const k = p.meta?.kind || "없음"; kinds[k] = (kinds[k] || 0) + 1; }); console.log("항목 구분(meta.kind):", kinds);
     if (warn.length) warn.forEach((w) => console.warn(w)); else console.log("경고: 없음");
     console.log("화면에 표시할 건수:", valid.length); console.groupEnd();
     return valid;
@@ -83,7 +84,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const BASE_ACTIONS = ["공식 공지·안내 확인", "다른 서비스와 같은 비밀번호 사용 여부 확인"];
   const ACTION_BY = { 계정정보: "비밀번호 변경과 2단계 인증 설정", 금융정보: "결제·카드 이용 내역 확인", 연락처: "스팸·피싱 문자·전화 주의", 신원정보: "명의도용 여부 확인(본인 인증 수단 점검)", "위치·이용기록": "이용 내역에서 낯선 기록 확인" };
   const adapt = (a) => ({ ...a, refDate: a.incidentDate || a.disclosedDate || null, dateText: a.incidentDate || (a.disclosedDate ? a.disclosedDate + " 공개" : "날짜 정보 없음"), countText: fmtCount(a), countShort: fmtCount(a).replace(/ 명$/, ""), actions: [...BASE_ACTIONS, ...a.leakedCategories.map((c) => ACTION_BY[c]).filter(Boolean)] });
-  const srcChip = (a) => `<span class="chip src">${a.meta?.source === "api" ? "API" : "JSON"}</span>`;
+  const isDummy = (a) => a.meta?.kind === "dummy" || /^DM-/.test(a.id);
+  const FLASK = I('<path d="M9 3h6M10 3v6l-5.5 9.2A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.8L14 9V3M7.5 15h9"/>');
+  const srcChip = (a) => isDummy(a) ? `<span class="chip src dummy" role="img" aria-label="가상(더미) 데이터" title="가상(더미) 데이터">${FLASK}</span>` : `<span class="chip src">${a.meta?.source === "api" ? "API" : "JSON"}</span>`;
   const overview = (a) => {
     const fmt = a.affectedCount == null ? null : a.affectedCount.toLocaleString() + a.affectedUnit;
     const rows = [["발생일", a.incidentDate, "incidentDate"], ["공개일", a.disclosedDate, "disclosedDate"], ["피해 규모", fmt, "affectedCount"], ["유출 항목", a.leakedCategories.join(", ") || null, "leakedCategories"], ["유출 상세", a.leakedData.join(", ") || null, "leakedData"], ["유형", a.incidentType, "incidentType"], ["원인", a.cause, "cause"], ["제재", a.penalty, "penalty"]];
@@ -92,11 +95,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 홈 가로 넘김 카드 (회색 이미지 자리)
   // 썸네일: 사고 이미지(a.image) → 기업 로고(a.logo) → 기본 아이콘 순. 로고는 사고 사진으로 오해하지 않도록 "로고" 표시를 붙임
   const DEFAULT_THUMB = I('<path d="M12 3l8 3v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/>');
-  const thumb = (a, rank) => {
+  const thumb = (a) => {
     const img = a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : a.logo ? `<img class="logo" src="${esc(a.logo)}" alt="" loading="lazy" onerror="this.remove()"><span class="thumb-tag">로고</span>` : "";
-    return `<div class="thumb" aria-hidden="true"><span class="thumb-ph">${DEFAULT_THUMB}</span>${img}${rank ? `<span class="rank">${rank}</span>` : ""}</div>`;
+    return `<div class="thumb" aria-hidden="true"><span class="thumb-ph">${DEFAULT_THUMB}</span>${img}<span class="thumb-src">${srcChip(a)}</span></div>`;
   };
-  const rail = (t, list) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a, 0)}</a><span><a class="chip chip-link" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span><span class="src-slot">${srcChip(a)}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
+  const rail = (t, list) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a)}</a><span><a class="chip chip-link" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div></section>`;
   const wireRails = () => {
     v.addEventListener("keydown", (e) => { if (e.target.classList.contains("hscroll") && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { e.preventDefault(); e.target.scrollBy({ left: e.target.clientWidth * 0.8 * (e.key === "ArrowRight" ? 1 : -1), behavior: "smooth" }); } });
   };
@@ -110,16 +113,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const pages = {
     home() {
-      const pop = ACCIDENTS.filter((a) => a.affectedUnit === "명" && a.affectedCount != null).sort((x, y) => y.affectedCount - x.affectedCount).slice(0, 8);
-      const neu = [...ACCIDENTS].sort(byDate).slice(0, 8);
-      const dummy = ACCIDENTS.filter((a) => a.meta?.kind === "dummy" || /^DM-/.test(a.id)).length, real = ACCIDENTS.length - dummy;
+      const realOnly = ACCIDENTS.filter((a) => !isDummy(a));
+      const pop = realOnly.filter((a) => a.affectedUnit === "명" && a.affectedCount != null).sort((x, y) => y.affectedCount - x.affectedCount).slice(0, 8); // 홈 추천 영역은 실제 사고만
+      const neu = [...realOnly].sort(byDate).slice(0, 8);
+      const dummy = ACCIDENTS.filter(isDummy).length, real = ACCIDENTS.length - dummy;
       const dataNote = dummy ? `실제 사고 ${real}건 + 더미(예시) ${dummy}건 · 저장된 JSON 데이터` : `실제 사고 ${real}건 기반 · 저장된 JSON 데이터`;
       const relOf = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
       const relAll = [...new Set(db.services.flatMap(relOf))];
       const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong>${relAll.some(worry) ? ` · <span class="chip warning">⚠ 걱정 항목 포함 ${relAll.filter(worry).length}건</span>` : ""}</p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
-      v.innerHTML = `<form class="search-bar" id="sf" role="search"><div class="input-wrap"><input type="search" name="q" aria-label="유출사고 검색" placeholder="유출사고 검색"><button class="button primary">검색</button></div></form>
-<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" aria-hidden="true"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
-<section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">등록한 서비스와 걱정되는 개인정보를 바탕으로 관련 사고를 확인해요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="서비스명 입력"><button class="button small-button">등록</button></div></form></section>
+      v.innerHTML = `<form class="search-bar" id="sf" role="search"><div class="input-wrap"><input type="search" name="q" aria-label="유출사고 검색" placeholder="사고명·기업명·분야로 검색"><button class="button primary">검색</button></div></form>
+<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" role="img" aria-label="히어로 이미지 영역(준비 중)"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg><span class="hero-box-label">히어로 이미지 영역 · 준비 중</span></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
+<section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">서비스 이름을 저장하면 관련 사고를 계속 확인할 수 있어요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button small-button">등록</button></div></form></section>
 ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       $("sf").onsubmit = (e) => { e.preventDefault(); location.href = P("list.html") + "?q=" + encodeURIComponent(e.target.q.value.trim()); };
       $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
@@ -177,7 +181,7 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
           const best = conds().map(([k, l]) => [k, l, apply(k).length]).filter((x) => x[2] > 0).sort((a, b) => b[2] - a[2])[0];
           none = empty("조건에 맞는 사고가 없습니다.", `<div class="row" style="justify-content:center">${best ? `<button class="button small-button" id="relax" data-k="${best[0]}">${esc(best[1])} 해제 (${best[2]}건)</button>` : ""}<button class="button small-button" id="reset">전체 초기화</button></div>`);
         }
-        $("res").innerHTML = `<div class="row between" style="margin:14px 0 4px"><strong>사고 ${r.length}건${n ? ` · 조건 ${n}개 적용` : ""}</strong><span class="muted">${S.sort === "size" ? "피해 규모순(명 단위만)" : "최신순"}</span></div>` + (r.length ? r.map((a) => card(a, "list")).join("") : none);
+        $("res").innerHTML = `<div class="row between" style="margin:14px 0 4px"><strong>사고 ${r.length}건${n ? ` · 조건 ${n}개 적용` : ""}</strong><span class="muted">${S.sort === "size" ? "피해 규모순(명 단위만)" : "최신순"}</span></div>` + (r.some(isDummy) ? `<p class="notice" style="margin:0 0 10px">결과에 가상(더미) 데이터가 포함돼 있어요. 플라스크 아이콘이 붙은 사고는 실제 사건이 아닌 실습용 데이터예요.</p>` : "") + (r.length ? r.map((a) => card(a, "list")).join("") : none);
         const u = new URLSearchParams(); if (S.search) u.set("q", S.search); if (S.categories.length) u.set("cat", S.categories.join(","));
         history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : "")); upd();
       };
@@ -212,7 +216,7 @@ ${rail("최신 사고", neu)}${rail("피해 규모가 큰 사고", pop)}`;
       v.innerHTML = `<h1>${a.title}</h1><div class="row"><span class="chip">${a.category}</span>${srcChip(a)}${worry(a) ? '<span class="chip warning">⚠ 걱정 항목</span>' : ""}</div>
 ${overview(a)}
 <section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}</p></section>
-<section class="panel"><h2>출처</h2>${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
+<section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
 <section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}</section>
 <div class="row"><button class="button primary" id="favb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
       const label = () => ($("favb").textContent = fav() ? "★ 관심 해제" : "☆ 관심 저장"); label();

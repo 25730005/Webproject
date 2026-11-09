@@ -150,3 +150,9 @@ details.filter-group summary { cursor:pointer; margin-bottom:8px; font-size:12px
 .my-entry .button { margin-bottom:10px; }
 .my-entry .input-wrap { margin-top:10px; }
 .my-entry input[type=text] { min-height:38px; font-size:14px; }
+
+.thumb-src { position:absolute; left:5px; top:4px; z-index:1; }
+.hero-intro .hero-box { position:relative; }
+.hero-box-label { position:absolute; inset:0; display:grid; place-items:center; font-size:12px; font-weight:600; color:#6b7280; text-shadow:0 0 4px #e5e7eb,0 0 4px #e5e7eb; }
+.chip.src.dummy { padding:1px 5px; color:#666; }
+.chip.src.dummy .ic { width:12px; height:12px; }
