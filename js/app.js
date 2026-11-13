@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const card = (a, mode) => {
     const href = P("detail.html") + "?id=" + a.id;
     if (mode === "mini") return `<a class="mini-card" href="${href}"><span>${srcChip(a)} <span class="chip tag">${a.category}</span></span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
-    return `<article class="accident-card"><div class="row between"><span>${srcChip(a)} <span class="chip tag">${a.category}</span></span></div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</article>`;
+    return `<article class="accident-card has-thumb"><a class="card-thumb" href="${href}" tabindex="-1">${thumb(a)}</a><div class="card-body"><div class="row between"><span class="chip tag">${a.category}</span></div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</div></article>`;
   };
   const addService = (s) => { s = s.trim(); if (s && !db.services.includes(s)) { db.services.push(s); save(); } };
   const toggleCheck = (id, i, on) => { const c = new Set(db.checks[id] || []); on ? c.add(i) : c.delete(i); db.checks[id] = [...c]; save(); };
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const CATEGORY = ["통신", "금융", "쇼핑·유통", "여행·숙박", "플랫폼·커뮤니티", "게임·레저", "공공", "교육·콘텐츠", "기타"];
   const REQUIRED = ["id", "title", "company", "category", "incidentType", "summary"];
   const ALLOWED = { category: CATEGORY, incidentType: ["해킹", "업무 과실", "시스템 오류", "내부자 유출", "기타"] };
-  const TYPES = { id: "string", title: "string", company: "string", category: "string", incidentType: "string", summary: "string", incidentDate: "string", disclosedDate: "string", affectedCount: "number", affectedUnit: "string" };
+  const TYPES = { id: "string", title: "string", company: "string", category: "string", incidentType: "string", summary: "string", incidentDate: "string", disclosedDate: "string", affectedCount: "number", affectedUnit: "string", thumbnail: "string" };
   const blank = (v) => v === null || v === undefined || v === "";
   function checkData(data, source) {
     console.group("[데이터 점검]", source);
@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
       (p.leakedCategories || []).forEach((c) => { if (!ITEMS.includes(c)) warn.push(`허용값 밖: id ${p.id} leakedCategories = "${c}"`); });
       if ((p.affectedCount == null) !== (p.affectedUnit == null)) warn.push(`규모와 단위가 짝이 아님: id ${p.id}`);
+      if (p.thumbnail && !/^asset\/.+\.(webp|png|jpe?g)$/i.test(p.thumbnail)) warn.push(`이미지 경로 형식: id ${p.id} thumbnail = "${p.thumbnail}"`);
     });
     const valid = data.filter((p) => {
       const miss = REQUIRED.filter((k) => blank(p[k]));
@@ -96,11 +97,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     return `<section class="panel"><h2>개요</h2><p class="small source-line">출처 ${srcChip(a)}</p><div class="key-value">${rows.map(([k, v]) => `<span>${k}</span><span>${v ? esc(v) : "정보 없음"}</span>`).join("")}</div></section>`;
   };
   // 홈 가로 넘김 카드 (회색 이미지 자리)
-  // 썸네일: 사고 이미지(a.image) → 기업 로고(a.logo) → 기본 아이콘 순. 로고는 사고 사진으로 오해하지 않도록 "로고" 표시를 붙임
+  // 썸네일: a.thumbnail(이미지 경로)이 있으면 이미지, 없거나 불러오지 못하면 회색 칸+기본 아이콘. 칩은 썸네일 왼쪽 위
   const DEFAULT_THUMB = I('<path d="M12 3l8 3v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/>');
   const thumb = (a) => {
-    const img = a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy" onerror="this.remove()">` : a.logo ? `<img class="logo" src="${esc(a.logo)}" alt="" loading="lazy" onerror="this.remove()"><span class="thumb-tag">로고</span>` : "";
-    return `<div class="thumb" aria-hidden="true"><span class="thumb-ph">${DEFAULT_THUMB}</span>${img}<span class="thumb-src">${srcChip(a)}</span></div>`;
+    const alt = isDummy(a) ? `${a.company} 가상 로고 (AI 생성 실습용)` : `${a.company} 이미지`;
+    const img = a.thumbnail ? `<img class="logo" src="${esc(base + a.thumbnail)}" alt="${esc(alt)}" loading="lazy" onerror="this.remove()">` : "";
+    return `<div class="thumb"><span class="thumb-ph" aria-hidden="true">${DEFAULT_THUMB}</span>${img}<span class="thumb-src">${srcChip(a)}</span></div>`;
   };
   const railCtrl = `<div class="rail-ctrl" role="group" aria-label="최신 사고 이동"><button type="button" class="rc-btn" data-rc="prev" aria-label="이전 사고">${ICON.back}</button><button type="button" class="rc-btn" data-rc="toggle" aria-label="자동 이동 일시정지">${ICON.pause}</button><button type="button" class="rc-btn" data-rc="next" aria-label="다음 사고">${ICON.next}</button></div>`;
   const rail = (t, list, auto) => `<section class="rail"><div class="section-heading"><h2>${t}</h2></div><div class="hscroll${auto ? " auto" : ""}" tabindex="0" aria-label="${t}">${list.length ? list.map((a) => `<div class="h-card" data-id="${a.id}"><a class="h-link" href="${P("detail.html")}?id=${a.id}" aria-label="${esc(a.title)} 상세 보기">${thumb(a)}</a><span><a class="chip chip-link tag" href="${P("list.html")}?cat=${encodeURIComponent(a.category)}" aria-label="${esc(a.category)} 사고 목록 보기">${a.category}</a></span><a class="h-link h-text" href="${P("detail.html")}?id=${a.id}"><strong>${esc(a.title)}</strong><span class="sub">${esc(a.company)} · ${a.dateText}</span><span class="sub">${a.countShort}</span></a></div>`).join("") : '<p class="muted">표시할 사고가 없습니다.</p>'}</div>${auto && list.length > 1 ? railCtrl : ""}</section>`;
@@ -227,7 +229,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
       $("sort").onchange = (e) => { S.sort = e.target.value; draw(); };
       $("cmpbtn").onclick = (e) => { if (db.cmp.length < 2) e.preventDefault(); };
       $("res").onclick = (e) => {
-        if (e.target.closest("a.card-title")) { try { sessionStorage.setItem("lb-list-scroll", JSON.stringify({ q: location.search, y: window.scrollY })); } catch (err) {} } // 상세에서 돌아올 때 스크롤 위치 복원용
+        if (e.target.closest("a.card-title, a.card-thumb")) { try { sessionStorage.setItem("lb-list-scroll", JSON.stringify({ q: location.search, y: window.scrollY })); } catch (err) {} } // 상세에서 돌아올 때 스크롤 위치 복원용
         if (e.target.id === "relax") { clear(e.target.dataset.k); draw(); }
         if (e.target.id === "reset") { ["search", "categories", "types", "leaked", "mine"].forEach(clear); S.sort = "latest"; draw(); }
       };
@@ -250,7 +252,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
       const sim = ACCIDENTS.filter((x) => x.id !== a.id && isDummy(x) === isDummy(a) && x.category === a.category)
         .map((x) => [x, (x.incidentType === a.incidentType ? 2 : 0) + x.leakedCategories.filter((c) => a.leakedCategories.includes(c)).length])
         .sort((m, n) => n[1] - m[1] || byDate(m[0], n[0])).slice(0, 3).map((x) => x[0]);
-      v.innerHTML = `<div class="title-row"><h1>${a.title}</h1><button type="button" class="share-btn" id="shareb" aria-label="이 사고 주소 공유하기">${ICON.share}</button></div><div class="row"><span class="chip tag">${a.category}</span>${srcChip(a)}</div>
+      v.innerHTML = `${a.thumbnail ? `<div class="detail-thumb">${thumb(a)}</div>` : ""}<div class="title-row"><h1>${a.title}</h1><button type="button" class="share-btn" id="shareb" aria-label="이 사고 주소 공유하기">${ICON.share}</button></div><div class="row"><span class="chip tag">${a.category}</span>${srcChip(a)}</div>
 ${overview(a)}
 <section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}</p></section>
 <section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
