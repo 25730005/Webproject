@@ -38,7 +38,7 @@
       }
     ],
     "recommendOrder": 1,
-    "thumbnail": null,
+    "thumbnail": "asset/company/01_sk-telecom.png",
     "meta": {
       "source": "json",
       "real": [
@@ -52,7 +52,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -111,7 +112,7 @@
       }
     ],
     "recommendOrder": 2,
-    "thumbnail": null,
+    "thumbnail": "asset/company/02_coupang.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -124,7 +125,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -174,7 +176,7 @@
       }
     ],
     "recommendOrder": 3,
-    "thumbnail": null,
+    "thumbnail": "asset/company/03_kt.png",
     "meta": {
       "source": "json",
       "real": [
@@ -187,7 +189,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -301,7 +304,7 @@
       }
     ],
     "recommendOrder": 5,
-    "thumbnail": null,
+    "thumbnail": "asset/company/04_gs-retail.png",
     "meta": {
       "source": "json",
       "real": [
@@ -314,7 +317,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -357,7 +361,7 @@
       }
     ],
     "recommendOrder": 6,
-    "thumbnail": null,
+    "thumbnail": "asset/company/05_yes24.png",
     "meta": {
       "source": "json",
       "real": [
@@ -367,7 +371,8 @@
         "disclosedDate",
         "incidentType",
         "cause",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -410,7 +415,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/06_kakao.png",
     "meta": {
       "source": "json",
       "real": [
@@ -419,7 +424,8 @@
         "incidentDate",
         "cause",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -476,7 +482,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/08_golfzon.png",
     "meta": {
       "source": "json",
       "real": [
@@ -489,7 +495,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -533,7 +540,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/09_modetour.png",
     "meta": {
       "source": "json",
       "real": [
@@ -545,7 +552,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -658,7 +666,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/10_lg-uplus.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -672,7 +680,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -730,7 +739,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/11_kcss-social-welfare.png",
     "meta": {
       "source": "json",
       "real": [
@@ -743,7 +752,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -779,7 +789,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/12_keis-worknet.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -791,7 +801,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -827,7 +838,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/13_kosaf.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -839,7 +850,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -875,7 +887,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/14_sk-stoa.png",
     "meta": {
       "source": "json",
       "real": [
@@ -887,7 +899,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -923,7 +936,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/15_donghaeng-lottery.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -935,7 +948,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -977,7 +991,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/02_coupang.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -990,7 +1004,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1026,7 +1041,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/16_millie.png",
     "meta": {
       "source": "json",
       "real": [
@@ -1037,7 +1052,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1073,7 +1089,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/17_weolbu.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -1083,7 +1099,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1529,7 +1546,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/18_verygoodtour.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -1538,7 +1555,8 @@
         "incidentType",
         "cause",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1578,7 +1596,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/19_hanwha-hotels-resorts.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -1590,7 +1608,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1647,7 +1666,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/20_interpark.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -1659,7 +1678,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1712,7 +1732,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/26_sk-communications.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -1724,7 +1744,8 @@
         "affectedCount",
         "affectedUnit",
         "leakedData",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1775,7 +1796,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/21_nexon.png",
     "meta": {
       "source": "json",
       "real": [
@@ -1788,7 +1809,8 @@
         "affectedCount",
         "affectedUnit",
         "leakedData",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1840,7 +1862,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/22_kb-kookmin-card.png",
     "meta": {
       "source": "json",
       "real": [
@@ -1854,7 +1876,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -1972,7 +1995,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/23_nh-nonghyup-card.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -1986,7 +2009,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2096,7 +2120,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/24_hanatour.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2108,7 +2132,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2156,7 +2181,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/25_yeogi-eottae.png",
     "meta": {
       "source": "json",
       "real": [
@@ -2168,7 +2193,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2269,7 +2295,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/27_louis-vuitton-korea.png",
     "meta": {
       "source": "json",
       "real": [
@@ -2281,7 +2307,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2317,7 +2344,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/28_christian-dior-couture-korea.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2329,7 +2356,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2365,7 +2393,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/29_tiffany-korea.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2377,7 +2405,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2426,7 +2455,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/30_tving.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2440,7 +2469,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2536,7 +2566,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/31_incruit.png",
     "meta": {
       "source": "json",
       "real": [
@@ -2548,7 +2578,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2584,7 +2615,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/32_nrf.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2595,7 +2626,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2639,7 +2671,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/07_tmoney.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2653,7 +2685,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2689,14 +2722,15 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/33_bithumb.png",
     "meta": {
       "source": "json",
       "real": [
         "title",
         "company",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2762,7 +2796,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/34_gangnamunni.png",
     "meta": {
       "source": "json",
       "real": [
@@ -2775,7 +2809,8 @@
         "affectedCount",
         "affectedUnit",
         "leakedData",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2878,7 +2913,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/35_rda.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2889,7 +2924,8 @@
         "cause",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -2936,7 +2972,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/36_misotech.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -2947,7 +2983,8 @@
         "cause",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3081,7 +3118,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/37_daekyo.png",
     "meta": {
       "source": "json",
       "real": [
@@ -3094,7 +3131,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3253,7 +3291,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/38_jbnu.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -3266,7 +3304,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3306,7 +3345,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/39_ewha.png",
     "meta": {
       "source": "json",
       "real": [
@@ -3319,7 +3358,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3427,7 +3467,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/40_topik-edu-center.png",
     "meta": {
       "source": "json",
       "real": [
@@ -3440,7 +3480,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3476,7 +3517,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/20_interpark.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -3487,7 +3528,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3523,7 +3565,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/41_reebonz.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -3534,7 +3576,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3570,7 +3613,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/42_paxnet.png",
     "meta": {
       "source": "json",
       "real": [
@@ -3581,7 +3624,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3617,7 +3661,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/43_dreamus-company.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -3626,7 +3670,8 @@
         "incidentType",
         "cause",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3662,7 +3707,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/44_gosia-academy.png",
     "meta": {
       "source": "json",
       "real": [
@@ -3671,7 +3716,8 @@
         "incidentType",
         "cause",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3711,7 +3757,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/45_musinsa.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -3721,7 +3767,8 @@
         "cause",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3849,7 +3896,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/46_speedauction.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -3858,7 +3905,8 @@
         "incidentType",
         "cause",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -3898,7 +3946,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/47_hallym-polytechnic.png",
     "meta": {
       "source": "json",
       "real": [
@@ -3908,7 +3956,8 @@
         "cause",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -4127,7 +4176,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/51_duo.png",
     "meta": {
       "source": "json",
       "real": [
@@ -4140,7 +4189,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -4183,7 +4233,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/52_geumneung-park.png",
     "meta": {
       "source": "json",
       "real": [
@@ -4196,7 +4246,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -4956,7 +5007,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/59_asiana-airlines.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -4967,7 +5018,8 @@
         "cause",
         "affectedCount",
         "affectedUnit",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -5003,7 +5055,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/57_skhynix.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -5014,7 +5066,8 @@
         "cause",
         "affectedCount",
         "affectedUnit",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -5416,7 +5469,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/54_mcdonalds.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -5428,7 +5481,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -5691,7 +5745,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/56_jejuair.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -5701,7 +5755,8 @@
         "incidentType",
         "cause",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -5790,7 +5845,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/48_locknlock.png",
     "meta": {
       "source": "json",
       "real": [
@@ -5801,7 +5856,8 @@
         "cause",
         "affectedCount",
         "affectedUnit",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -5837,7 +5893,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/49_ubase.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -5848,7 +5904,8 @@
         "cause",
         "affectedCount",
         "affectedUnit",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -5884,7 +5941,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/50_sunphoto.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -5895,7 +5952,8 @@
         "cause",
         "affectedCount",
         "affectedUnit",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -6213,7 +6271,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/58_kyobo.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -6224,7 +6282,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -6307,7 +6366,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/60_kyochonfnb.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -6318,7 +6377,8 @@
         "affectedCount",
         "affectedUnit",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -6751,7 +6811,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/55_hyundai-motor.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -6760,7 +6820,8 @@
         "incidentType",
         "cause",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -7862,7 +7923,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/31_incruit.png",
     "meta": {
       "source": "json",
       "real": [
@@ -7875,7 +7936,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [
@@ -8107,7 +8169,7 @@
       }
     ],
     "recommendOrder": null,
-    "thumbnail": null,
+    "thumbnail": "asset/company/53_cj-enm.jpg",
     "meta": {
       "source": "json",
       "real": [
@@ -8120,7 +8182,8 @@
         "affectedUnit",
         "leakedData",
         "penalty",
-        "sources"
+        "sources",
+        "thumbnail"
       ],
       "dummy": [],
       "draft": [

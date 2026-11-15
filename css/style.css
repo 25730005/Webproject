@@ -144,7 +144,8 @@ details.filter-group summary { cursor:pointer; margin-bottom:8px; font-size:12px
 .hero-intro .hero-box { aspect-ratio:4/1; margin:0 0 14px; }
 .hero-kicker { margin:0 0 6px; font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.02em; }
 .hero-intro h1 { margin:0 0 8px; font-size:22px; line-height:1.35; }
-.hero-intro .lead { margin:0 0 6px; font-size:14px; line-height:1.55; }
+.hero-intro .lead { margin:0 0 6px; font-size:14px; line-height:1.55; text-wrap:balance; }
+.hero-intro p, .hero-intro h1 { word-break:keep-all; }
 .my-entry h2 { margin:0 0 4px; font-size:17px; }
 .my-entry .my-sum { margin:10px 0 8px; }
 .my-entry .button { margin-bottom:10px; }
@@ -184,6 +185,10 @@ details.filter-group summary { cursor:pointer; margin-bottom:8px; font-size:12px
 .accident-card.has-thumb > .card-body { display:grid; gap:7px; min-width:0; }
 .card-thumb { display:block; }
 .card-thumb .thumb { width:112px; height:112px; }
-.detail-thumb .thumb { height:140px; margin-bottom:10px; }
+.detail-thumb .thumb { height:120px; margin-bottom:10px; }
+.detail-thumb .thumb img.logo { box-sizing:border-box; padding:14px 20px; }
+.help-link { margin:10px 0 0; word-break:keep-all; }
+.title-row h1 { word-break:keep-all; overflow-wrap:break-word; }
+.my-entry > p.small { word-break:keep-all; text-wrap:balance; }
 @media (max-width:360px) { .accident-card.has-thumb { grid-template-columns:96px minmax(0,1fr); } .card-thumb .thumb { width:96px; height:96px; } }
 .card-thumb .thumb, .detail-thumb .thumb { border:1px solid #e3e3df; }

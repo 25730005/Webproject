@@ -93,14 +93,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const srcChip = (a) => isDummy(a) ? `<span class="chip src dummy" role="img" aria-label="가상(더미) 데이터" title="가상(더미) 데이터">${FLASK}</span>` : `<span class="chip src">${a.meta?.source === "api" ? "API" : "JSON"}</span>`;
   const overview = (a) => {
     const fmt = a.affectedCount == null ? null : a.affectedCount.toLocaleString() + a.affectedUnit;
-    const rows = [["발생일", a.incidentDate, "incidentDate"], ["공개일", a.disclosedDate, "disclosedDate"], ["피해 규모", fmt, "affectedCount"], ["유출 항목", a.leakedCategories.join(", ") || null, "leakedCategories"], ["유출 상세", a.leakedData.join(", ") || null, "leakedData"], ["유형", a.incidentType, "incidentType"], ["원인", a.cause, "cause"], ["제재", a.penalty, "penalty"]];
+    const rows = [["기업·기관", a.company, "company"], ["발생일", a.incidentDate, "incidentDate"], ["공개일", a.disclosedDate, "disclosedDate"], ["피해 규모", fmt, "affectedCount"], ["유출 항목", a.leakedCategories.join(", ") || null, "leakedCategories"], ["유출 상세", a.leakedData.join(", ") || null, "leakedData"], ["유형", a.incidentType, "incidentType"], ["원인", a.cause, "cause"], ["제재", a.penalty, "penalty"]];
     return `<section class="panel"><h2>개요</h2><p class="small source-line">출처 ${srcChip(a)}</p><div class="key-value">${rows.map(([k, v]) => `<span>${k}</span><span>${v ? esc(v) : "정보 없음"}</span>`).join("")}</div></section>`;
   };
   // 홈 가로 넘김 카드 (회색 이미지 자리)
   // 썸네일: a.thumbnail(이미지 경로)이 있으면 이미지, 없거나 불러오지 못하면 회색 칸+기본 아이콘. 칩은 썸네일 왼쪽 위
   const DEFAULT_THUMB = I('<path d="M12 3l8 3v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/>');
   const thumb = (a) => {
-    const alt = isDummy(a) ? `${a.company} 가상 로고 (AI 생성 실습용)` : `${a.company} 이미지`;
+    const alt = isDummy(a) ? `${a.company} 가상 로고 (AI 생성 실습용)` : `${a.company} 로고`;
     const img = a.thumbnail ? `<img class="logo" src="${esc(base + a.thumbnail)}" alt="${esc(alt)}" loading="lazy" onerror="this.remove()">` : "";
     return `<div class="thumb"><span class="thumb-ph" aria-hidden="true">${DEFAULT_THUMB}</span>${img}<span class="thumb-src">${srcChip(a)}</span></div>`;
   };
@@ -256,7 +256,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
 ${overview(a)}
 <section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}</p></section>
 <section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
-<section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}</section>
+<section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}<p class="small help-link">피해가 의심되면 <a href="${P("help.html")}">신고·상담 안내</a>를 확인해 보세요.</p></section>
 ${sim.length ? `<section class="panel"><h2>비슷한 사고</h2><p class="small muted">같은 분야에서 유형·유출 항목이 비슷한 사고예요.</p><div class="similar">${sim.map((x) => card(x, "mini")).join("")}</div></section>` : ""}
 <div class="row"><button class="button primary" id="favb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
       const label = () => { $("favb").textContent = fav() ? "★ 관심 해제" : "☆ 관심 저장"; $("favb").setAttribute("aria-pressed", fav()); }; label();
