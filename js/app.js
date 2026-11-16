@@ -18,13 +18,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ── 공통 헤더·하단 탭 ──
   const header = $("app-header");
-  if (body.dataset.title && body.dataset.back !== "0") {
+  // 헤더는 모든 페이지에서 같은 모양(로고 + 부제)으로 고정. 화면 제목·뒤로가기는 헤더 아래 줄에 둠
+  header.innerHTML = `<a class="brand" href="${base}index.html"><strong>LeakBase</strong><span>개인정보·보안 유출 사고 아카이브</span></a>`;
+  if (body.dataset.title) {
+    const showBack = body.dataset.back !== "0";
     const isDetail = body.dataset.page === "detail"; // 상세는 직접 주소로 들어와도 목록으로 돌아가게 함
-    header.innerHTML = `<a class="icon-btn" id="back" href="${base}${isDetail ? "pages/list.html" : "index.html"}" aria-label="${isDetail ? "목록으로 돌아가기" : "이전 화면으로 돌아가기"}">${ICON.back}</a><strong class="page-title">${body.dataset.title}</strong>`;
+    const bar = document.createElement("div");
+    bar.className = "page-head"; bar.id = "page-head";
+    bar.innerHTML = (showBack ? `<a class="icon-btn" id="back" href="${base}${isDetail ? "pages/list.html" : "index.html"}" aria-label="${isDetail ? "목록으로 돌아가기" : "이전 화면으로 돌아가기"}">${ICON.back}</a>` : "") + `<strong class="page-title">${body.dataset.title}</strong>`;
+    header.after(bar);
     // 같은 사이트에서 들어왔을 때만 브라우저 뒤로가기(목록 조건·스크롤 유지), 아니면 위 주소로 이동
-    $("back").addEventListener("click", (e) => { if (history.length > 1 && document.referrer.startsWith(location.origin)) { e.preventDefault(); history.back(); } });
-  } else if (body.dataset.title) header.innerHTML = `<strong class="page-title">${body.dataset.title}</strong>`;
-  else header.innerHTML = `<a class="brand" href="${base}index.html"><strong>LeakBase</strong><span>개인정보·보안 유출 사고 아카이브</span></a>`;
+    if (showBack) $("back").addEventListener("click", (e) => { if (history.length > 1 && document.referrer.startsWith(location.origin)) { e.preventDefault(); history.back(); } });
+  }
   const tabs = [["home", "index.html", "홈", ICON.home], ["list", "pages/list.html", "사고 목록", ICON.list], ["help", "pages/help.html", "신고·상담처", ICON.phone], ["my", "pages/my.html", "내 정보", ICON.my]];
   $("app-nav").innerHTML = tabs.map(([k, h, l, ic]) => `<a href="${base}${h}"${body.dataset.nav === k ? ' aria-current="page"' : ""}>${ic}<span>${l}</span></a>`).join("");
 
@@ -151,16 +156,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       const pop = realOnly.filter((a) => a.affectedUnit === "명" && a.affectedCount != null).sort((x, y) => y.affectedCount - x.affectedCount).slice(0, 8); // 홈 추천 영역은 실제 사고만
       const neu = [...realOnly].sort(byDate).slice(0, 8);
       const dummy = ACCIDENTS.filter(isDummy).length, real = ACCIDENTS.length - dummy;
-      const dataNote = dummy ? `실제 사고 ${real}건 · 더미(예시) ${dummy}건` : `실제 사고 ${real}건`;
+      const dataNote = dummy ? `실제 사고 ${real}건 + 더미(예시) ${dummy}건 · 저장된 JSON 데이터` : `실제 사고 ${real}건 기반 · 저장된 JSON 데이터`;
       const relOf = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
       const relAll = [...new Set(db.services.flatMap(relOf))];
-      const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong><a class="button small-button" href="${P("my.html")}">확인하기 →</a></p>` : "";
-      v.innerHTML = `<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero-bg" aria-hidden="true"></div><div class="hero-body"><h1>내 서비스도<br><em>유출 사고</em>에 해당될까?</h1><p class="lead">서비스 이름으로 사고를 검색하고, 등록해 두면 관련 사고를 계속 확인할 수 있어요.</p><form class="hero-form" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="서비스 이름" placeholder="서비스 이름 (예: 쿠팡)" autocomplete="off"></div><div class="hero-actions"><button type="submit" class="button primary">사고 검색</button><button type="button" class="button" id="regb">내 서비스 등록</button></div></form>${mySummary}</div></section>
-<p class="muted data-note">${dataNote}</p>
+      const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong></p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
+      v.innerHTML = `<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" role="img" aria-label="히어로 이미지 영역(준비 중)"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg><span class="hero-box-label">히어로 이미지 영역 · 준비 중</span></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
+<section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">서비스 이름을 저장하면 관련 사고를 계속 확인할 수 있어요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button small-button">등록</button></div></form></section>
 ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
-      // 검색: 입력한 이름으로 사고 목록으로 이동 / 등록: 내 서비스에 저장하고 내 정보로 이동
-      $("rf").onsubmit = (e) => { e.preventDefault(); const q = e.target.s.value.trim(); location.href = P("list.html") + (q ? "?q=" + encodeURIComponent(q) : ""); };
-      $("regb").onclick = () => { const f = $("rf"), q = f.s.value.trim(); if (!q) { notify("등록할 서비스 이름을 입력해 주세요"); f.s.focus(); return; } addService(q); location.href = P("my.html"); };
+      $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
       wireRails();
     },
 
