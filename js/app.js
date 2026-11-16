@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     $("back").addEventListener("click", (e) => { if (history.length > 1 && document.referrer.startsWith(location.origin)) { e.preventDefault(); history.back(); } });
   } else if (body.dataset.title) header.innerHTML = `<strong class="page-title">${body.dataset.title}</strong>`;
   else header.innerHTML = `<a class="brand" href="${base}index.html"><strong>LeakBase</strong><span>개인정보·보안 유출 사고 아카이브</span></a>`;
-  const tabs = [["list", "pages/list.html", "사고 목록", ICON.list], ["home", "index.html", "홈", ICON.home], ["my", "pages/my.html", "내 정보", ICON.my], ["help", "pages/help.html", "신고·상담", ICON.phone]];
+  const tabs = [["home", "index.html", "홈", ICON.home], ["list", "pages/list.html", "사고 목록", ICON.list], ["help", "pages/help.html", "신고·상담처", ICON.phone], ["my", "pages/my.html", "내 정보", ICON.my]];
   $("app-nav").innerHTML = tabs.map(([k, h, l, ic]) => `<a href="${base}${h}"${body.dataset.nav === k ? ' aria-current="page"' : ""}>${ic}<span>${l}</span></a>`).join("");
 
   // ── 카드 ──
@@ -151,14 +151,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       const pop = realOnly.filter((a) => a.affectedUnit === "명" && a.affectedCount != null).sort((x, y) => y.affectedCount - x.affectedCount).slice(0, 8); // 홈 추천 영역은 실제 사고만
       const neu = [...realOnly].sort(byDate).slice(0, 8);
       const dummy = ACCIDENTS.filter(isDummy).length, real = ACCIDENTS.length - dummy;
-      const dataNote = dummy ? `실제 사고 ${real}건 + 더미(예시) ${dummy}건 · 저장된 JSON 데이터` : `실제 사고 ${real}건 기반 · 저장된 JSON 데이터`;
+      const dataNote = dummy ? `실제 사고 ${real}건 · 더미(예시) ${dummy}건` : `실제 사고 ${real}건`;
       const relOf = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
       const relAll = [...new Set(db.services.flatMap(relOf))];
-      const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong></p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
-      v.innerHTML = `<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" role="img" aria-label="히어로 이미지 영역(준비 중)"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg><span class="hero-box-label">히어로 이미지 영역 · 준비 중</span></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
-<section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">서비스 이름을 저장하면 관련 사고를 계속 확인할 수 있어요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button small-button">등록</button></div></form></section>
+      const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong><a class="button small-button" href="${P("my.html")}">확인하기 →</a></p>` : "";
+      v.innerHTML = `<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero-bg" aria-hidden="true"></div><div class="hero-body"><h1>내 서비스도<br><em>유출 사고</em>에 해당될까?</h1><p class="lead">서비스 이름으로 사고를 검색하고, 등록해 두면 관련 사고를 계속 확인할 수 있어요.</p><form class="hero-form" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="서비스 이름" placeholder="서비스 이름 (예: 쿠팡)" autocomplete="off"></div><div class="hero-actions"><button type="submit" class="button primary">사고 검색</button><button type="button" class="button" id="regb">내 서비스 등록</button></div></form>${mySummary}</div></section>
+<p class="muted data-note">${dataNote}</p>
 ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
-      $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
+      // 검색: 입력한 이름으로 사고 목록으로 이동 / 등록: 내 서비스에 저장하고 내 정보로 이동
+      $("rf").onsubmit = (e) => { e.preventDefault(); const q = e.target.s.value.trim(); location.href = P("list.html") + (q ? "?q=" + encodeURIComponent(q) : ""); };
+      $("regb").onclick = () => { const f = $("rf"), q = f.s.value.trim(); if (!q) { notify("등록할 서비스 이름을 입력해 주세요"); f.s.focus(); return; } addService(q); location.href = P("my.html"); };
       wireRails();
     },
 
@@ -189,11 +191,13 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
       };
       const chipRow = (id, list, key) => `<div class="chips" id="${id}">${list.map((c) => `<button type="button" class="chip" data-k="${key}" data-c="${c}" aria-pressed="false">${c}</button>`).join("")}</div>`;
       v.innerHTML = `<form class="panel" id="lf"><div class="input-wrap"><input type="search" id="q" value="${esc(S.search)}" placeholder="서비스명 또는 사고명" aria-label="서비스명 또는 사고명"><button class="button primary">검색</button></div>
+<div class="filter-group row sortbar" role="group" aria-label="정렬"><span class="filter-label">정렬</span><button type="button" class="chip" data-sort="latest" aria-pressed="false">최신순</button><button type="button" class="chip" data-sort="size" aria-pressed="false">피해 규모순</button></div>
+<details class="filter-group filters" id="filters"><summary id="fsum">필터 (분야 · 유출 항목 · 유형)</summary>
 <div class="filter-group"><span class="filter-label">분야</span><div class="chips" id="cats"><button type="button" class="chip" data-k="categories" data-c="" aria-pressed="false">전체</button>${CATS.map((c) => `<button type="button" class="chip" data-k="categories" data-c="${c}" aria-pressed="false">${c}</button>`).join("")}</div></div>
 <div class="filter-group"><span class="filter-label">유출 항목</span>${chipRow("leak", ITEMS, "leaked")}</div>
-<details class="filter-group" id="more"><summary>상세 필터 (유형)</summary>${chipRow("types", TYPES, "types")}</details>
-<div class="filter-group row between"><button type="button" class="chip" id="mine" aria-pressed="false">내 서비스만</button><label class="sort-label">정렬 <select id="sort" aria-label="정렬"><option value="latest">최신순</option><option value="size">피해 규모순</option></select></label></div>
-<p class="small muted" id="minehint" hidden>내 서비스를 먼저 등록해 주세요. <a href="${P("my.html")}">내 서비스로 이동</a></p></form><div id="res"></div><a class="button primary full" id="cmpbtn" href="#">선택한 사고 비교</a>`;
+<div class="filter-group"><span class="filter-label">유형</span>${chipRow("types", TYPES, "types")}</div>
+<div class="filter-group"><button type="button" class="chip" id="mine" aria-pressed="false">내 서비스만</button></div>
+<p class="small muted" id="minehint" hidden>내 서비스를 먼저 등록해 주세요. <a href="${P("my.html")}">내 정보로 이동</a></p></details></form><div id="res"></div><a class="button primary full" id="cmpbtn" href="#">선택한 사고 비교</a>`;
       const upd = () => { const n = db.cmp.length, b = $("cmpbtn"); b.textContent = n ? `선택한 ${n}건 비교` : "선택한 사고 비교"; b.href = P("compare.html") + "?ids=" + db.cmp.join(","); b.setAttribute("aria-disabled", n < 2); };
       const conds = () => [
         ...(S.search.trim() ? [["search", `검색어 "${S.search.trim()}"`]] : []),
@@ -206,7 +210,9 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
         document.querySelectorAll("#lf [data-k]").forEach((b) => { const on = b.dataset.c ? S[b.dataset.k].includes(b.dataset.c) : !S.categories.length; b.classList.toggle("active", on); b.setAttribute("aria-pressed", on); });
         $("mine").classList.toggle("active", S.mine); $("mine").setAttribute("aria-pressed", S.mine);
         $("mine").setAttribute("aria-disabled", !db.services.length); $("minehint").hidden = db.services.length > 0 || !S.mine;
-        $("sort").value = S.sort;
+        document.querySelectorAll("#lf [data-sort]").forEach((b) => { const on = b.dataset.sort === S.sort; b.classList.toggle("active", on); b.setAttribute("aria-pressed", on); });
+        const fn = S.categories.length + S.leaked.length + S.types.length + (S.mine ? 1 : 0);
+        $("fsum").textContent = "필터 (분야 · 유출 항목 · 유형)" + (fn ? ` · ${fn}개 적용` : "");
         const r = apply(), n = count();
         let none = "";
         if (!r.length) {
@@ -221,12 +227,12 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
       const clear = (k) => { if (k === "search") { S.search = ""; $("q").value = ""; } else if (k === "mine") S.mine = false; else S[k] = []; };
       $("lf").onsubmit = (e) => { e.preventDefault(); S.search = $("q").value; draw(); };
       $("lf").onclick = (e) => {
+        const sb = e.target.closest("[data-sort]"); if (sb) { S.sort = sb.dataset.sort; draw(); return; }
         const b = e.target.closest("[data-k]"); if (!b) return;
         const k = b.dataset.k, c = b.dataset.c;
         S[k] = !c ? [] : S[k].includes(c) ? S[k].filter((x) => x !== c) : [...S[k], c]; draw();
       };
       $("mine").onclick = () => { if (!db.services.length) { $("minehint").hidden = false; return; } S.mine = !S.mine; draw(); };
-      $("sort").onchange = (e) => { S.sort = e.target.value; draw(); };
       $("cmpbtn").onclick = (e) => { if (db.cmp.length < 2) e.preventDefault(); };
       $("res").onclick = (e) => {
         if (e.target.closest("a.card-title, a.card-thumb")) { try { sessionStorage.setItem("lb-list-scroll", JSON.stringify({ q: location.search, y: window.scrollY })); } catch (err) {} } // 상세에서 돌아올 때 스크롤 위치 복원용
@@ -238,7 +244,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
         if (e.target.checked && db.cmp.length >= 3) { e.target.checked = false; alert("비교는 최대 3건까지 가능합니다."); return; }
         db.cmp = e.target.checked ? [...db.cmp, id] : db.cmp.filter((x) => x !== id); save(); upd();
       };
-      if (S.types.length) $("more").open = true;
+      $("filters").open = S.categories.length + S.leaked.length + S.types.length > 0 || S.mine; // 조건이 걸린 채 들어오면 필터를 펼쳐 보여 줌
       draw();
       try { const sv = JSON.parse(sessionStorage.getItem("lb-list-scroll") || "null"); sessionStorage.removeItem("lb-list-scroll"); if (sv && sv.q === location.search) window.scrollTo(0, sv.y); } catch (err) {}
     },
@@ -256,7 +262,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
 ${overview(a)}
 <section class="panel"><h2>사고 내용</h2><p>${esc(a.summary)}</p></section>
 <section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
-<section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}<p class="small help-link">피해가 의심되면 <a href="${P("help.html")}">신고·상담 안내</a>를 확인해 보세요.</p></section>
+<section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}<p class="small help-link">피해가 의심되면 <a href="${P("help.html")}">신고·상담처</a>를 확인해 보세요.</p></section>
 ${sim.length ? `<section class="panel"><h2>비슷한 사고</h2><p class="small muted">같은 분야에서 유형·유출 항목이 비슷한 사고예요.</p><div class="similar">${sim.map((x) => card(x, "mini")).join("")}</div></section>` : ""}
 <div class="row"><button class="button primary" id="favb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
       const label = () => { $("favb").textContent = fav() ? "★ 관심 해제" : "☆ 관심 저장"; $("favb").setAttribute("aria-pressed", fav()); }; label();
@@ -284,7 +290,7 @@ ${sim.length ? `<section class="panel"><h2>비슷한 사고</h2><p class="small 
       const rel = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
       // 내 정보 = 내 서비스 / 관심 사고 / 최근 본 사고를 칩으로 전환 (이전의 관심·최근 화면을 합침)
       let tab = location.hash === "#favorites" ? "favorites" : location.hash === "#recent" ? "recent" : "services";
-      const TABS = [["services", "내 서비스"], ["favorites", "관심 사고"], ["recent", "최근 본 사고"]];
+      const TABS = [["services", "내 사고 목록"], ["favorites", "관심 사고"], ["recent", "최근 본 사고"]];
       const listOf = (ids, label) => `<section><div class="section-heading"><h2>${label}</h2></div>${ids.length ? ids.map(find).filter(Boolean).map((a) => card(a, "plain")).join("") : empty(`${label}가 없습니다.`, `<a class="button small-button" href="${P("list.html")}">사고 둘러보기</a>`)}</section>`;
       const panes = {
         services: () => {
