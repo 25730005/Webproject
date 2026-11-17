@@ -142,6 +142,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     sc.addEventListener("click", (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
     paint();
   };
+  // 홈 히어로: 이미지 3장 자동 전환(5초). 점·일시정지 버튼·스와이프로 조작하고, 조작 후 8초 쉼. 마우스 올림·키보드 초점·화면 밖·다른 탭에서는 정지, 동작 줄이기 설정에서는 정지 상태로 시작
+  const wireHero = () => {
+    const box = $("hero"), pp = $("hero-pp");
+    if (!box || !pp) return;
+    const slides = [...box.querySelectorAll(".hero-slide")], dots = [...box.querySelectorAll(".hero-dot")];
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let cur = 0, playing = !reduce, hover = false, focus = false, visible = true, quietUntil = 0;
+    const show = (i) => {
+      cur = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => { s.classList.toggle("on", k === cur); s.setAttribute("aria-hidden", k === cur ? "false" : "true"); });
+      dots.forEach((d, k) => d.setAttribute("aria-current", k === cur ? "true" : "false"));
+    };
+    const paint = () => { pp.innerHTML = playing ? ICON.pause : ICON.play; pp.setAttribute("aria-label", playing ? "이미지 자동 전환 일시정지" : "이미지 자동 전환 시작"); };
+    const quiet = () => { quietUntil = Date.now() + 8000; };
+    dots.forEach((d) => d.addEventListener("click", () => { quiet(); show(+d.dataset.i); }));
+    pp.addEventListener("click", () => { quiet(); playing = !playing; paint(); });
+    let x0 = null;
+    box.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; quiet(); }, { passive: true });
+    box.addEventListener("touchend", (e) => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); }, { passive: true });
+    box.addEventListener("mouseenter", () => { hover = true; }); box.addEventListener("mouseleave", () => { hover = false; });
+    box.addEventListener("focusin", (e) => { focus = e.target.matches(":focus-visible"); }); box.addEventListener("focusout", () => { focus = false; });
+    if ("IntersectionObserver" in window) new IntersectionObserver((es) => { visible = es[0].isIntersecting; }).observe(box);
+    setInterval(() => { if (playing && !hover && !focus && visible && !document.hidden && Date.now() >= quietUntil) show(cur + 1); }, 5000);
+    paint();
+  };
   const boot = async () => {
     v.innerHTML = '<p class="muted">불러오는 중…</p>';
     try { const res = await fetch(DATA_URL); if (!res.ok) throw new Error("HTTP " + res.status); ACCIDENTS = checkData(await res.json(), DATA_URL).map(adapt); }
@@ -160,11 +185,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       const relOf = (s) => ACCIDENTS.filter((a) => a.company.includes(s) || s.includes(a.company));
       const relAll = [...new Set(db.services.flatMap(relOf))];
       const mySummary = db.services.length ? `<p class="my-sum"><strong>등록한 서비스 ${db.services.length}개 · 관련 사고 ${relAll.length}건</strong></p><a class="button small-button" href="${P("my.html")}">관련 사고 확인하기 →</a>` : "";
-      v.innerHTML = `<section class="hero-intro" aria-label="LeakBase 소개"><div class="hero hero-box" role="img" aria-label="히어로 이미지 영역(준비 중)"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 0L100 25M100 0L0 25"/></svg><span class="hero-box-label">히어로 이미지 영역 · 준비 중</span></div><p class="hero-kicker">국내 개인정보 유출 사고 아카이브</p><h1>내 정보가 유출됐다면,<br>어디서부터 확인해야 할까?</h1><p class="lead">흩어진 개인정보 유출 사고를 한곳에서 확인하고, 내 서비스와 관련된 위험을 살펴보세요.</p><p class="small muted">${dataNote}</p></section>
-<section class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2><p class="small">서비스 이름을 저장하면 관련 사고를 계속 확인할 수 있어요.</p>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button small-button">등록</button></div></form></section>
+      const HERO = [["asset/hero/hero-01.webp", "모든 유출 사고를 한곳에 — LeakBase"], ["asset/hero/hero-02.webp", "LeakBase — 국내 개인정보 유출 사고 아카이브"], ["asset/hero/hero-03.webp", "유출은 멈추지 않습니다 — LeakBase"]];
+      v.innerHTML = `<h1 class="sr-only">LeakBase 홈</h1><section class="hero-card" aria-label="LeakBase 소개와 내 서비스 등록"><div class="hero-slides" id="hero" role="group" aria-roledescription="이미지 슬라이드" aria-label="LeakBase 소개 이미지">${HERO.map((h, i) => `<div class="hero-slide${i ? "" : " on"}" aria-hidden="${i ? "true" : "false"}"><img src="${base + h[0]}" alt="${h[1]}"${i ? ' loading="lazy"' : ""}></div>`).join("")}<div class="hero-ctrl"><button type="button" class="hero-pp" id="hero-pp"></button>${HERO.map((h, i) => `<button type="button" class="hero-dot" data-i="${i}" aria-label="${i + 1}번째 이미지 보기" aria-current="${i ? "false" : "true"}"></button>`).join("")}</div></div>
+<div class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button primary cta">등록</button></div></form></div></section>
+<p class="small muted data-note">${dataNote}</p>
 ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
       $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
       wireRails();
+      wireHero();
     },
 
     list() {
@@ -193,7 +221,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
         return r.sort(byDate);
       };
       const chipRow = (id, list, key) => `<div class="chips" id="${id}">${list.map((c) => `<button type="button" class="chip" data-k="${key}" data-c="${c}" aria-pressed="false">${c}</button>`).join("")}</div>`;
-      v.innerHTML = `<form class="panel" id="lf"><div class="input-wrap"><input type="search" id="q" value="${esc(S.search)}" placeholder="서비스명 또는 사고명" aria-label="서비스명 또는 사고명"><button class="button primary">검색</button></div>
+      v.innerHTML = `<form class="panel" id="lf"><div class="input-wrap"><input type="search" id="q" value="${esc(S.search)}" placeholder="서비스명 또는 사고명" aria-label="서비스명 또는 사고명"><button class="button primary cta">검색</button></div>
 <div class="filter-group row sortbar" role="group" aria-label="정렬"><span class="filter-label">정렬</span><button type="button" class="chip" data-sort="latest" aria-pressed="false">최신순</button><button type="button" class="chip" data-sort="size" aria-pressed="false">피해 규모순</button></div>
 <details class="filter-group filters" id="filters"><summary id="fsum">필터 (분야 · 유출 항목 · 유형)</summary>
 <div class="filter-group"><span class="filter-label">분야</span><div class="chips" id="cats"><button type="button" class="chip" data-k="categories" data-c="" aria-pressed="false">전체</button>${CATS.map((c) => `<button type="button" class="chip" data-k="categories" data-c="${c}" aria-pressed="false">${c}</button>`).join("")}</div></div>
