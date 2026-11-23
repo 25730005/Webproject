@@ -222,3 +222,22 @@ details.filters[open] > summary { border-color:var(--accent); }
 .chip.tag { color:var(--accent); }
 p a, li a { color:var(--accent); }
 input[type=checkbox], input[type=radio] { accent-color:var(--accent); }
+
+/* v16: 비교·관심 아이콘 버튼, 선택된 카드, 비교함 하단 바 */
+.icon-toggle { flex:none; display:grid; place-items:center; width:40px; height:40px; padding:0; border:1px solid var(--line2); border-radius:50%; background:var(--card); color:var(--ink); cursor:pointer; }
+.icon-toggle .ic { width:20px; height:20px; }
+.icon-toggle.small { width:34px; height:34px; }
+.icon-toggle.small .ic { width:18px; height:18px; }
+.icon-toggle:hover { background:var(--soft); }
+.icon-toggle[aria-pressed=true] { color:var(--on-dark); background:var(--accent); border-color:var(--accent); }
+.fav-btn[aria-pressed=true] .ic, .cmp-btn[aria-pressed=true] .ic rect { fill:currentColor; }
+.accident-card.in-cmp { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
+.detail-actions { gap:10px; }
+.cmp-bar { position:fixed; left:50%; transform:translateX(-50%); width:min(100%,393px); box-sizing:border-box; z-index:11; display:flex; align-items:center; gap:8px; padding:8px 12px; background:var(--header); border-top:1px solid var(--accent); box-shadow:0 -4px 12px rgba(0,0,0,.35); }
+.cmp-bar[hidden] { display:none; }
+.cmp-count { flex:1; min-width:0; display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; }
+.cmp-count .ic { width:20px; height:20px; color:var(--accent); }
+.cmp-count small { flex-basis:100%; color:var(--muted); font-size:12px; line-height:1.3; }
+.cmp-bar .button .ic { width:14px; height:14px; }
+.has-cmpbar main { padding-bottom:calc(84px + env(safe-area-inset-bottom,0px)); }
+.has-cmpbar .toast { bottom:calc(var(--navh, 60px) + 80px); }

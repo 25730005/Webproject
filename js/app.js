@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const byDate = (a, b) => (b.refDate || "").localeCompare(a.refDate || "");
   const empty = (msg, btn) => `<div class="panel empty"><p>${msg}</p>${btn || ""}</div>`;
   const I = (d) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
-  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), share: I('<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/>'), pause: I('<path d="M8 5v14M16 5v14"/>'), play: I('<path d="M7 4l13 8-13 8z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>') };
+  const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), share: I('<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/>'), pause: I('<path d="M8 5v14M16 5v14"/>'), play: I('<path d="M7 4l13 8-13 8z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'),
+    compare: I('<rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/>'), close: I('<path d="M6 6l12 12M18 6L6 18"/>') };
 
   // ── 공통 헤더·하단 탭 ──
   const header = $("app-header");
@@ -64,9 +65,37 @@ document.addEventListener("DOMContentLoaded", async () => {
   const card = (a, mode) => {
     const href = P("detail.html") + "?id=" + a.id;
     if (mode === "mini") return `<a class="mini-card" href="${href}"><span>${srcChip(a)} <span class="chip tag">${a.category}</span></span><strong>${a.title}</strong><span class="muted">${a.dateText} · ${a.countShort}</span></a>`;
-    return `<article class="accident-card has-thumb"><a class="card-thumb" href="${href}" tabindex="-1">${thumb(a)}</a><div class="card-body"><div class="row between"><span class="chip tag">${a.category}</span></div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div>${mode === "list" ? `<label class="cmp"><input type="checkbox" data-id="${a.id}" ${db.cmp.includes(a.id) ? "checked" : ""}> 비교에 담기</label>` : ""}</div></article>`;
+    return `<article class="accident-card has-thumb${db.cmp.includes(a.id) ? " in-cmp" : ""}"><a class="card-thumb" href="${href}" tabindex="-1">${thumb(a)}</a><div class="card-body"><div class="row between"><span class="chip tag">${a.category}</span>${mode === "list" ? cmpBtn(a.id, "small") : ""}</div><a class="card-title" href="${href}">${a.title}</a><div class="card-meta"><span>${esc(a.company)}</span><span>${a.dateText}</span><span>${a.countShort}</span><span>${a.leakedCategories.join("·") || "유출 항목 정보 없음"}</span></div></div></article>`;
   };
   const addService = (s) => { s = s.trim(); if (s && !db.services.includes(s)) { db.services.push(s); save(); } };
+  // 비교함: 목록 카드·상세의 아이콘 버튼과 하단 바가 같은 db.cmp를 본다(최대 3건, 중복 없음)
+  const cmpBtn = (id, extra = "") => { const on = db.cmp.includes(id), t = on ? "비교함에서 빼기" : "비교함에 담기"; return `<button type="button" class="icon-toggle cmp-btn ${extra}" data-cmp="${id}" aria-pressed="${on}" aria-label="${t}" title="${t}">${ICON.compare}</button>`; };
+  // 1건 이상 담으면 하단 탭 바로 위에 비교함 바를 보여 준다(목록·상세). 2건 이상이면 "비교하기"가 켜진다.
+  const cmpBar = () => {
+    if (body.dataset.page !== "list" && body.dataset.page !== "detail") return;
+    let bar = $("cmpbar"); const n = db.cmp.length;
+    if (!n) { if (bar) bar.hidden = true; body.classList.remove("has-cmpbar"); return; }
+    if (!bar) { bar = document.createElement("div"); bar.id = "cmpbar"; bar.className = "cmp-bar"; bar.setAttribute("role", "region"); bar.setAttribute("aria-label", "비교함"); document.body.appendChild(bar); }
+    const nav = document.querySelector(".bottom-nav"), ready = n >= 2;
+    bar.hidden = false; body.classList.add("has-cmpbar"); bar.style.bottom = (nav ? nav.offsetHeight : 60) + "px"; document.documentElement.style.setProperty("--navh", (nav ? nav.offsetHeight : 60) + "px");
+    bar.innerHTML = `<span class="cmp-count">${ICON.compare}<b>비교함 ${n}/3</b>${ready ? "" : "<small>1건 더 담으면 비교할 수 있어요</small>"}</span><button type="button" class="icon-toggle small" id="cmpclear" aria-label="비교함 비우기" title="비교함 비우기">${ICON.close}</button><a class="button primary small-button" id="cmpgo" href="${P("compare.html")}?ids=${db.cmp.map(encodeURIComponent).join(",")}" ${ready ? "" : 'aria-disabled="true"'}>비교하기 ${ICON.next}</a>`;
+  };
+  const syncCmp = () => {
+    document.querySelectorAll("[data-cmp]").forEach((b) => { const on = db.cmp.includes(b.dataset.cmp), t = on ? "비교함에서 빼기" : "비교함에 담기"; b.setAttribute("aria-pressed", on); b.setAttribute("aria-label", t); b.title = t; const c = b.closest(".accident-card"); if (c) c.classList.toggle("in-cmp", on); });
+    cmpBar();
+  };
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-cmp]");
+    if (b) {
+      const id = b.dataset.cmp, on = !db.cmp.includes(id);
+      if (on && db.cmp.length >= 3) { notify("비교는 최대 3건까지 담을 수 있어요"); return; }
+      db.cmp = on ? [...db.cmp, id] : db.cmp.filter((x) => x !== id);
+      const ok = save(); syncCmp(); if (ok) notify(on ? `비교함에 담았어요 (${db.cmp.length}/3)` : "비교함에서 뺐어요");
+      return;
+    }
+    if (e.target.closest("#cmpclear")) { db.cmp = []; save(); syncCmp(); notify("비교함을 비웠어요"); return; }
+    if (e.target.closest("#cmpgo") && db.cmp.length < 2) e.preventDefault();
+  });
   const toggleCheck = (id, i, on) => { const c = new Set(db.checks[id] || []); on ? c.add(i) : c.delete(i); db.checks[id] = [...c]; save(); };
   const prog = (a) => (db.checks[a.id] || []).filter((i) => i < a.actions.length).length;
   const checkList = (a) => `<div class="checklist">${a.actions.map((t, i) => `<label><input type="checkbox" data-id="${a.id}" data-i="${i}" ${(db.checks[a.id] || []).includes(i) ? "checked" : ""}> ${t}</label>`).join("")}</div>`;
@@ -196,7 +225,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
   // 저장 서버(Firebase) 읽기: 4초 안에 안 오면 포기하고 사고 JSON만으로 동작한다. 실패해도 오류를 던지지 않고 null을 돌려준다.
   const loadCloud = async () => {
-    try { const m = await import(new URL("cloud.js?v=15", APP_SRC).href); const d = await m.load(); if (!cloudOn) return null; cloud = m; return d || {}; }
+    try { const m = await import(new URL("cloud.js?v=16", APP_SRC).href); const d = await m.load(); if (!cloudOn) return null; cloud = m; return d || {}; }
     catch (e) { console.error(e); return null; }
   };
   const withTimeout = (p, ms) => new Promise((res) => { const t = setTimeout(() => { cloudOn = false; res(null); }, ms); p.then((d) => { clearTimeout(t); res(d); }); });
@@ -266,8 +295,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
 <div class="filter-group"><span class="filter-label">유출 항목</span>${chipRow("leak", ITEMS, "leaked")}</div>
 <div class="filter-group"><span class="filter-label">유형</span>${chipRow("types", TYPES, "types")}</div>
 <div class="filter-group"><button type="button" class="chip" id="mine" aria-pressed="false">내 서비스만</button></div>
-<p class="small muted" id="minehint" hidden>내 서비스를 먼저 등록해 주세요. <a href="${P("my.html")}">내 정보로 이동</a></p></details></form><div id="res"></div><a class="button primary full" id="cmpbtn" href="#">선택한 사고 비교</a>`;
-      const upd = () => { const n = db.cmp.length, b = $("cmpbtn"); b.textContent = n ? `선택한 ${n}건 비교` : "선택한 사고 비교"; b.href = P("compare.html") + "?ids=" + db.cmp.join(","); b.setAttribute("aria-disabled", n < 2); };
+<p class="small muted" id="minehint" hidden>내 서비스를 먼저 등록해 주세요. <a href="${P("my.html")}">내 정보로 이동</a></p></details></form><div id="res"></div>`;
       const conds = () => [
         ...(S.search.trim() ? [["search", `검색어 "${S.search.trim()}"`]] : []),
         ...(S.categories.length ? [["categories", "분야 " + S.categories.join("·")]] : []),
@@ -291,7 +319,7 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
         }
         $("res").innerHTML = `<div class="row between" style="margin:14px 0 4px"><strong>사고 ${r.length}건${n ? ` · 조건 ${n}개 적용` : ""}</strong><span class="muted">${S.sort === "size" ? "피해 규모순(명 단위만)" : "최신순"}</span></div>` + (r.some(isDummy) ? `<p class="notice" style="margin:0 0 10px">결과에 가상(더미) 데이터가 포함돼 있어요. 플라스크 아이콘이 붙은 사고는 실제 사건이 아닌 실습용 데이터예요.</p>` : "") + (r.length ? r.map((a) => card(a, "list")).join("") : none);
         const u = new URLSearchParams(); if (S.search) u.set("q", S.search); if (S.categories.length) u.set("cat", S.categories.join(",")); if (S.types.length) u.set("type", S.types.join(",")); if (S.leaked.length) u.set("leak", S.leaked.join(",")); if (S.mine) u.set("mine", "1"); if (S.sort === "size") u.set("sort", "size");
-        history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : "")); upd();
+        history.replaceState(null, "", location.pathname + (u.toString() ? "?" + u : ""));
       };
       const clear = (k) => { if (k === "search") { S.search = ""; $("q").value = ""; } else if (k === "mine") S.mine = false; else S[k] = []; };
       $("lf").onsubmit = (e) => { e.preventDefault(); S.search = $("q").value; draw(); };
@@ -302,19 +330,13 @@ ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
         S[k] = !c ? [] : S[k].includes(c) ? S[k].filter((x) => x !== c) : [...S[k], c]; draw();
       };
       $("mine").onclick = () => { if (!db.services.length) { $("minehint").hidden = false; return; } S.mine = !S.mine; draw(); };
-      $("cmpbtn").onclick = (e) => { if (db.cmp.length < 2) e.preventDefault(); };
       $("res").onclick = (e) => {
         if (e.target.closest("a.card-title, a.card-thumb")) { try { sessionStorage.setItem("lb-list-scroll", JSON.stringify({ q: location.search, y: window.scrollY })); } catch (err) {} } // 상세에서 돌아올 때 스크롤 위치 복원용
         if (e.target.id === "relax") { clear(e.target.dataset.k); draw(); }
         if (e.target.id === "reset") { ["search", "categories", "types", "leaked", "mine"].forEach(clear); S.sort = "latest"; draw(); }
       };
-      $("res").onchange = (e) => {
-        const id = e.target.dataset.id; if (!id) return;
-        if (e.target.checked && db.cmp.length >= 3) { e.target.checked = false; alert("비교는 최대 3건까지 가능합니다."); return; }
-        db.cmp = e.target.checked ? [...db.cmp, id] : db.cmp.filter((x) => x !== id); save(); upd();
-      };
       $("filters").open = S.categories.length + S.leaked.length + S.types.length > 0 || S.mine; // 조건이 걸린 채 들어오면 필터를 펼쳐 보여 줌
-      draw();
+      draw(); cmpBar();
       try { const sv = JSON.parse(sessionStorage.getItem("lb-list-scroll") || "null"); sessionStorage.removeItem("lb-list-scroll"); if (sv && sv.q === location.search) window.scrollTo(0, sv.y); } catch (err) {}
     },
 
@@ -333,17 +355,10 @@ ${overview(a)}
 <section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
 <section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}<p class="small help-link">피해가 의심되면 <a href="${P("help.html")}">신고·상담처</a>를 확인해 보세요.</p></section>
 ${sim.length ? `<section class="panel"><h2>비슷한 사고</h2><p class="small muted">같은 분야에서 유형·유출 항목이 비슷한 사고예요.</p><div class="similar">${sim.map((x) => card(x, "mini")).join("")}</div></section>` : ""}
-<div class="row"><button class="button primary" id="favb"></button><button class="button" id="cmpb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
-      const label = () => { $("favb").textContent = fav() ? "★ 관심 해제" : "☆ 관심 저장"; $("favb").setAttribute("aria-pressed", fav()); }; label();
+<div class="row detail-actions"><button type="button" class="icon-toggle fav-btn" id="favb">${ICON.star}</button>${cmpBtn(a.id).replace("<button ", '<button id="cmpb" ')}<a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
+      const label = () => { const on = fav(), t = on ? "관심 해제" : "관심 저장"; const f = $("favb"); f.setAttribute("aria-pressed", on); f.setAttribute("aria-label", t); f.title = t; }; label();
       $("favb").onclick = () => { const on = !fav(); db.favs = on ? [a.id, ...db.favs] : db.favs.filter((i) => i !== a.id); const ok = save(); label(); if (ok) notify(on ? "관심 사고에 저장했어요" : "관심 저장을 해제했어요"); };
-      // 비교함 담기: 목록 화면 체크박스와 같은 db.cmp를 쓴다(최대 3건, 중복 없음)
-      const inCmp = () => db.cmp.includes(a.id);
-      const cmpLabel = () => { $("cmpb").textContent = inCmp() ? "비교함에서 빼기" : "비교함에 담기"; $("cmpb").setAttribute("aria-pressed", inCmp()); }; cmpLabel();
-      $("cmpb").onclick = () => {
-        if (!inCmp() && db.cmp.length >= 3) { notify("비교는 최대 3건까지 담을 수 있어요"); return; }
-        const on = !inCmp(); db.cmp = on ? [...db.cmp, a.id] : db.cmp.filter((x) => x !== a.id);
-        const ok = save(); cmpLabel(); if (ok) notify(on ? "비교함에 담았어요 (" + db.cmp.length + "/3)" : "비교함에서 뺐어요");
-      };
+      cmpBar(); // 비교함 담기는 위의 공통 클릭 처리와 하단 바가 맡는다
       // 공유: id만 담은 주소를 보냄(휴대폰은 공유 창, 아니면 주소 복사). 출발 화면 같은 탐색 맥락은 빼고 공유
       $("shareb").onclick = async () => {
         const url = new URL(P("detail.html") + "?id=" + encodeURIComponent(a.id), location.href).href;
