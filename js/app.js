@@ -1,15 +1,42 @@
-// LeakBase 프로토타입: 공통 UI + 화면별 동작 (저장은 브라우저 localStorage)
+// LeakBase 프로토타입: 공통 UI + 화면별 동작 (즐겨찾기만 localStorage, 나머지 개인 저장은 Firebase Firestore: js/cloud.js)
+const APP_SRC = document.currentScript ? document.currentScript.src : location.href;
 document.addEventListener("DOMContentLoaded", async () => {
   const body = document.body, base = body.dataset.base || "", v = document.getElementById("view");
   let ACCIDENTS = [];
   const KEY = "leakbase", ITEMS = ["계정정보", "금융정보", "연락처", "신원정보", "위치·이용기록"];
   const DEF = () => ({ favs: [], recent: [], services: [], checks: {}, cmp: [] });
-  let db; try { db = { ...DEF(), ...JSON.parse(localStorage.getItem(KEY) || "{}") }; } catch (e) { db = DEF(); }
-  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} };
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   // 잠깐 보였다 사라지는 안내 문구(공유 결과 등)
   const notify = (msg) => { let t = document.getElementById("toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); } t.textContent = msg; t.classList.add("show"); clearTimeout(notify.t); notify.t = setTimeout(() => t.classList.remove("show"), 2200); };
+  // 저장값 점검: 배열·객체가 아닌 값(abc, null 등)은 기본값으로 복구한다. 읽기·저장 모두 같은 점검을 거친다.
+  const isObj = (o) => o && typeof o === "object" && !Array.isArray(o);
+  const clean = (o) => {
+    const r = isObj(o) ? o : {}, d = DEF();
+    ["favs", "recent", "services", "cmp"].forEach((k) => { d[k] = Array.isArray(r[k]) ? r[k] : []; });
+    if (isObj(r.checks)) Object.keys(r.checks).forEach((id) => { if (Array.isArray(r.checks[id])) d.checks[id] = r.checks[id]; });
+    return d;
+  };
+  const CLOUD_KEYS = ["recent", "cmp", "services", "checks"]; // DB에 저장하는 4개 항목(즐겨찾기는 localStorage)
+  const db = DEF();
+  try { db.favs = clean(JSON.parse(localStorage.getItem(KEY) || "{}")).favs; } catch (e) {}
+  let cloud = null, cloudOn = true, timer = 0, lastSent = "", warnedLs = false, warnedCloud = false;
+  const snap = () => JSON.stringify(CLOUD_KEYS.map((k) => db[k]));
+  const cloudFail = () => { if (warnedCloud) return; warnedCloud = true; notify("저장 서버에 연결하지 못했어요. 이번 접속의 최근·비교·내 서비스·체크리스트는 저장되지 않을 수 있어요"); };
+  // 즐겨찾기를 localStorage에 저장한다. 막힌 환경이면 한 번만 안내하고 false를 돌려준다(성공 알림을 띄우지 않기 위해).
+  const saveLs = () => { try { localStorage.setItem(KEY, JSON.stringify({ favs: db.favs })); return true; } catch (e) { if (!warnedLs) { warnedLs = true; notify("이 브라우저에서는 저장할 수 없어요. 새로고침하면 사라질 수 있어요"); } return false; } };
+  // 바뀐 값이 있으면 DB에 쓴다. DB에 연결되지 않은 접속에서는 쓰지 않고 메모리에만 둔다.
+  const flush = () => {
+    clearTimeout(timer); timer = 0;
+    if (!cloud) return Promise.resolve();
+    const s = snap(); if (s === lastSent) return Promise.resolve();
+    lastSent = s;
+    return cloud.save({ recent: db.recent, cmp: db.cmp, services: db.services, checks: db.checks }).catch((e) => { console.error(e); lastSent = ""; cloudFail(); });
+  };
+  const save = () => { const ok = saveLs(); if (cloud) { clearTimeout(timer); timer = setTimeout(flush, 300); } return ok; };
+  // 페이지를 떠나기 직전에 남은 값이 있으면 바로 저장을 시도한다(이동 직후 값이 끊기는 것을 줄이기 위함)
+  window.addEventListener("pagehide", flush);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) flush(); });
   const P = (f) => base + "pages/" + f, find = (id) => ACCIDENTS.find((a) => a.id == id);
   const byDate = (a, b) => (b.refDate || "").localeCompare(a.refDate || "");
   const empty = (msg, btn) => `<div class="panel empty"><p>${msg}</p>${btn || ""}</div>`;
@@ -167,10 +194,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     setInterval(() => { if (playing && !hover && !focus && visible && !document.hidden && Date.now() >= quietUntil) show(cur + 1); }, 5000);
     paint();
   };
+  // 저장 서버(Firebase) 읽기: 4초 안에 안 오면 포기하고 사고 JSON만으로 동작한다. 실패해도 오류를 던지지 않고 null을 돌려준다.
+  const loadCloud = async () => {
+    try { const m = await import(new URL("cloud.js?v=15", APP_SRC).href); const d = await m.load(); if (!cloudOn) return null; cloud = m; return d || {}; }
+    catch (e) { console.error(e); return null; }
+  };
+  const withTimeout = (p, ms) => new Promise((res) => { const t = setTimeout(() => { cloudOn = false; res(null); }, ms); p.then((d) => { clearTimeout(t); res(d); }); });
+  let cloudP;
   const boot = async () => {
     v.innerHTML = '<p class="muted">불러오는 중…</p>';
+    const cp = cloudP || (cloudP = withTimeout(loadCloud(), 4000)); // 사고 JSON과 DB를 동시에 읽는다
     try { const res = await fetch(DATA_URL); if (!res.ok) throw new Error("HTTP " + res.status); ACCIDENTS = checkData(await res.json(), DATA_URL).map(adapt); }
     catch (err) { console.error(err); v.innerHTML = empty("사고 정보를 불러오지 못했습니다.", '<button class="button small-button" id="retry">다시 시도</button>'); $("retry").onclick = boot; return; }
+    const data = await cp;
+    if (data) { const c = clean(data); CLOUD_KEYS.forEach((k) => { db[k] = c[k]; }); lastSent = snap(); }
+    else cloudFail();
     const ok = new Set(ACCIDENTS.map((a) => a.id)); ["favs", "recent", "cmp"].forEach((k) => { db[k] = db[k].filter((i) => ok.has(i)); }); save();
     (pages[body.dataset.page] || (() => {}))();
   };
@@ -190,7 +228,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 <div class="panel soft my-entry" id="rf-wrap"><h2>내 서비스도 해당될까?</h2>${mySummary}<form class="reg-form-inline" id="rf"><div class="input-wrap"><input type="text" name="s" aria-label="등록할 서비스명" placeholder="내 서비스 이름 (예: 쿠팡)"><button class="button primary cta">등록</button></div></form></div></section>
 <p class="small muted data-note">${dataNote}</p>
 ${rail("최신 사고", neu, true)}${rail("피해 규모가 큰 사고", pop)}`;
-      $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); location.href = P("my.html"); };
+      $("rf").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); Promise.race([flush(), new Promise((r) => setTimeout(r, 1500))]).then(() => { location.href = P("my.html"); }); };
       wireRails();
       wireHero();
     },
@@ -295,9 +333,17 @@ ${overview(a)}
 <section class="panel"><h2>출처</h2>${isDummy(a) ? '<p class="small">이 사고는 실습용 가상(더미) 데이터로, 실제 사건이 아니라서 출처가 없어요.</p>' : ""}${a.sources.map((x) => `<p class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a> · ${esc(x.type)}${x.checkedAt ? " · 열람 " + x.checkedAt : ""}</p>`).join("")}<p class="notice">분야·유출 항목 분류와 요약은 팀 검토 전 초안입니다.</p></section>
 <section class="panel"><h2>대응 체크리스트</h2>${checkList(a)}<p class="small help-link">피해가 의심되면 <a href="${P("help.html")}">신고·상담처</a>를 확인해 보세요.</p></section>
 ${sim.length ? `<section class="panel"><h2>비슷한 사고</h2><p class="small muted">같은 분야에서 유형·유출 항목이 비슷한 사고예요.</p><div class="similar">${sim.map((x) => card(x, "mini")).join("")}</div></section>` : ""}
-<div class="row"><button class="button primary" id="favb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
+<div class="row"><button class="button primary" id="favb"></button><button class="button" id="cmpb"></button><a class="button" href="${P("checklist.html")}">체크리스트 모아보기</a></div>`;
       const label = () => { $("favb").textContent = fav() ? "★ 관심 해제" : "☆ 관심 저장"; $("favb").setAttribute("aria-pressed", fav()); }; label();
-      $("favb").onclick = () => { db.favs = fav() ? db.favs.filter((i) => i !== a.id) : [a.id, ...db.favs]; save(); label(); };
+      $("favb").onclick = () => { const on = !fav(); db.favs = on ? [a.id, ...db.favs] : db.favs.filter((i) => i !== a.id); const ok = save(); label(); if (ok) notify(on ? "관심 사고에 저장했어요" : "관심 저장을 해제했어요"); };
+      // 비교함 담기: 목록 화면 체크박스와 같은 db.cmp를 쓴다(최대 3건, 중복 없음)
+      const inCmp = () => db.cmp.includes(a.id);
+      const cmpLabel = () => { $("cmpb").textContent = inCmp() ? "비교함에서 빼기" : "비교함에 담기"; $("cmpb").setAttribute("aria-pressed", inCmp()); }; cmpLabel();
+      $("cmpb").onclick = () => {
+        if (!inCmp() && db.cmp.length >= 3) { notify("비교는 최대 3건까지 담을 수 있어요"); return; }
+        const on = !inCmp(); db.cmp = on ? [...db.cmp, a.id] : db.cmp.filter((x) => x !== a.id);
+        const ok = save(); cmpLabel(); if (ok) notify(on ? "비교함에 담았어요 (" + db.cmp.length + "/3)" : "비교함에서 뺐어요");
+      };
       // 공유: id만 담은 주소를 보냄(휴대폰은 공유 창, 아니면 주소 복사). 출발 화면 같은 탐색 맥락은 빼고 공유
       $("shareb").onclick = async () => {
         const url = new URL(P("detail.html") + "?id=" + encodeURIComponent(a.id), location.href).href;
