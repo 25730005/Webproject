@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const empty = (msg, btn) => `<div class="panel empty"><p>${msg}</p>${btn || ""}</div>`;
   const I = (d) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
   const ICON = { back: I('<path d="M15 5l-7 7 7 7"/>'), next: I('<path d="M9 5l7 7-7 7"/>'), home: I('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'), my: I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'), list: I('<path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>'), phone: I('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'), grid: I('<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>'), share: I('<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/>'), pause: I('<path d="M8 5v14M16 5v14"/>'), play: I('<path d="M7 4l13 8-13 8z"/>'), star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'),
-    compare: I('<rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/>'), close: I('<path d="M6 6l12 12M18 6L6 18"/>') };
+    compare: I('<rect x="1.5" y="4" width="6" height="16" rx="1.5"/><rect x="16.5" y="4" width="6" height="16" rx="1.5"/><path d="M9.2 9.5h5.6M12.8 7.5l2 2-2 2M14.8 14.5H9.2M11.2 12.5l-2 2 2 2"/>'), shield: I('<path d="M12 3l8 3v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/><path d="M12 8v5M12 16.2v.01"/>'), close: I('<path d="M6 6l12 12M18 6L6 18"/>') };
 
   // ── 공통 헤더·하단 탭 ──
   const header = $("app-header");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 같은 사이트에서 들어왔을 때만 브라우저 뒤로가기(목록 조건·스크롤 유지), 아니면 위 주소로 이동
     if (showBack) $("back").addEventListener("click", (e) => { if (history.length > 1 && document.referrer.startsWith(location.origin)) { e.preventDefault(); history.back(); } });
   }
-  const tabs = [["home", "index.html", "홈", ICON.home], ["list", "pages/list.html", "사고 목록", ICON.list], ["help", "pages/help.html", "신고·상담처", ICON.phone], ["my", "pages/my.html", "내 정보", ICON.my]];
+  const tabs = [["home", "index.html", "홈", ICON.home], ["list", "pages/list.html", "사고 목록", ICON.shield], ["help", "pages/help.html", "신고·상담처", ICON.phone], ["my", "pages/my.html", "내 정보", ICON.my]];
   $("app-nav").innerHTML = tabs.map(([k, h, l, ic]) => `<a href="${base}${h}"${body.dataset.nav === k ? ' aria-current="page"' : ""}>${ic}<span>${l}</span></a>`).join("");
 
   // ── 카드 ──
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const id = b.dataset.cmp, on = !db.cmp.includes(id);
       if (on && db.cmp.length >= 3) { notify("비교는 최대 3건까지 담을 수 있어요"); return; }
       db.cmp = on ? [...db.cmp, id] : db.cmp.filter((x) => x !== id);
-      const ok = save(); syncCmp(); if (ok) notify(on ? `비교함에 담았어요 (${db.cmp.length}/3)` : "비교함에서 뺐어요");
+      const ok = save(); syncCmp(); if (on) { b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop"); b.addEventListener("animationend", () => b.classList.remove("pop"), { once: true }); } if (ok) notify(on ? `비교함에 담았어요 (${db.cmp.length}/3)` : "비교함에서 뺐어요");
       return;
     }
     if (e.target.closest("#cmpclear")) { db.cmp = []; save(); syncCmp(); notify("비교함을 비웠어요"); return; }
@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       slides.forEach((s, k) => { s.classList.toggle("on", k === cur); s.setAttribute("aria-hidden", k === cur ? "false" : "true"); });
       dots.forEach((d, k) => d.setAttribute("aria-current", k === cur ? "true" : "false"));
     };
-    const paint = () => { pp.innerHTML = playing ? ICON.pause : ICON.play; pp.setAttribute("aria-label", playing ? "이미지 자동 전환 일시정지" : "이미지 자동 전환 시작"); };
+    const paint = () => { pp.innerHTML = playing ? ICON.pause : ICON.play; pp.setAttribute("aria-label", playing ? "이미지 자동 전환 일시정지" : "이미지 자동 전환 시작"); box.classList.toggle("paused", !playing); };
     const quiet = () => { quietUntil = Date.now() + 8000; };
     dots.forEach((d) => d.addEventListener("click", () => { quiet(); show(+d.dataset.i); }));
     pp.addEventListener("click", () => { quiet(); playing = !playing; paint(); });
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
   // 저장 서버(Firebase) 읽기: 4초 안에 안 오면 포기하고 사고 JSON만으로 동작한다. 실패해도 오류를 던지지 않고 null을 돌려준다.
   const loadCloud = async () => {
-    try { const m = await import(new URL("cloud.js?v=16", APP_SRC).href); const d = await m.load(); if (!cloudOn) return null; cloud = m; return d || {}; }
+    try { const m = await import(new URL("cloud.js?v=17", APP_SRC).href); const d = await m.load(); if (!cloudOn) return null; cloud = m; return d || {}; }
     catch (e) { console.error(e); return null; }
   };
   const withTimeout = (p, ms) => new Promise((res) => { const t = setTimeout(() => { cloudOn = false; res(null); }, ms); p.then((d) => { clearTimeout(t); res(d); }); });
@@ -395,16 +395,54 @@ ${db.services.length ? db.services.map((s, i) => `<article class="service-card">
         favorites: () => listOf(db.favs, "관심 사고") + `<a class="button primary full" href="${P("checklist.html")}">체크리스트 모아보기</a>`,
         recent: () => listOf(db.recent, "최근 본 사고")
       };
+      // 계정 카드: 익명이면 구글 로그인, 로그인 상태면 로그아웃. 로그인 계정이 바뀌면 새로고침해서 그 계정의 기록을 다시 읽는다.
+      let acct = cloud ? null : { off: true };
+      const acctHtml = () => {
+        if (!acct) return '<section class="panel account" id="acct"><p class="small muted">계정 확인 중…</p></section>';
+        if (acct.off) return '<section class="panel account" id="acct"><div><strong>로그인할 수 없어요</strong><p class="small muted">저장 서버에 연결하지 못했어요. 잠시 뒤 새로고침해 주세요.</p></div></section>';
+        if (acct.anon) return '<section class="panel account" id="acct"><div><strong>임시 계정으로 사용 중</strong><p class="small muted">구글로 로그인하면 지금 담은 기록이 이어지고 다른 기기에서도 볼 수 있어요. 즐겨찾기는 이 기기에만 저장돼요.</p></div><button type="button" class="button small-button" id="glogin">구글로 로그인</button></section>';
+        return `<section class="panel account" id="acct"><div><strong>${esc(acct.email || "구글 계정")}</strong><p class="small muted">구글 계정으로 로그인 중이에요. 즐겨찾기는 이 기기에만 저장돼요.</p></div><button type="button" class="button small-button" id="glogout">로그아웃</button></section>`;
+      };
+      const msgAfterReload = (m) => { try { sessionStorage.setItem("lb-auth-msg", m); } catch (e) {} };
+      const login = async () => {
+        const btn = $("glogin"); if (!btn || !cloud) return; btn.disabled = true;
+        try {
+          await flush(); // 지금까지 담은 기록을 먼저 서버에 저장
+          const r = await cloud.loginGoogle(() => confirm("이 구글 계정에 이미 저장된 기록이 있어요.\n불러오면 이 기기에서 임시로 담은 기록은 사라져요.\n계속할까요?"));
+          if (r === "cancelled") { btn.disabled = false; return; }
+          cloud = null; clearTimeout(timer); // 계정이 바뀌므로 이 화면의 옛 값은 더 쓰지 않는다
+          msgAfterReload(r === "linked" ? "구글 계정으로 로그인했어요. 담아 둔 기록이 그대로 이어져요" : "구글 계정에 저장된 기록을 불러왔어요");
+          location.reload();
+        } catch (e) {
+          console.error(e); btn.disabled = false;
+          notify(e && e.code === "auth/popup-blocked" ? "팝업이 막혔어요. 팝업을 허용한 뒤 다시 눌러 주세요" : "로그인하지 못했어요. 잠시 뒤 다시 시도해 주세요");
+        }
+      };
+      const logout = async () => {
+        if (!cloud) return;
+        if (!confirm("로그아웃하면 즐겨찾기도 이 기기에서 함께 지워져요.\n다시 로그인해도 즐겨찾기는 돌아오지 않아요.\n로그아웃할까요?")) return;
+        try {
+          await flush(); await cloud.logout();
+          cloud = null; clearTimeout(timer);
+          try { localStorage.removeItem(KEY); } catch (e) {}
+          msgAfterReload("로그아웃했어요. 즐겨찾기도 함께 지웠어요");
+          location.reload();
+        } catch (e) { console.error(e); notify("로그아웃하지 못했어요. 잠시 뒤 다시 시도해 주세요"); }
+      };
       const draw = () => {
-        v.innerHTML = `<div class="chips tabs" role="group" aria-label="내 정보 보기 선택">${TABS.map(([k, l]) => `<button type="button" class="chip${k === tab ? " active" : ""}" data-tab="${k}" aria-pressed="${k === tab}">${l}</button>`).join("")}</div>${panes[tab]()}`;
+        v.innerHTML = `${acctHtml()}<div class="chips tabs" role="group" aria-label="내 정보 보기 선택">${TABS.map(([k, l]) => `<button type="button" class="chip${k === tab ? " active" : ""}" data-tab="${k}" aria-pressed="${k === tab}">${l}</button>`).join("")}</div>${panes[tab]()}`;
         if (tab === "services") $("af").onsubmit = (e) => { e.preventDefault(); addService(e.target.s.value); draw(); };
       };
       v.onclick = (e) => {
+        if (e.target.closest("#glogin")) { login(); return; }
+        if (e.target.closest("#glogout")) { logout(); return; }
         const t = e.target.closest("[data-tab]");
         if (t) { if (t.dataset.tab !== tab) { tab = t.dataset.tab; history.replaceState(null, "", location.pathname + location.search + (tab === "services" ? "" : "#" + tab)); draw(); } return; }
         if (e.target.dataset.del !== undefined) { db.services.splice(+e.target.dataset.del, 1); save(); draw(); }
       };
       draw();
+      try { const m = sessionStorage.getItem("lb-auth-msg"); if (m) { sessionStorage.removeItem("lb-auth-msg"); notify(m); } } catch (e) {}
+      if (cloud) cloud.who().then((w) => { acct = w; draw(); }).catch(() => { acct = { off: true }; draw(); });
     },
 
     help() {
