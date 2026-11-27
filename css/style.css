@@ -256,6 +256,10 @@ input[type=checkbox], input[type=radio] { accent-color:var(--accent); }
 .account { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
 .account p { margin:4px 0 0; }
 .account strong { word-break:break-all; }
+.dlg { position:fixed; inset:0; z-index:30; display:flex; align-items:center; justify-content:center; padding:16px; background:rgba(0,0,0,.55); }
+.dlg-box { width:min(100%,340px); padding:16px; border:1px solid var(--line2); border-radius:var(--radius); background:var(--card); color:var(--ink); }
+.dlg-box p { margin:8px 0 14px; line-height:1.5; }
+.dlg-actions { display:flex; justify-content:flex-end; gap:8px; }
 .account .button { flex:none; }
 @media (prefers-reduced-motion: reduce) {
   .cmp-btn.pop, .cmp-bar { animation:none; }

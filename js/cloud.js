@@ -49,7 +49,7 @@ export const who = async () => {
 
 // 구글 로그인(팝업). 익명 계정이면 그 계정에 구글을 연결해서 기록이 그대로 이어진다(같은 ID).
 // 이미 다른 기기에서 쓰던 구글 계정이면 연결이 거절되므로, confirmSwitch()가 true일 때 그 계정으로 바꾼다(이 기기의 임시 기록은 합치지 않는다).
-// 돌려주는 값: "linked" | "switched" | "signed" | "cancelled"
+// 돌려주는 값: "linked" | "switched" | "signed" | "cancelled"(전환 확인에서 취소) | "closed"(로그인 창이 닫힘)
 export const loginGoogle = async (confirmSwitch) => {
   const { Au, auth } = await init();
   const provider = new Au.GoogleAuthProvider(), cur = auth.currentUser;
@@ -63,7 +63,7 @@ export const loginGoogle = async (confirmSwitch) => {
       if (confirmSwitch && !(await confirmSwitch())) return "cancelled";
       await Au.signInWithCredential(auth, cred); locked = true; return "switched";
     }
-    if (e && (e.code === "auth/popup-closed-by-user" || e.code === "auth/cancelled-popup-request")) return "cancelled";
+    if (e && (e.code === "auth/popup-closed-by-user" || e.code === "auth/cancelled-popup-request")) return "closed";
     throw e;
   }
 };

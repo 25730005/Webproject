@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   // 잠깐 보였다 사라지는 안내 문구(공유 결과 등)
-  const notify = (msg) => { let t = document.getElementById("toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); } t.textContent = msg; t.classList.add("show"); clearTimeout(notify.t); notify.t = setTimeout(() => t.classList.remove("show"), 2200); };
+  const notify = (msg, ms) => { let t = document.getElementById("toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); } t.textContent = msg; t.classList.add("show"); clearTimeout(notify.t); notify.t = setTimeout(() => t.classList.remove("show"), ms || 2200); };
   // 저장값 점검: 배열·객체가 아닌 값(abc, null 등)은 기본값으로 복구한다. 읽기·저장 모두 같은 점검을 거친다.
   const isObj = (o) => o && typeof o === "object" && !Array.isArray(o);
   const clean = (o) => {
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
   // 저장 서버(Firebase) 읽기: 4초 안에 안 오면 포기하고 사고 JSON만으로 동작한다. 실패해도 오류를 던지지 않고 null을 돌려준다.
   const loadCloud = async () => {
-    try { const m = await import(new URL("cloud.js?v=17", APP_SRC).href); const d = await m.load(); if (!cloudOn) return null; cloud = m; return d || {}; }
+    try { const m = await import(new URL("cloud.js?v=18", APP_SRC).href); const d = await m.load(); if (!cloudOn) return null; cloud = m; return d || {}; }
     catch (e) { console.error(e); return null; }
   };
   const withTimeout = (p, ms) => new Promise((res) => { const t = setTimeout(() => { cloudOn = false; res(null); }, ms); p.then((d) => { clearTimeout(t); res(d); }); });
@@ -404,30 +404,42 @@ ${db.services.length ? db.services.map((s, i) => `<article class="service-card">
         return `<section class="panel account" id="acct"><div><strong>${esc(acct.email || "구글 계정")}</strong><p class="small muted">구글 계정으로 로그인 중이에요. 즐겨찾기는 이 기기에만 저장돼요.</p></div><button type="button" class="button small-button" id="glogout">로그아웃</button></section>`;
       };
       const msgAfterReload = (m) => { try { sessionStorage.setItem("lb-auth-msg", m); } catch (e) {} };
+      // 화면 안 확인 박스. 브라우저 기본 confirm()은 구글 로그인 창이 닫힌 직후 막혀 "취소"로 처리되는 경우가 있어 쓰지 않는다.
+      const ask = (title, body, okLabel) => new Promise((res) => {
+        const o = document.createElement("div"); o.className = "dlg"; o.setAttribute("role", "alertdialog"); o.setAttribute("aria-modal", "true");
+        o.innerHTML = `<div class="dlg-box"><strong>${title}</strong><p class="small">${body}</p><div class="dlg-actions"><button type="button" class="button small-button" data-r="0">취소</button><button type="button" class="button small-button primary" data-r="1">${okLabel}</button></div></div>`;
+        const done = (v) => { document.removeEventListener("keydown", kd); o.remove(); res(v); };
+        const kd = (e) => { if (e.key === "Escape") done(false); };
+        o.onclick = (e) => { const b = e.target.closest("[data-r]"); if (b) done(b.dataset.r === "1"); else if (e.target === o) done(false); };
+        document.addEventListener("keydown", kd); document.body.appendChild(o); o.querySelector('[data-r="1"]').focus();
+      });
       const login = async () => {
         const btn = $("glogin"); if (!btn || !cloud) return; btn.disabled = true;
         try {
-          await flush(); // 지금까지 담은 기록을 먼저 서버에 저장
-          const r = await cloud.loginGoogle(() => confirm("이 구글 계정에 이미 저장된 기록이 있어요.\n불러오면 이 기기에서 임시로 담은 기록은 사라져요.\n계속할까요?"));
-          if (r === "cancelled") { btn.disabled = false; return; }
+          // 팝업이 클릭 직후에 열리도록 이 앞에서 await 하지 않는다(브라우저가 클릭과 떨어진 팝업을 막을 수 있다)
+          const r = await cloud.loginGoogle(() => ask("이 구글 계정에 이미 저장된 기록이 있어요", "불러오면 이 기기에서 임시로 담은 기록은 사라져요.<br>계속할까요?", "불러오기"));
+          if (r === "cancelled") { btn.disabled = false; notify("불러오기를 취소했어요. 로그인하지 않았어요"); return; }
+          if (r === "closed") { btn.disabled = false; notify("로그인 창이 닫혔어요. 다시 눌러 주세요", 4000); return; }
+          if (r === "linked") await flush(); // 같은 ID에 연결됐으므로 담아 둔 기록을 새로고침 전에 저장
           cloud = null; clearTimeout(timer); // 계정이 바뀌므로 이 화면의 옛 값은 더 쓰지 않는다
           msgAfterReload(r === "linked" ? "구글 계정으로 로그인했어요. 담아 둔 기록이 그대로 이어져요" : "구글 계정에 저장된 기록을 불러왔어요");
           location.reload();
         } catch (e) {
           console.error(e); btn.disabled = false;
-          notify(e && e.code === "auth/popup-blocked" ? "팝업이 막혔어요. 팝업을 허용한 뒤 다시 눌러 주세요" : "로그인하지 못했어요. 잠시 뒤 다시 시도해 주세요");
+          const code = (e && e.code) || (e && e.name) || "unknown";
+          notify(e && e.code === "auth/popup-blocked" ? "팝업이 막혔어요. 팝업을 허용한 뒤 다시 눌러 주세요 (auth/popup-blocked)" : `로그인하지 못했어요 (${code}). 이 코드를 알려 주세요`, 7000);
         }
       };
       const logout = async () => {
         if (!cloud) return;
-        if (!confirm("로그아웃하면 즐겨찾기도 이 기기에서 함께 지워져요.\n다시 로그인해도 즐겨찾기는 돌아오지 않아요.\n로그아웃할까요?")) return;
+        if (!(await ask("로그아웃할까요?", "즐겨찾기도 이 기기에서 함께 지워져요.<br>다시 로그인해도 즐겨찾기는 돌아오지 않아요.", "로그아웃"))) return;
         try {
           await flush(); await cloud.logout();
           cloud = null; clearTimeout(timer);
           try { localStorage.removeItem(KEY); } catch (e) {}
           msgAfterReload("로그아웃했어요. 즐겨찾기도 함께 지웠어요");
           location.reload();
-        } catch (e) { console.error(e); notify("로그아웃하지 못했어요. 잠시 뒤 다시 시도해 주세요"); }
+        } catch (e) { console.error(e); notify(`로그아웃하지 못했어요 (${(e && e.code) || "unknown"}). 잠시 뒤 다시 시도해 주세요`, 5000); }
       };
       const draw = () => {
         v.innerHTML = `${acctHtml()}<div class="chips tabs" role="group" aria-label="내 정보 보기 선택">${TABS.map(([k, l]) => `<button type="button" class="chip${k === tab ? " active" : ""}" data-tab="${k}" aria-pressed="${k === tab}">${l}</button>`).join("")}</div>${panes[tab]()}`;
